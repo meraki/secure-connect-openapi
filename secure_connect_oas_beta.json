@@ -2173,15 +2173,15 @@
         }
       }
     },
-    "/organizations/{organizationId}/reports/topCategories/{type}": {
+    "/organizations/{organizationId}/reports/topCategories": {
       "get": {
         "tags": [
           "Reports",
           "Top Categories"
         ],
-        "summary": "Get Top Categories By Type",
-        "description": "List the categories for the type of traffic which received the greatest number of requests.\nOrder the number of requests in descending order.",
-        "operationId": "getTopCategoriesType",
+        "summary": "Get Top Categories (all)",
+        "description": "List the categories which received the greatest number of requests.\nOrder the number of requests in descending order.",
+        "operationId": "getTopCategories",
         "security": [
           {
             "meraki_api_key": [
@@ -2198,16 +2198,6 @@
             "schema": {
               "type": "integer"
             }
-          },
-          {
-            "name": "type",
-            "in": "path",
-            "description": "Specify the type of traffic. Valid values: dns, proxy, or ip.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "example": "ip"
           },
           {
             "name": "from",
@@ -2498,7 +2488,7 @@
                       "category": {
                         "id": 66,
                         "label": "Malware",
-                        "type": "security",
+                        "typse": "security",
                         "integration": true
                       },
                       "count": 3827

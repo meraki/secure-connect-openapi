@@ -5437,6 +5437,1471 @@
         ]
       }
     },
+    "/organizations/{organizationId}/networkDevices": {
+      "post": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "Create Network Device",
+        "description": "Create a network device",
+        "operationId": "createNetworkDevice",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "minProperties": 4,
+                "required": [
+                  "model",
+                  "macAddress",
+                  "name",
+                  "serialNumber"
+                ],
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "example": "ModelName",
+                    "maxLength": 128,
+                    "pattern": "[0-9A-Za-z_.-]{1,128}",
+                    "description": "The model name of the device. Must be unique to your organization."
+                  },
+                  "macAddress": {
+                    "type": "string",
+                    "example": "0123456789ab",
+                    "maxLength": 12,
+                    "minLength": 12,
+                    "pattern": "[0-9A-Fa-f]{12}",
+                    "description": "Specify the MAC address of the device. The unique MAC address may include\nup to twelve characters and must not contain hyphens or colons."
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "label1",
+                    "maxLength": 50,
+                    "description": "A name for the device. Provide a unique name for your organization."
+                  },
+                  "serialNumber": {
+                    "type": "string",
+                    "example": "12345a",
+                    "maxLength": 255,
+                    "description": "The serial number of the device"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "description": "A text tag that describes the device or this particular origin assigned to the device. Provide a tag that is unique to your organization.",
+                    "maxLength": 50
+                  }
+                }
+              },
+              "example": {
+                "model": "The model name of the device. Must be unique to your organization.",
+                "macAddress": "0123456789ab",
+                "name": "A name for the device.",
+                "serialNumber": "12345a"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success. Create a network device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "minProperties": 7,
+                  "required": [
+                    "originId",
+                    "deviceId",
+                    "deviceKey",
+                    "name",
+                    "serialNumber",
+                    "createdAt",
+                    "organizationId"
+                  ],
+                  "properties": {
+                    "originId": {
+                      "type": "integer",
+                      "example": 35872943,
+                      "minimum": 1,
+                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                    },
+                    "deviceId": {
+                      "type": "string",
+                      "example": "0123456789abcdef",
+                      "maxLength": 16,
+                      "minLength": 15,
+                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                    },
+                    "deviceKey": {
+                      "type": "string",
+                      "example": "ModelName-0123456789ab",
+                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "APIDemoDevice",
+                      "description": "The name of the device.",
+                      "minLength": 1
+                    },
+                    "serialNumber": {
+                      "type": "string",
+                      "example": "12345a",
+                      "description": "The serial number of the device."
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2017-09-22T04:18:51.000Z",
+                      "description": "The time when the device was created. Specify an ISO 8601-formatted timestamp."
+                    },
+                    "organizationId": {
+                      "type": "integer",
+                      "example": 1234,
+                      "minimum": 1
+                    }
+                  }
+                },
+                "example": {
+                  "originId": 35872943,
+                  "deviceId": "0123456789abcdef",
+                  "deviceKey": "ModelName-0123456789ab",
+                  "name": "APIDemoDevice",
+                  "serialNumber": "12345a",
+                  "createdAt": "2021-09-22T04:18:51.000Z",
+                  "organizationId": 1234
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "List Network Devices",
+        "description": "List the network devices",
+        "operationId": "getAllNetworkDevices",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "minProperties": 7,
+                    "required": [
+                      "originId",
+                      "deviceId",
+                      "deviceKey",
+                      "name",
+                      "serialNumber",
+                      "createdAt",
+                      "organizationId"
+                    ],
+                    "properties": {
+                      "originId": {
+                        "type": "integer",
+                        "example": 35872943,
+                        "minimum": 1,
+                        "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                      },
+                      "deviceId": {
+                        "type": "string",
+                        "example": "0123456789abcdef",
+                        "maxLength": 16,
+                        "minLength": 15,
+                        "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                      },
+                      "deviceKey": {
+                        "type": "string",
+                        "example": "ModelName-0123456789ab",
+                        "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "APIDemoDevice",
+                        "description": "The name of the device.",
+                        "minLength": 1
+                      },
+                      "serialNumber": {
+                        "type": "string",
+                        "example": "12345a",
+                        "description": "The serial number of the device."
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2017-09-22T04:18:51.000Z",
+                        "description": "The time when the device was created. Specify an ISO 8601-formatted timestamp."
+                      },
+                      "organizationId": {
+                        "type": "integer",
+                        "example": 1234,
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "originId": 35872943,
+                    "deviceId": "0123456789abcdef",
+                    "deviceKey": "ModelName-0123456789ab",
+                    "name": "APIDemoDevice",
+                    "serialNumber": "12345a",
+                    "createdAt": "2021-09-22T04:18:51.000Z",
+                    "organizationId": 1234
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/organizations/{organizationId}/networkDevices/{originId}": {
+      "patch": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "Update Network Device",
+        "description": "Update a network device",
+        "operationId": "updateNetworkDevice",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "The origin ID of the identity",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "label1",
+                    "maxLength": 50,
+                    "description": "A name for the device. Provide a unique name for your organization."
+                  }
+                },
+                "example": {
+                  "name": "MyDeviceName"
+                }
+              },
+              "example": {
+                "name": "NetworkDevice01"
+              }
+            }
+          },
+          "description": "Properties of the network device to be updated",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success. Update network device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "minProperties": 7,
+                  "required": [
+                    "originId",
+                    "deviceId",
+                    "deviceKey",
+                    "name",
+                    "serialNumber",
+                    "createdAt",
+                    "organizationId"
+                  ],
+                  "properties": {
+                    "originId": {
+                      "type": "integer",
+                      "example": 35872943,
+                      "minimum": 1,
+                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                    },
+                    "deviceId": {
+                      "type": "string",
+                      "example": "0123456789abcdef",
+                      "maxLength": 16,
+                      "minLength": 15,
+                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                    },
+                    "deviceKey": {
+                      "type": "string",
+                      "example": "ModelName-0123456789ab",
+                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "APIDemoDevice",
+                      "description": "The name of the device.",
+                      "minLength": 1
+                    },
+                    "serialNumber": {
+                      "type": "string",
+                      "example": "12345a",
+                      "description": "The serial number of the device."
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2017-09-22T04:18:51.000Z",
+                      "description": "The time when the device was created. Specify an ISO 8601-formatted timestamp."
+                    },
+                    "organizationId": {
+                      "type": "integer",
+                      "example": 1234,
+                      "minimum": 1
+                    }
+                  }
+                },
+                "example": {
+                  "originId": 35872943,
+                  "deviceId": "0123456789abcdef",
+                  "deviceKey": "ModelName-0123456789ab",
+                  "name": "APIDemoDevice",
+                  "serialNumber": "12345a",
+                  "createdAt": "2021-09-22T04:18:51.000Z",
+                  "organizationId": 1234
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "Get Network Device",
+        "description": "Get a network device",
+        "operationId": "getNetworkDevice",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "The origin ID of the identity",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Get a network device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "minProperties": 7,
+                  "required": [
+                    "originId",
+                    "deviceId",
+                    "deviceKey",
+                    "name",
+                    "serialNumber",
+                    "createdAt",
+                    "organizationId"
+                  ],
+                  "properties": {
+                    "originId": {
+                      "type": "integer",
+                      "example": 35872943,
+                      "minimum": 1,
+                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                    },
+                    "deviceId": {
+                      "type": "string",
+                      "example": "0123456789abcdef",
+                      "maxLength": 16,
+                      "minLength": 15,
+                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                    },
+                    "deviceKey": {
+                      "type": "string",
+                      "example": "ModelName-0123456789ab",
+                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "APIDemoDevice",
+                      "description": "The name of the device.",
+                      "minLength": 1
+                    },
+                    "serialNumber": {
+                      "type": "string",
+                      "example": "12345a",
+                      "description": "The serial number of the device."
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2017-09-22T04:18:51.000Z",
+                      "description": "The time when the device was created. Specify an ISO 8601-formatted timestamp."
+                    },
+                    "organizationId": {
+                      "type": "integer",
+                      "example": 1234,
+                      "minimum": 1
+                    }
+                  }
+                },
+                "example": {
+                  "originId": 35872943,
+                  "deviceId": "0123456789abcdef",
+                  "deviceKey": "ModelName-0123456789ab",
+                  "name": "APIDemoDevice",
+                  "serialNumber": "12345a",
+                  "createdAt": "2021-09-22T04:18:51.000Z",
+                  "organizationId": 1234
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "Delete Network Device",
+        "description": "Remove a network device",
+        "operationId": "deleteNetworkDevice",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "The origin ID of the identity",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content in response body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                },
+                "example": {
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationId}/networkDevices/{originId}/policies": {
+      "get": {
+        "tags": [
+          "Deployments",
+          "Network Devices"
+        ],
+        "summary": "List Policies for Network Device",
+        "description": "List the Umbrella policies associated with a network device.\nIf no filters are supplied, Umbrella returns the DNS policies.",
+        "operationId": "listNetworkDevicePolicies",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "The origin ID of the identity",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "format": "int32"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Specifies the type of Umbrella policy (either DNS or Web)",
+            "required": false,
+            "schema": {
+              "default": "dns",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "minProperties": 6,
+                    "required": [
+                      "policyId",
+                      "name",
+                      "priority",
+                      "isAppliedDirectly",
+                      "isDefault",
+                      "createdAt"
+                    ],
+                    "properties": {
+                      "policyId": {
+                        "type": "integer",
+                        "maxLength": 64,
+                        "description": "The unique ID for the policy.",
+                        "minimum": 0
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "The name of the policy as displayed in Umbrella.",
+                        "example": "ApiDemoPolicy"
+                      },
+                      "priority": {
+                        "type": "integer",
+                        "maxLength": 64,
+                        "description": "The prioirity of the policy.",
+                        "minimum": 0
+                      },
+                      "isAppliedDirectly": {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Specify whether the policy is directly applied to this network device."
+                      },
+                      "isDefault": {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Specify whether the policy is the default policy."
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2021-10-02T20:00:00Z",
+                        "description": "The time when the policy was created. Specify an ISO 8601-formatted timestamp."
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "policyId": 123,
+                    "name": "APIDemo policy",
+                    "priority": 1,
+                    "isAppliedDirectly": true,
+                    "isDefault": true,
+                    "createdAt": "2017-09-22T04:18:51.000Z"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 400,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation Error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 401,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Validation error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 403,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Forbidden",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 404,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Not Found",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "example": 500,
+                      "description": "HTTP status code"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal error",
+                      "description": "A brief description of the error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organizationId}/endpointPosture/browser": {
       "parameters": [
         {
@@ -20063,6 +21528,9 @@
     },
     {
       "name": "Data Center"
+    },
+    {
+      "name": "Network Devices"
     },
     {
       "name": "Posture profile"

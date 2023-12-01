@@ -292,7 +292,7 @@
           {
             "name": "httperrors",
             "in": "query",
-            "description": "Filter data for requests that resulted in a TLS error or a certificate error.\nValid values: 'certificateerror' or 'tlserror'.",
+            "description": "Filter data for requests that resulted in a TLS error or a certificate error.\nValid values: `certificateerror` or `tlserror`.",
             "schema": {
               "type": "string",
               "enum": [
@@ -2812,7 +2812,7 @@
           {
             "name": "timerange",
             "in": "header",
-            "description": "A string that represents a range of time (for example: 'minute', 'hour', or 'day').\nIf the header is not set, the header value defaults to 'hour'.",
+            "description": "A string that represents a range of time (for example: `minute`, `hour`, or `day`).\nIf the header is not set, the header value defaults to `hour`.",
             "schema": {
               "type": "string"
             },
@@ -3479,10 +3479,16 @@
           {
             "name": "type",
             "in": "path",
-            "description": "Specify the type of traffic. Valid values: dns, proxy, firewall, or ip.",
+            "description": "Specify the type of traffic. Valid values: `dns`, `proxy`, `firewall`, or `ip`.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "dns",
+                "proxy",
+                "firewall",
+                "ip"
+              ]
             },
             "example": "firewall"
           },
@@ -4304,7 +4310,7 @@
           "Summary"
         ],
         "summary": "Get Summary By Type",
-        "description": "List the summary by traffic type.",
+        "description": "Get the summary by traffic type.",
         "operationId": "getSummaryByType",
         "security": [
           {
@@ -4326,10 +4332,16 @@
           {
             "name": "type",
             "in": "path",
-            "description": "Specify the type of traffic. Valid values: dns, proxy, firewall, or ip.",
+            "description": "Specify the type of traffic. Valid values: `dns`, `proxy`, `firewall`, or `ip`.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "dns",
+                "proxy",
+                "firewall",
+                "ip"
+              ]
             },
             "example": "firewall"
           },

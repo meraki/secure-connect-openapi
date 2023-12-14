@@ -3,7 +3,7 @@
   "info": {
     "title": "Meraki Integrated API for Secure Connect",
     "description": "The Cisco Meraki Integrated API for Secure Connect is a modern REST API based on the OpenAPI specification.\n  ---\n\n  [API Documentation](https://meraki.io/api)\n\n  [Meraki Homepage](https://www.meraki.com)\n",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "contact": {
       "name": "Meraki Developer Community",
       "url": "https://meraki.io/community"
@@ -24195,6 +24195,311 @@
           }
         }
       }
+    },
+    "/organizations/{organizationId}/policy/rulesets": {
+      "x-apigw-path": "/rulesets",
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "get rulesets for a organization",
+        "description": "Get multiple rulesets for a given organization.\nIt's possible to filter by `attribute_name`, `attribute_value` and `offset`.\nThere are global limits for the number of rulesets to should be returned for each organization,\ntherefore this endpoint won't return all organization's rulesets.\n",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      },
+      "post": {
+        "summary": "create a ruleset for an organization",
+        "description": "Takes ruleset as json in a POST request and saves it to db.\nAny primary ids in payload (ruleset_id, rule_id etc) are ignored and new ones are generated.\nOnce created, it returns the ruleset by reading it back from db.\n",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      }
+    },
+    "/organizations/{organizationId}/policy/rulesets/{rulesetId}": {
+      "x-apigw-path": "/rulesets/{rulesetId}",
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "rulesetId",
+          "in": "path",
+          "description": "Umbrella Ruleset ID",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get a specific ruleset for a given organization id.",
+        "description": "Get a specific ruleset for a given organization id.",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      },
+      "put": {
+        "summary": "update a ruleset for an organization",
+        "description": "Updates ruleset.\nFor now we just support simple payload with ruleset priority and name.\n",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      },
+      "delete": {
+        "summary": "Delete ruleset and all rules associated to it.",
+        "description": "Delete ruleset and all rules associated to it.",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      }
+    },
+    "/organizations/{organizationId}/policy/rulesets/{rulesetId}/rules": {
+      "x-apigw-path": "/rulesets/{rulesetId}/rules",
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "rulesetId",
+          "in": "path",
+          "description": "Umbrella Ruleset ID",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "post": {
+        "summary": "create a rule with in ruleset for an organization",
+        "description": "create a rule with in ruleset for an organization",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      }
+    },
+    "/organizations/{organizationId}/policy/rulesets/{rulesetId}/rules/{ruleId}": {
+      "x-apigw-path": "/rulesets/{rulesetId}/rules/{ruleId}",
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "rulesetId",
+          "in": "path",
+          "description": "Umbrella Ruleset ID",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "ruleId",
+          "in": "path",
+          "description": "Umbrella Rule ID",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "get a single rule",
+        "description": "get a single rule",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      },
+      "put": {
+        "summary": "update a rule",
+        "description": "update a rule",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      },
+      "delete": {
+        "summary": "delete a rule",
+        "description": "delete a rule",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      }
+    },
+    "/organizations/{organizationId}/policy/rulesets/byType/{rulesetType}": {
+      "x-apigw-path": "/rulesets/type/{rulesetType}",
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "rulesetType",
+          "in": "path",
+          "description": "Umbrella ruleset type",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get the rulesets based on type.",
+        "description": "Get multiple rulesets for a given organization for a given ruleset type.\nIt's possible to filter by `attribute_name`, `attribute_value` and `offset`.\nThere are global limits for the number of rulesets to should be returned for each organization,\ntherefore this endpoint won't return all organization's rulesets.\n",
+        "security": [
+          {
+            "meraki_api_key": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Apix_integrated_policy_apis_v1"
+        ]
+      }
     }
   },
   "components": {
@@ -24268,6 +24573,9 @@
     },
     {
       "name": "Profile"
+    },
+    {
+      "name": "Apix_integrated_policy_apis_v1"
     }
   ],
   "servers": [

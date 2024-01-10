@@ -61,7 +61,8 @@
             "in": "query",
             "description": "A number that represents an index into the collection.",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 0
             },
             "example": 0
           },
@@ -71,7 +72,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -2234,7 +2236,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -2243,7 +2246,8 @@
             "in": "query",
             "description": "A number that represents an index into the collection.",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 0
             },
             "example": 0
           },
@@ -2663,7 +2667,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -2672,7 +2677,8 @@
             "in": "query",
             "description": "A number that represents an index into the collection.",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 0
             },
             "example": 0
           },
@@ -3880,7 +3886,8 @@
             "in": "query",
             "description": "A number that represents an index into the collection.",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 0
             },
             "example": 0
           },
@@ -3890,7 +3897,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -4370,7 +4378,8 @@
             "in": "query",
             "description": "A number that represents an index into the collection.",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 0
             },
             "example": 0
           },
@@ -4380,7 +4389,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -4845,7 +4855,8 @@
             "description": "The maximum number of records to return from the collection.",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "number",
+              "default": 100
             },
             "example": 100
           },
@@ -5456,7 +5467,7 @@
           "Network Devices"
         ],
         "summary": "Create Network Device",
-        "description": "Create a network device",
+        "description": "Create a network device.",
         "operationId": "createNetworkDevice",
         "security": [
           {
@@ -5497,7 +5508,7 @@
                     "type": "string",
                     "example": "label1",
                     "maxLength": 50,
-                    "description": "A name for the device. Provide a unique name for your organization."
+                    "description": "A name of the device. Provide a unique device name in your organization."
                   },
                   "serialNumber": {
                     "type": "string",
@@ -5513,7 +5524,7 @@
                 }
               },
               "example": {
-                "model": "The model name of the device. Must be unique to your organization.",
+                "model": "The model name of the device.",
                 "macAddress": "0123456789ab",
                 "name": "A name for the device.",
                 "serialNumber": "12345a"
@@ -5523,11 +5534,12 @@
         },
         "responses": {
           "201": {
-            "description": "Success. Create a network device.",
+            "description": "Success. Created a network device.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The network device object.",
                   "minProperties": 7,
                   "required": [
                     "originId",
@@ -5576,6 +5588,7 @@
                     },
                     "organizationId": {
                       "type": "integer",
+                      "description": "The ID of the organization.",
                       "example": 1234,
                       "minimum": 1
                     }
@@ -5742,7 +5755,7 @@
           "Network Devices"
         ],
         "summary": "List Network Devices",
-        "description": "List the network devices",
+        "description": "List the network devices.",
         "operationId": "getAllNetworkDevices",
         "security": [
           {
@@ -5758,8 +5771,10 @@
               "application/json": {
                 "schema": {
                   "type": "array",
+                  "description": "The list of networks devices.",
                   "items": {
                     "type": "object",
+                    "description": "The network device object.",
                     "minProperties": 7,
                     "required": [
                       "originId",
@@ -5808,6 +5823,7 @@
                       },
                       "organizationId": {
                         "type": "integer",
+                        "description": "The ID of the organization.",
                         "example": 1234,
                         "minimum": 1
                       }
@@ -5979,7 +5995,7 @@
           "Network Devices"
         ],
         "summary": "Update Network Device",
-        "description": "Update a network device",
+        "description": "Update a network device.",
         "operationId": "updateNetworkDevice",
         "security": [
           {
@@ -6001,7 +6017,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity",
+            "description": "The origin ID of the identity.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -6018,12 +6034,13 @@
                 "required": [
                   "name"
                 ],
+                "description": "Update the network device information.",
                 "properties": {
                   "name": {
                     "type": "string",
                     "example": "label1",
                     "maxLength": 50,
-                    "description": "A name for the device. Provide a unique name for your organization."
+                    "description": "A name of the device. Provide a unique device name in your organization."
                   }
                 },
                 "example": {
@@ -6035,16 +6052,17 @@
               }
             }
           },
-          "description": "Properties of the network device to be updated",
+          "description": "Update the properties of the network device.",
           "required": true
         },
         "responses": {
           "200": {
-            "description": "Success. Update network device.",
+            "description": "Success. Updated the network device.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The network device object.",
                   "minProperties": 7,
                   "required": [
                     "originId",
@@ -6093,6 +6111,7 @@
                     },
                     "organizationId": {
                       "type": "integer",
+                      "description": "The ID of the organization.",
                       "example": 1234,
                       "minimum": 1
                     }
@@ -6248,7 +6267,7 @@
           "Network Devices"
         ],
         "summary": "Get Network Device",
-        "description": "Get a network device",
+        "description": "Get a network device.",
         "operationId": "getNetworkDevice",
         "security": [
           {
@@ -6270,7 +6289,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity",
+            "description": "The origin ID of the identity.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -6286,6 +6305,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The network device object.",
                   "minProperties": 7,
                   "required": [
                     "originId",
@@ -6334,6 +6354,7 @@
                     },
                     "organizationId": {
                       "type": "integer",
+                      "description": "The ID of the organization.",
                       "example": 1234,
                       "minimum": 1
                     }
@@ -6489,7 +6510,7 @@
           "Network Devices"
         ],
         "summary": "Delete Network Device",
-        "description": "Remove a network device",
+        "description": "Remove a network device.",
         "operationId": "deleteNetworkDevice",
         "security": [
           {
@@ -6511,7 +6532,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity",
+            "description": "The origin ID of the identity.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -6694,7 +6715,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity",
+            "description": "The origin ID of the identity.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -6705,12 +6726,13 @@
           {
             "name": "type",
             "in": "query",
-            "description": "Specifies the type of Umbrella policy (either DNS or Web)",
+            "description": "The type of Umbrella policy (either DNS or Web).",
             "required": false,
             "schema": {
               "default": "dns",
               "type": "string"
-            }
+            },
+            "example": "dns"
           }
         ],
         "responses": {
@@ -6720,8 +6742,10 @@
               "application/json": {
                 "schema": {
                   "type": "array",
+                  "description": "The list of policies associated with the network device.",
                   "items": {
                     "type": "object",
+                    "description": "The policy associated with a network device.",
                     "minProperties": 6,
                     "required": [
                       "policyId",

@@ -3,7 +3,7 @@
   "info": {
     "title": "Meraki Integrated API for Secure Connect",
     "description": "The Cisco Meraki Integrated API for Secure Connect is a modern REST API based on the OpenAPI specification.\n  ---\n\n  [API Documentation](https://meraki.io/api)\n\n  [Meraki Homepage](https://www.meraki.com)\n",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "contact": {
       "name": "Meraki Developer Community",
       "url": "https://meraki.io/community"
@@ -24902,6 +24902,54 @@
           }
         }
       }
+    },
+    "/organizations/{organizationId}/firewall/applications": {
+      "get": {
+        "summary": "",
+        "description": "",
+        "operationId": "\\OpenDNS\\Api\\V3\\Method_Organizations_Firewallapplications_ReadCollection",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization ID associated with this resource.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "organizations_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "405": {
+            "description": "Method Not Allowed"
+          }
+        },
+        "tags": [
+          "Firewall Applications"
+        ]
+      }
     }
   },
   "components": {
@@ -24990,6 +25038,9 @@
     },
     {
       "name": "Users"
+    },
+    {
+      "name": "Firewall Applications"
     }
   ],
   "servers": [

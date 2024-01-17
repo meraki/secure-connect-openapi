@@ -23998,13 +23998,6 @@
           "schema": {
             "type": "integer"
           }
-        },
-        {
-          "name": "orgId",
-          "in": "path",
-          "required": true,
-          "schema": {
-          }
         }
       ],
       "get": {
@@ -24342,13 +24335,6 @@
           "schema": {
             "type": "integer"
           }
-        },
-        {
-          "name": "orgId",
-          "in": "path",
-          "required": true,
-          "schema": {
-          }
         }
       ]
     },
@@ -24361,13 +24347,6 @@
           "required": true,
           "schema": {
             "type": "integer"
-          }
-        },
-        {
-          "name": "orgId",
-          "in": "path",
-          "required": true,
-          "schema": {
           }
         },
         {
@@ -24629,13 +24608,6 @@
           "schema": {
             "type": "integer"
           }
-        },
-        {
-          "name": "orgId",
-          "in": "path",
-          "required": true,
-          "schema": {
-          }
         }
       ],
       "get": {
@@ -24790,13 +24762,6 @@
           "schema": {
             "type": "integer"
           }
-        },
-        {
-          "name": "orgId",
-          "in": "path",
-          "required": true,
-          "schema": {
-          }
         }
       ],
       "get": {
@@ -24916,16 +24881,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "organizations_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],

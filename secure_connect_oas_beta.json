@@ -22568,6 +22568,962 @@
         }
       }
     },
+    "/organizations/{organizationId}/policy/certificatePolicy": {
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getCertPolicies",
+        "description": "Get a list of certificate policies in the organization.",
+        "tags": [
+          "Posture profile",
+          "Certificate Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "title": "Resource Model",
+                      "description": "base template for Unified Policy API resources",
+                      "type": "object",
+                      "properties": {
+                        "organizationId": {
+                          "title": "Umbrella Org Id",
+                          "description": "Unique identifier for the org.",
+                          "type": "number",
+                          "readOnly": true,
+                          "example": 2345
+                        },
+                        "resourceId": {
+                          "title": "Generic Id",
+                          "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                          "type": "integer",
+                          "readOnly": true,
+                          "example": "2345"
+                        },
+                        "resourceName": {
+                          "title": "Resource Name",
+                          "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                        },
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "title": "Resource Instance",
+                            "description": "base template for single instance of a Unified Policy API resource",
+                            "type": "object",
+                            "required": [
+                              "resourceInstanceName"
+                            ],
+                            "properties": {
+                              "createdAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedBy": {
+                                "title": "Modified By Id",
+                                "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "org/2/user/3855475"
+                              },
+                              "organizationId": {
+                                "title": "Umbrella Org Id",
+                                "description": "Unique identifier for the org.",
+                                "type": "number",
+                                "readOnly": true,
+                                "example": 2345
+                              },
+                              "resourceInstanceId": {
+                                "title": "Generic Id",
+                                "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                                "type": "integer",
+                                "readOnly": true,
+                                "example": "2345"
+                              },
+                              "resourceInstanceName": {
+                                "description": "Name for specific instance of resource",
+                                "type": "string",
+                                "example": "My favorite posture configuration"
+                              },
+                              "resourceName": {
+                                "title": "Resource Name",
+                                "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "title": "Certificate Policy Resource",
+                            "description": "umbrella.latitude.certificate_policy",
+                            "allOf": [
+                              {
+                                "title": "Resource Instance",
+                                "description": "base template for single instance of a Unified Policy API resource",
+                                "type": "object",
+                                "required": [
+                                  "resourceInstanceName"
+                                ],
+                                "properties": {
+                                  "createdAt": {
+                                    "title": "Date/Time",
+                                    "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "example": "2021-01-19T00:18:07+00:00"
+                                  },
+                                  "modifiedAt": {
+                                    "title": "Date/Time",
+                                    "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "example": "2021-01-19T00:18:07+00:00"
+                                  },
+                                  "modifiedBy": {
+                                    "title": "Modified By Id",
+                                    "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                                    "type": "string",
+                                    "readOnly": true,
+                                    "example": "org/2/user/3855475"
+                                  },
+                                  "organizationId": {
+                                    "title": "Umbrella Org Id",
+                                    "description": "Unique identifier for the org.",
+                                    "type": "number",
+                                    "readOnly": true,
+                                    "example": 2345
+                                  },
+                                  "resourceInstanceId": {
+                                    "title": "Generic Id",
+                                    "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                                    "type": "integer",
+                                    "readOnly": true,
+                                    "example": "2345"
+                                  },
+                                  "resourceInstanceName": {
+                                    "description": "Name for specific instance of resource",
+                                    "type": "string",
+                                    "example": "My favorite posture configuration"
+                                  },
+                                  "resourceName": {
+                                    "title": "Resource Name",
+                                    "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                                    "type": "string",
+                                    "readOnly": true,
+                                    "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "required": [
+                                  "certPolicy"
+                                ],
+                                "properties": {
+                                  "certPolicy": {
+                                    "title": "Cert Policy Posture",
+                                    "type": "object",
+                                    "required": [
+                                      "certId"
+                                    ],
+                                    "properties": {
+                                      "certId": {
+                                        "type": "integer",
+                                        "example": 1
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "operationId": "createCertPolicy",
+        "description": "Create a new Certificate Policy for the organization.",
+        "tags": [
+          "Posture profile",
+          "Certificate Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Certificate Policy Resource",
+                "description": "umbrella.latitude.certificate_policy",
+                "allOf": [
+                  {
+                    "title": "Resource Instance",
+                    "description": "base template for single instance of a Unified Policy API resource",
+                    "type": "object",
+                    "required": [
+                      "resourceInstanceName"
+                    ],
+                    "properties": {
+                      "createdAt": {
+                        "title": "Date/Time",
+                        "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "example": "2021-01-19T00:18:07+00:00"
+                      },
+                      "modifiedAt": {
+                        "title": "Date/Time",
+                        "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "example": "2021-01-19T00:18:07+00:00"
+                      },
+                      "modifiedBy": {
+                        "title": "Modified By Id",
+                        "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "org/2/user/3855475"
+                      },
+                      "organizationId": {
+                        "title": "Umbrella Org Id",
+                        "description": "Unique identifier for the org.",
+                        "type": "number",
+                        "readOnly": true,
+                        "example": 2345
+                      },
+                      "resourceInstanceId": {
+                        "title": "Generic Id",
+                        "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                        "type": "integer",
+                        "readOnly": true,
+                        "example": "2345"
+                      },
+                      "resourceInstanceName": {
+                        "description": "Name for specific instance of resource",
+                        "type": "string",
+                        "example": "My favorite posture configuration"
+                      },
+                      "resourceName": {
+                        "title": "Resource Name",
+                        "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "certPolicy"
+                    ],
+                    "properties": {
+                      "certPolicy": {
+                        "title": "Cert Policy Posture",
+                        "type": "object",
+                        "required": [
+                          "certId"
+                        ],
+                        "properties": {
+                          "certId": {
+                            "type": "integer",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Certificate Policy Resource",
+                  "description": "umbrella.latitude.certificate_policy",
+                  "allOf": [
+                    {
+                      "title": "Resource Instance",
+                      "description": "base template for single instance of a Unified Policy API resource",
+                      "type": "object",
+                      "required": [
+                        "resourceInstanceName"
+                      ],
+                      "properties": {
+                        "createdAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedBy": {
+                          "title": "Modified By Id",
+                          "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "org/2/user/3855475"
+                        },
+                        "organizationId": {
+                          "title": "Umbrella Org Id",
+                          "description": "Unique identifier for the org.",
+                          "type": "number",
+                          "readOnly": true,
+                          "example": 2345
+                        },
+                        "resourceInstanceId": {
+                          "title": "Generic Id",
+                          "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                          "type": "integer",
+                          "readOnly": true,
+                          "example": "2345"
+                        },
+                        "resourceInstanceName": {
+                          "description": "Name for specific instance of resource",
+                          "type": "string",
+                          "example": "My favorite posture configuration"
+                        },
+                        "resourceName": {
+                          "title": "Resource Name",
+                          "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "certPolicy"
+                      ],
+                      "properties": {
+                        "certPolicy": {
+                          "title": "Cert Policy Posture",
+                          "type": "object",
+                          "required": [
+                            "certId"
+                          ],
+                          "properties": {
+                            "certId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/organizations/{organizationId}/policy/certificatePolicy/{id}": {
+      "parameters": [
+        {
+          "name": "organizationId",
+          "in": "path",
+          "description": "Organization ID associated with this resource.",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "title": "Generic Id",
+            "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+            "type": "integer",
+            "readOnly": true,
+            "example": "2345"
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getCertPolicy",
+        "description": "Get a Certificate Policy by id.",
+        "tags": [
+          "Posture profile",
+          "Certificate Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Certificate Policy Resource",
+                  "description": "umbrella.latitude.certificate_policy",
+                  "allOf": [
+                    {
+                      "title": "Resource Instance",
+                      "description": "base template for single instance of a Unified Policy API resource",
+                      "type": "object",
+                      "required": [
+                        "resourceInstanceName"
+                      ],
+                      "properties": {
+                        "createdAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedBy": {
+                          "title": "Modified By Id",
+                          "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "org/2/user/3855475"
+                        },
+                        "organizationId": {
+                          "title": "Umbrella Org Id",
+                          "description": "Unique identifier for the org.",
+                          "type": "number",
+                          "readOnly": true,
+                          "example": 2345
+                        },
+                        "resourceInstanceId": {
+                          "title": "Generic Id",
+                          "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                          "type": "integer",
+                          "readOnly": true,
+                          "example": "2345"
+                        },
+                        "resourceInstanceName": {
+                          "description": "Name for specific instance of resource",
+                          "type": "string",
+                          "example": "My favorite posture configuration"
+                        },
+                        "resourceName": {
+                          "title": "Resource Name",
+                          "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "certPolicy"
+                      ],
+                      "properties": {
+                        "certPolicy": {
+                          "title": "Cert Policy Posture",
+                          "type": "object",
+                          "required": [
+                            "certId"
+                          ],
+                          "properties": {
+                            "certId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "certPolicy",
+        "description": "Delete a Certificate Policy by id.",
+        "tags": [
+          "Posture profile",
+          "Certificate Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "title": "Resource Model",
+                      "description": "base template for Unified Policy API resources",
+                      "type": "object",
+                      "properties": {
+                        "organizationId": {
+                          "title": "Umbrella Org Id",
+                          "description": "Unique identifier for the org.",
+                          "type": "number",
+                          "readOnly": true,
+                          "example": 2345
+                        },
+                        "resourceId": {
+                          "title": "Generic Id",
+                          "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                          "type": "integer",
+                          "readOnly": true,
+                          "example": "2345"
+                        },
+                        "resourceName": {
+                          "title": "Resource Name",
+                          "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                        },
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "title": "Resource Instance",
+                            "description": "base template for single instance of a Unified Policy API resource",
+                            "type": "object",
+                            "required": [
+                              "resourceInstanceName"
+                            ],
+                            "properties": {
+                              "createdAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedBy": {
+                                "title": "Modified By Id",
+                                "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "org/2/user/3855475"
+                              },
+                              "organizationId": {
+                                "title": "Umbrella Org Id",
+                                "description": "Unique identifier for the org.",
+                                "type": "number",
+                                "readOnly": true,
+                                "example": 2345
+                              },
+                              "resourceInstanceId": {
+                                "title": "Generic Id",
+                                "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                                "type": "integer",
+                                "readOnly": true,
+                                "example": "2345"
+                              },
+                              "resourceInstanceName": {
+                                "description": "Name for specific instance of resource",
+                                "type": "string",
+                                "example": "My favorite posture configuration"
+                              },
+                              "resourceName": {
+                                "title": "Resource Name",
+                                "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "title": "Resource Instance",
+                            "description": "base template for single instance of a Unified Policy API resource",
+                            "type": "object",
+                            "required": [
+                              "resourceInstanceName"
+                            ],
+                            "properties": {
+                              "createdAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedAt": {
+                                "title": "Date/Time",
+                                "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                                "type": "string",
+                                "format": "date-time",
+                                "readOnly": true,
+                                "example": "2021-01-19T00:18:07+00:00"
+                              },
+                              "modifiedBy": {
+                                "title": "Modified By Id",
+                                "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "org/2/user/3855475"
+                              },
+                              "organizationId": {
+                                "title": "Umbrella Org Id",
+                                "description": "Unique identifier for the org.",
+                                "type": "number",
+                                "readOnly": true,
+                                "example": 2345
+                              },
+                              "resourceInstanceId": {
+                                "title": "Generic Id",
+                                "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                                "type": "integer",
+                                "readOnly": true,
+                                "example": "2345"
+                              },
+                              "resourceInstanceName": {
+                                "description": "Name for specific instance of resource",
+                                "type": "string",
+                                "example": "My favorite posture configuration"
+                              },
+                              "resourceName": {
+                                "title": "Resource Name",
+                                "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                                "type": "string",
+                                "readOnly": true,
+                                "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                              }
+                            }
+                          },
+                          "example": [
+
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateCertPolicy",
+        "description": "Update a Certificate Policy by id.",
+        "tags": [
+          "Posture profile",
+          "Certificate Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Certificate Policy Resource",
+                "description": "umbrella.latitude.certificate_policy",
+                "allOf": [
+                  {
+                    "title": "Resource Instance",
+                    "description": "base template for single instance of a Unified Policy API resource",
+                    "type": "object",
+                    "required": [
+                      "resourceInstanceName"
+                    ],
+                    "properties": {
+                      "createdAt": {
+                        "title": "Date/Time",
+                        "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "example": "2021-01-19T00:18:07+00:00"
+                      },
+                      "modifiedAt": {
+                        "title": "Date/Time",
+                        "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "example": "2021-01-19T00:18:07+00:00"
+                      },
+                      "modifiedBy": {
+                        "title": "Modified By Id",
+                        "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "org/2/user/3855475"
+                      },
+                      "organizationId": {
+                        "title": "Umbrella Org Id",
+                        "description": "Unique identifier for the org.",
+                        "type": "number",
+                        "readOnly": true,
+                        "example": 2345
+                      },
+                      "resourceInstanceId": {
+                        "title": "Generic Id",
+                        "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                        "type": "integer",
+                        "readOnly": true,
+                        "example": "2345"
+                      },
+                      "resourceInstanceName": {
+                        "description": "Name for specific instance of resource",
+                        "type": "string",
+                        "example": "My favorite posture configuration"
+                      },
+                      "resourceName": {
+                        "title": "Resource Name",
+                        "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "certPolicy"
+                    ],
+                    "properties": {
+                      "certPolicy": {
+                        "title": "Cert Policy Posture",
+                        "type": "object",
+                        "required": [
+                          "certId"
+                        ],
+                        "properties": {
+                          "certId": {
+                            "type": "integer",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Certificate Policy Resource",
+                  "description": "umbrella.latitude.certificate_policy",
+                  "allOf": [
+                    {
+                      "title": "Resource Instance",
+                      "description": "base template for single instance of a Unified Policy API resource",
+                      "type": "object",
+                      "required": [
+                        "resourceInstanceName"
+                      ],
+                      "properties": {
+                        "createdAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedAt": {
+                          "title": "Date/Time",
+                          "description": "datetime string with format YYYY-MM-DDTHH:MM:SS+timezone",
+                          "type": "string",
+                          "format": "date-time",
+                          "readOnly": true,
+                          "example": "2021-01-19T00:18:07+00:00"
+                        },
+                        "modifiedBy": {
+                          "title": "Modified By Id",
+                          "description": "encoding of the user who changed something with format org/organizationId/user/USERID",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "org/2/user/3855475"
+                        },
+                        "organizationId": {
+                          "title": "Umbrella Org Id",
+                          "description": "Unique identifier for the org.",
+                          "type": "number",
+                          "readOnly": true,
+                          "example": 2345
+                        },
+                        "resourceInstanceId": {
+                          "title": "Generic Id",
+                          "description": "Unique identifier for the resource. Auto-incrementing MySQL key",
+                          "type": "integer",
+                          "readOnly": true,
+                          "example": "2345"
+                        },
+                        "resourceInstanceName": {
+                          "description": "Name for specific instance of resource",
+                          "type": "string",
+                          "example": "My favorite posture configuration"
+                        },
+                        "resourceName": {
+                          "title": "Resource Name",
+                          "description": "Resource Name which determines endpoint and Brain resources. This has the same name as the path, i.e., umbrella.endpoint.posture.os",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "umbrella.optional_namespace.optional_subnamespace.resource_name"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "certPolicy"
+                      ],
+                      "properties": {
+                        "certPolicy": {
+                          "title": "Cert Policy Posture",
+                          "type": "object",
+                          "required": [
+                            "certId"
+                          ],
+                          "properties": {
+                            "certId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/organizations/{organizationId}/endpointPosture/profile": {
       "parameters": [
         {
@@ -24975,6 +25931,9 @@
     },
     {
       "name": "Disk Encryption"
+    },
+    {
+      "name": "Certificate Policy"
     },
     {
       "name": "Profile"

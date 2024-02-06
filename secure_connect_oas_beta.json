@@ -2092,38 +2092,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -2135,13 +2185,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -2153,31 +2228,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -2523,38 +2648,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -2566,13 +2741,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -2584,31 +2784,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -2992,38 +3242,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3035,13 +3335,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3053,31 +3378,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -3364,38 +3739,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3407,13 +3832,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3425,31 +3875,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -3743,38 +4243,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3786,13 +4336,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -3804,31 +4379,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -4219,38 +4844,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -4262,13 +4937,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -4280,31 +4980,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -4711,38 +5461,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -4754,13 +5554,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -4772,31 +5597,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -5106,38 +5981,88 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Invalid request"
+                    "message": "Bad Request",
+                    "code": 400
                   }
                 }
               }
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Unauthorized request"
+                    "message": "Unauthorized",
+                    "code": 401
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -5149,13 +6074,38 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Forbidden"
+                    "message": "Forbidden",
+                    "code": 403
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
@@ -5167,31 +6117,81 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Not Found"
+                    "message": "Not Found",
+                    "code": 404
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The description of the error.",
+                      "example": "Internal Server Error"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "The status code of the error.",
+                      "example": 500
                     }
                   },
                   "example": {
-                    "message": "Server error"
+                    "message": "Internal Server Error",
+                    "code": 500
                   }
                 }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
               }
             }
           }
@@ -5607,25 +6607,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5633,25 +6639,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5660,24 +6672,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5686,24 +6704,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5711,25 +6735,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5845,25 +6875,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5871,25 +6907,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5898,24 +6940,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5924,24 +6972,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -5949,25 +7003,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6130,25 +7190,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6156,25 +7222,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6183,24 +7255,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6209,24 +7287,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6234,25 +7318,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6373,25 +7463,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6399,25 +7495,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6426,24 +7528,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6452,24 +7560,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6477,25 +7591,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6554,25 +7674,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6580,25 +7706,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6607,24 +7739,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6633,24 +7771,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6658,25 +7802,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6806,25 +7956,31 @@
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 400,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation Error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6832,25 +7988,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 401,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Validation error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6859,24 +8021,30 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 403,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Forbidden",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6885,24 +8053,30 @@
           },
           "404": {
             "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 404,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Not Found",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -6910,25 +8084,31 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "statusCode": {
-                      "type": "integer",
-                      "example": 500,
-                      "description": "HTTP status code"
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Internal error",
-                      "description": "A brief description of the error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Detailed error message"
+                    "Error": {
+                      "type": "string"
                     }
                   }
                 }

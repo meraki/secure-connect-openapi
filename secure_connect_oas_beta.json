@@ -17,7 +17,7 @@
           "Activity"
         ],
         "summary": "Get Activities (all)",
-        "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\nNote: The IP activity report is not available.",
+        "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\n**Note:** The IP activity report is not available.",
         "operationId": "getActivities",
         "security": [
           {
@@ -1128,7 +1128,7 @@
                                 "properties": {
                                   "generatorid": {
                                     "type": "number",
-                                    "description": "Unique id assigned to the part of the IPS which generated the event."
+                                    "description": "Unique id assigned to the part of the IPS that generated the event."
                                   },
                                   "id": {
                                     "type": "number",
@@ -2316,7 +2316,7 @@
           "Top Categories"
         ],
         "summary": "Get Top Categories (all)",
-        "description": "List the categories which received the greatest number of requests.\nOrder the number of requests in descending order.",
+        "description": "List the categories that received the greatest number of requests.\nOrder the number of requests in descending order.",
         "operationId": "getTopCategories",
         "security": [
           {

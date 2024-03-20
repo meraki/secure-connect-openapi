@@ -6216,7 +6216,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List the data centers",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -6333,7 +6333,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -6534,7 +6534,7 @@
         },
         "responses": {
           "201": {
-            "description": "Success. Created a network device.",
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -6796,7 +6796,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -7117,7 +7117,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success. Updated the network device.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -7390,7 +7390,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success. Get a network device.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -7663,7 +7663,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content in response body.",
+            "description": "No Content",
             "content": {
               "application/json": {
                 "schema": {
@@ -7887,7 +7887,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -8184,7 +8184,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List the tunnels associated with the organization.\nYou must set the `includeState` request query parameter to `true` for the response\nto include the state information.",
+            "description": "OK",
             "headers": {
               "Total-Item-Count": {
                 "schema": {
@@ -8227,7 +8227,7 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "description": "Tunnel resource object",
+                    "description": "Get the information about the tunnel in the organization.\nYou must set the `includeState` request query parameter to `true` for the response\nto include the state information.",
                     "properties": {
                       "id": {
                         "type": "integer",
@@ -8687,7 +8687,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -8861,7 +8861,7 @@
                     "description": "Enter IPv4 ranges and CIDR addresses.\nFor serviceType 'SIG' - Add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic destined for RFC-1918 addresses to return through the tunnel.\nIf serviceType is 'Private Access' this field is required, otherwise optional.\n0.0.0.0/0 is not allowed.",
                     "items": {
                       "type": "string",
-                      "description": "IPv4 CIDR ranges"
+                      "description": "IPv4 CIDR ranges."
                     },
                     "example": [
                       "123.111.222.25/24",
@@ -8936,7 +8936,7 @@
         },
         "responses": {
           "200": {
-            "description": "Tunnel created",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -9187,7 +9187,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -9339,7 +9339,7 @@
           {
             "in": "path",
             "name": "id",
-            "description": "The ID of the tunnel",
+            "description": "The ID of the tunnel.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -9352,7 +9352,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a tunnel",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -9592,7 +9592,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -9710,7 +9710,7 @@
       "delete": {
         "summary": "Delete Tunnel",
         "operationId": "deleteTunnel",
-        "description": "Deletes a specific tunnel",
+        "description": "Delete a tunnel in the organization.",
         "security": [
           {
             "meraki_api_key": [
@@ -9735,7 +9735,7 @@
           {
             "in": "path",
             "name": "id",
-            "description": "The ID of the tunnel",
+            "description": "The ID of the tunnel.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -9743,7 +9743,7 @@
           }
         ],
         "requestBody": {
-          "description": "Provide the tunnel to delete",
+          "description": "Provide the tunnel to delete.",
           "required": true,
           "content": {
             "application/json": {
@@ -9762,7 +9762,7 @@
         },
         "responses": {
           "200": {
-            "description": "The tunnel was removed",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -9824,7 +9824,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -10073,12 +10073,12 @@
         ],
         "responses": {
           "200": {
-            "description": "Return policies associated with a tunnel.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "description": "Policies associated with a tunnel",
+                  "description": "Policies associated with a tunnel.",
                   "readOnly": true,
                   "items": {
                     "type": "object",
@@ -10104,7 +10104,7 @@
                       },
                       "organizationId": {
                         "type": "integer",
-                        "description": "An Umbrella organization ID",
+                        "description": "An Umbrella organization ID.",
                         "example": 33451234
                       },
                       "priority": {
@@ -10201,7 +10201,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized request",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {

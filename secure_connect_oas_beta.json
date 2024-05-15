@@ -16,7 +16,7 @@
           "Reports",
           "Activity"
         ],
-        "summary": "Get Activities (all)",
+        "summary": "Get Activities (All)",
         "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\n**Note:** The IP activity report is not available.",
         "operationId": "getActivities",
         "security": [
@@ -2315,7 +2315,7 @@
           "Reports",
           "Top Categories"
         ],
-        "summary": "Get Top Categories (all)",
+        "summary": "Get Top Categories (All)",
         "description": "List the categories that received the greatest number of requests.\nOrder the number of requests in descending order.",
         "operationId": "getTopCategories",
         "security": [

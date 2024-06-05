@@ -8789,7 +8789,7 @@
                       "id": {
                         "type": "integer",
                         "readOnly": true,
-                        "description": "Tunnel resource ID, use this ID as reference for subsequent requests",
+                        "description": "The tunnel resource ID. Use this ID for subsequent requests.",
                         "example": 1122321
                       },
                       "uri": {
@@ -8810,11 +8810,11 @@
                       },
                       "client": {
                         "type": "object",
-                        "description": "Configuration metadata of the client",
+                        "description": "The tunnel client's configuration metadata.",
                         "properties": {
                           "deviceType": {
                             "type": "string",
-                            "description": "The type of device from which the tunnel originates. The default value is \"other\".\nValid values are: ASA, FTD, ISR, Meraki MX, Viptela cEdge, Viptela vEdge, other.",
+                            "description": "The type of device where the tunnel originates. The default value is `other`.",
                             "enum": [
                               "ASA",
                               "FTD",
@@ -8823,12 +8823,11 @@
                               "Viptela cEdge",
                               "Viptela vEdge",
                               "other"
-                            ],
-                            "example": "ASA"
+                            ]
                           },
                           "authentication": {
                             "type": "object",
-                            "description": "Authentication context of client",
+                            "description": "The authentication context of the client.",
                             "properties": {
                               "type": {
                                 "type": "string",
@@ -8843,15 +8842,15 @@
                                 "properties": {
                                   "id": {
                                     "type": "string",
-                                    "description": "PSK ID. If an IP address is used as the ID, the IP address\nitself will be returned in this field.",
+                                    "description": "The PSK ID. If an IP address is used as the ID, the IP address is the value of this field.",
                                     "readOnly": true,
                                     "example": "admin@2561066-237952254-umbrella.com"
                                   },
                                   "modifiedAt": {
                                     "type": "string",
                                     "format": "date-time",
-                                    "readOnly": true,
-                                    "example": "2018-06-13T16:07:07.222Z"
+                                    "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                                    "example": "2022-04-12T23:20:50.52Z"
                                   }
                                 }
                               }
@@ -8875,20 +8874,20 @@
                       },
                       "serviceType": {
                         "type": "string",
-                        "description": "The Service type to associate with the tunnel. The default value is \"SIG\".\nValid values are SIG, Private Access.",
+                        "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
                         "enum": [
                           "SIG",
                           "Private Access"
                         ],
-                        "readOnly": true,
                         "example": "SIG"
                       },
                       "networkCIDRs": {
                         "type": "array",
-                        "description": "IP ranges associated with the tunnel. If serviceType is \"Private Access\" this field\nis required, otherwise optional.",
+                        "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
                         "items": {
                           "type": "string",
-                          "description": "IPv4 CIDR ranges"
+                          "description": "An IPv4 CIDR range.",
+                          "example": "111.222.39.1/32"
                         },
                         "example": [
                           "123.111.222.25/24",
@@ -8943,7 +8942,7 @@
                               "ikeState": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "IKE SA State:\n* CREATED\n* CONNECTING\n* ESTABLISHED\n* PASSIVE\n* REKEYING\n* REKEYED\n* DELETING\n* DESTROYING\n",
+                                "description": "IKE SA State:\n  * CREATED\n  * CONNECTING\n  * ESTABLISHED\n  * PASSIVE\n  * REKEYING\n  * REKEYED\n  * DELETING\n  * DESTROYING\n",
                                 "enum": [
                                   "CREATED",
                                   "CONNECTING",
@@ -8959,7 +8958,7 @@
                               "ipsecState": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "IPSec/Child SA State:\n* CREATED\n* ROUTED\n* INSTALLING\n* INSTALLED\n* UPDATING\n* REKEYING\n* REKEYED\n* RETRYING\n* DELETING\n* DELETED\n* DESTROYING\n",
+                                "description": "IPSec/Child SA State:\n  * CREATED\n  * ROUTED\n  * INSTALLING\n  * INSTALLED\n  * UPDATING\n  * REKEYING\n  * REKEYED\n  * RETRYING\n  * DELETING\n  * DELETED\n  * DESTROYING\n",
                                 "enum": [
                                   "CREATED",
                                   "ROUTED",
@@ -9145,7 +9144,7 @@
                                 "type": "string",
                                 "readOnly": true,
                                 "format": "date-time",
-                                "description": "When the state was last updated (UTC time, with milliseconds).",
+                                "description": "The date and time (UTC time with milliseconds) when the tunnel's state was last updated.",
                                 "example": "2018-06-13T16:07:07.222Z"
                               }
                             }
@@ -9161,8 +9160,8 @@
                       "modifiedAt": {
                         "type": "string",
                         "format": "date-time",
-                        "readOnly": true,
-                        "example": "2018-06-13T16:07:07.222Z"
+                        "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                        "example": "2022-04-12T23:20:50.52Z"
                       }
                     }
                   }
@@ -9393,7 +9392,7 @@
                   },
                   "deviceType": {
                     "type": "string",
-                    "description": "The type of device from which the tunnel originates. The default value is 'other'.\nValid values are: ASA, FTD, ISR, Meraki MX, Viptela cEdge, Viptela vEdge, other.",
+                    "description": "The type of device from which the tunnel originates. The default value is 'other'.",
                     "enum": [
                       "ASA",
                       "FTD",
@@ -9406,7 +9405,7 @@
                   },
                   "serviceType": {
                     "type": "string",
-                    "description": "The type of service to associate with the tunnel. The default values is 'SIG'.\nValid values are: SIG or Private Access. This field is optional.",
+                    "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
                     "enum": [
                       "SIG",
                       "Private Access"
@@ -9415,10 +9414,11 @@
                   },
                   "networkCIDRs": {
                     "type": "array",
-                    "description": "Enter IPv4 ranges and CIDR addresses.\nFor serviceType 'SIG' - Add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic destined for RFC-1918 addresses to return through the tunnel.\nIf serviceType is 'Private Access' this field is required, otherwise optional.\n0.0.0.0/0 is not allowed.",
+                    "description": "Enter IPv4 ranges and CIDR addresses.\nFor serviceType 'SIG' - Add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic destined for RFC-1918 addresses to return through the tunnel.\nIf serviceType is 'Private Access' this field is required.\n0.0.0.0/0 is not allowed.",
                     "items": {
                       "type": "string",
-                      "description": "IPv4 CIDR ranges."
+                      "description": "An IPv4 CIDR range.",
+                      "example": "111.222.39.1/32"
                     },
                     "example": [
                       "123.111.222.25/24",
@@ -9429,7 +9429,7 @@
                     "type": "object",
                     "properties": {
                       "protocol": {
-                        "description": "The tunnel transport protocol. The default is IPSec.",
+                        "description": "The tunnel transport protocol. The default tunnel transport protocol is IPSec.",
                         "type": "string",
                         "enum": [
                           "IPSec"
@@ -9497,176 +9497,170 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
+                  "type": "object",
+                  "description": "Tunnel resource object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "readOnly": true,
+                      "description": "Tunnel resource ID, use this ID as reference for subsequent requests",
+                      "example": 1122321
+                    },
+                    "uri": {
+                      "type": "string",
+                      "description": "Resource URI",
+                      "readOnly": true,
+                      "example": "/tunnels/1122321"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name given to the tunnel. Tunnel Name is required, cannot exceed 50 characters in length\nand cannot have any special characters other than spaces and hyphens.",
+                      "example": "Site01Tunnel"
+                    },
+                    "siteOriginId": {
+                      "type": "integer",
+                      "description": "The Site origin ID to associate with the tunnel",
+                      "example": 123456
+                    },
+                    "client": {
                       "type": "object",
-                      "description": "Tunnel resource object",
+                      "description": "The tunnel client's configuration metadata including the client secret.",
                       "properties": {
-                        "id": {
-                          "type": "integer",
-                          "readOnly": true,
-                          "description": "Tunnel resource ID, use this ID as reference for subsequent requests",
-                          "example": 1122321
-                        },
-                        "uri": {
+                        "deviceType": {
                           "type": "string",
-                          "description": "Resource URI",
-                          "readOnly": true,
-                          "example": "/tunnels/1122321"
+                          "description": "The type of device where the tunnel originates. The default value is `other`.",
+                          "enum": [
+                            "ASA",
+                            "FTD",
+                            "ISR",
+                            "Meraki MX",
+                            "Viptela cEdge",
+                            "Viptela vEdge",
+                            "other"
+                          ]
                         },
-                        "name": {
-                          "type": "string",
-                          "description": "Display name given to the tunnel. Tunnel Name is required, cannot exceed 50 characters in length\nand cannot have any special characters other than spaces and hyphens.",
-                          "example": "Site01Tunnel"
-                        },
-                        "siteOriginId": {
-                          "type": "integer",
-                          "description": "The Site origin ID to associate with the tunnel",
-                          "example": 123456
-                        },
-                        "client": {
+                        "authentication": {
                           "type": "object",
-                          "description": "The configuration metadata of the client",
+                          "description": "The authentication context of the client.",
                           "properties": {
-                            "deviceType": {
+                            "type": {
                               "type": "string",
-                              "description": "The type of device from which the tunnel originates. The default value is 'other'.\nValid values are: ASA, FTD, ISR, Meraki MX, Viptela cEdge, Viptela vEdge, other.",
                               "enum": [
-                                "ASA",
-                                "FTD",
-                                "ISR",
-                                "Meraki MX",
-                                "Viptela cEdge",
-                                "Viptela vEdge",
-                                "other"
+                                "PSK"
                               ],
-                              "example": "ASA"
+                              "example": "PSK",
+                              "readOnly": true
                             },
-                            "authentication": {
+                            "parameters": {
                               "type": "object",
-                              "description": "The authentication context of the client",
                               "properties": {
-                                "type": {
+                                "id": {
                                   "type": "string",
-                                  "enum": [
-                                    "PSK"
-                                  ],
-                                  "example": "PSK",
-                                  "readOnly": true
+                                  "description": "The PSK ID. If an IP address is used as the ID, the IP address is the value of this field.",
+                                  "readOnly": true,
+                                  "example": "admin@2561066-237952254-umbrella.com"
                                 },
-                                "parameters": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string",
-                                      "description": "PSK ID. If an IP address is used as the ID, the IP address\nis returned in this field.",
-                                      "readOnly": true,
-                                      "example": "admin@2561066-237952254-umbrella.com"
-                                    },
-                                    "modifiedAt": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "readOnly": true,
-                                      "example": "2018-06-13T16:07:07.222Z"
-                                    },
-                                    "secret": {
-                                      "type": "string",
-                                      "example": "123Secret",
-                                      "description": "The secret of the PSK credentials. Ensure that you save the secret.\nThis is the only time the system provides this value."
-                                    }
-                                  }
+                                "modifiedAt": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                                  "example": "2022-04-12T23:20:50.52Z"
+                                },
+                                "secret": {
+                                  "type": "string",
+                                  "example": "123Secret",
+                                  "description": "The secret of the PSK credentials. Ensure that you save the secret.\nThis is the only time the system provides this value."
                                 }
                               }
                             }
                           }
-                        },
-                        "transport": {
-                          "type": "object",
-                          "properties": {
-                            "protocol": {
-                              "description": "The tunnel transport protocol. The default transport protocol is IPSec.",
-                              "type": "string",
-                              "enum": [
-                                "IPSec"
-                              ],
-                              "readOnly": true,
-                              "example": "IPSec"
-                            }
-                          }
-                        },
-                        "serviceType": {
+                        }
+                      }
+                    },
+                    "transport": {
+                      "type": "object",
+                      "properties": {
+                        "protocol": {
+                          "description": "The tunnel transport protocol. The default transport protocol is IPSec.",
                           "type": "string",
-                          "description": "The Service type to associate with the tunnel. The valid values are: SIG or Private Access.\nThe default type of service is 'SIG'.",
                           "enum": [
-                            "SIG",
-                            "Private Access"
+                            "IPSec"
                           ],
                           "readOnly": true,
-                          "example": "SIG"
-                        },
-                        "networkCIDRs": {
-                          "type": "array",
-                          "description": "IP ranges associated with the tunnel. If serviceType is 'Private Access' this field\nis required, otherwise optional.",
-                          "items": {
-                            "type": "string",
-                            "description": "IPv4 CIDR ranges"
-                          },
-                          "example": [
-                            "123.111.222.25/24",
-                            "111.222.39.1/32"
-                          ]
-                        },
-                        "meta": {
-                          "type": "object",
-                          "description": "Metadata for the tunnel object, relating to service internals.",
-                          "readOnly": true
-                        },
-                        "createdAt": {
-                          "type": "string",
-                          "description": "The date and time (timestamp) when the tunnel was created.",
-                          "format": "date-time",
-                          "readOnly": true,
-                          "example": "2018-06-13T16:07:07.222Z"
-                        },
-                        "modifiedAt": {
-                          "type": "string",
-                          "description": "The date and time (timestamp) when the tunnel was updated.",
-                          "format": "date-time",
-                          "readOnly": true,
-                          "example": "2018-06-13T16:07:07.222Z"
+                          "example": "IPSec"
                         }
-                      },
-                      "example": {
-                        "id": 1122321,
-                        "uri": "/tunnels/1122321",
-                        "name": "Site01Tunnel",
-                        "siteOriginId": 123456,
-                        "client": {
-                          "deviceType": "ASA",
-                          "authentication": {
-                            "type": "PSK",
-                            "parameters": {
-                              "id": "admin@2561066-237952254-umbrella.com",
-                              "modifiedAt": "2018-06-13T16:07:07.222Z",
-                              "secret": "secretkey123"
-                            }
-                          }
-                        },
-                        "transport": {
-                          "protocol": "IPSec"
-                        },
-                        "serviceType": "SIG",
-                        "networkCIDRs": [
-                          "123.111.222.25/24",
-                          "111.222.39.1/32"
-                        ],
-                        "meta": {
-                        },
-                        "createdAt": "2018-06-13T16:07:07.222Z",
-                        "modifiedAt": "2018-06-13T16:07:07.222Z"
                       }
+                    },
+                    "serviceType": {
+                      "type": "string",
+                      "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
+                      "enum": [
+                        "SIG",
+                        "Private Access"
+                      ],
+                      "example": "SIG"
+                    },
+                    "networkCIDRs": {
+                      "type": "array",
+                      "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
+                      "items": {
+                        "type": "string",
+                        "description": "An IPv4 CIDR range.",
+                        "example": "111.222.39.1/32"
+                      },
+                      "example": [
+                        "123.111.222.25/24",
+                        "111.222.39.1/32"
+                      ]
+                    },
+                    "meta": {
+                      "type": "object",
+                      "description": "Metadata for the tunnel object, relating to service internals.",
+                      "readOnly": true
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "description": "The date and time (timestamp) when the tunnel was created.",
+                      "format": "date-time",
+                      "readOnly": true,
+                      "example": "2018-06-13T16:07:07.222Z"
+                    },
+                    "modifiedAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                      "example": "2022-04-12T23:20:50.52Z"
                     }
-                  ]
+                  },
+                  "example": {
+                    "id": 1122321,
+                    "uri": "/tunnels/1122321",
+                    "name": "Site01Tunnel",
+                    "siteOriginId": 123456,
+                    "client": {
+                      "deviceType": "ASA",
+                      "authentication": {
+                        "type": "PSK",
+                        "parameters": {
+                          "id": "admin@2561066-237952254-umbrella.com",
+                          "modifiedAt": "2018-06-13T16:07:07.222Z",
+                          "secret": "secretkey123"
+                        }
+                      }
+                    },
+                    "transport": {
+                      "protocol": "IPSec"
+                    },
+                    "serviceType": "SIG",
+                    "networkCIDRs": [
+                      "123.111.222.25/24",
+                      "111.222.39.1/32"
+                    ],
+                    "meta": {
+                    },
+                    "createdAt": "2018-06-13T16:07:07.222Z",
+                    "modifiedAt": "2018-06-13T16:07:07.222Z"
+                  }
                 },
                 "example": {
                   "id": 1122321,
@@ -9914,12 +9908,12 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Tunnel resource object",
+                  "description": "The tunnel resource object.",
                   "properties": {
                     "id": {
                       "type": "integer",
                       "readOnly": true,
-                      "description": "Tunnel resource ID, use this ID as reference for subsequent requests",
+                      "description": "The tunnel resource ID, use this ID as reference for subsequent requests.",
                       "example": 1122321
                     },
                     "uri": {
@@ -9940,11 +9934,11 @@
                     },
                     "client": {
                       "type": "object",
-                      "description": "Configuration metadata of the client",
+                      "description": "The tunnel client's configuration metadata.",
                       "properties": {
                         "deviceType": {
                           "type": "string",
-                          "description": "The type of device from which the tunnel originates. The default value is 'other'.\nValid values are: ASA, FTD, ISR, Meraki MX, Viptela cEdge, Viptela vEdge, other.",
+                          "description": "The type of device where the tunnel originates. The default value is `other`.",
                           "enum": [
                             "ASA",
                             "FTD",
@@ -9953,12 +9947,11 @@
                             "Viptela cEdge",
                             "Viptela vEdge",
                             "other"
-                          ],
-                          "example": "ASA"
+                          ]
                         },
                         "authentication": {
                           "type": "object",
-                          "description": "Authentication context of client",
+                          "description": "The authentication context of the client.",
                           "properties": {
                             "type": {
                               "type": "string",
@@ -9973,15 +9966,15 @@
                               "properties": {
                                 "id": {
                                   "type": "string",
-                                  "description": "PSK ID. If an IP address is used as the ID, the IP address\nitself will be returned in this field.",
+                                  "description": "The PSK ID. If an IP address is used as the ID, the IP address is the value of this field.",
                                   "readOnly": true,
                                   "example": "admin@2561066-237952254-umbrella.com"
                                 },
                                 "modifiedAt": {
                                   "type": "string",
                                   "format": "date-time",
-                                  "readOnly": true,
-                                  "example": "2018-06-13T16:07:07.222Z"
+                                  "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                                  "example": "2022-04-12T23:20:50.52Z"
                                 }
                               }
                             }
@@ -10005,20 +9998,20 @@
                     },
                     "serviceType": {
                       "type": "string",
-                      "description": "The Service type to associate with the tunnel. The default value is 'SIG'.\nValid values: SIG or Private Access.",
+                      "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
                       "enum": [
                         "SIG",
                         "Private Access"
                       ],
-                      "readOnly": true,
                       "example": "SIG"
                     },
                     "networkCIDRs": {
                       "type": "array",
-                      "description": "IP ranges associated with the tunnel. If serviceType is 'Private Access' this field\nis required, otherwise optional.",
+                      "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
                       "items": {
                         "type": "string",
-                        "description": "IPv4 CIDR ranges"
+                        "description": "An IPv4 CIDR range.",
+                        "example": "111.222.39.1/32"
                       },
                       "example": [
                         "123.111.222.25/24",
@@ -10039,10 +10032,9 @@
                     },
                     "modifiedAt": {
                       "type": "string",
-                      "description": "The time when the tunnel was modified.",
                       "format": "date-time",
-                      "readOnly": true,
-                      "example": "2018-06-13T16:07:07.222Z"
+                      "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                      "example": "2022-04-12T23:20:50.52Z"
                     }
                   },
                   "example": {
@@ -10648,7 +10640,7 @@
                       },
                       "type": {
                         "type": "string",
-                        "description": "The type of policy. Valid values are: 'web' or 'firewallrule'.",
+                        "description": "The type of policy.",
                         "enum": [
                           "firewallrule",
                           "web"
@@ -10685,9 +10677,9 @@
                       },
                       "modifiedAt": {
                         "type": "string",
-                        "description": "The date and time (timestamp) when the tunnel was updated.",
                         "format": "date-time",
-                        "example": "2018-06-13T16:07:07.222Z"
+                        "description": "The date and time (timestamp) that Umbrella updated the tag on the roaming computer.\nThe timestamp is an ISO 8601 formatted string. For example: `2023-04-12T23:20:50.52Z`.",
+                        "example": "2022-04-12T23:20:50.52Z"
                       },
                       "uri": {
                         "type": "string",

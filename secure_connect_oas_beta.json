@@ -6774,39 +6774,66 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the IPsec-enabled data centers.",
                   "properties": {
                     "continents": {
                       "type": "array",
+                      "description": "The list of continents.",
                       "items": {
                         "type": "object",
+                        "description": "The properties of the continent.",
                         "properties": {
                           "cities": {
                             "type": "array",
+                            "description": "The list of cities.",
                             "items": {
                               "type": "object",
+                              "description": "The properties of the city.",
                               "properties": {
                                 "latitude": {
                                   "type": "string",
+                                  "description": "The latitude of the city.",
                                   "example": "52.354662"
                                 },
                                 "longitude": {
                                   "type": "string",
+                                  "description": "The longitude of the city.",
                                   "example": "4.955532"
                                 },
                                 "name": {
                                   "type": "string",
+                                  "description": "The name of the city.",
                                   "example": "Amsterdam"
                                 },
                                 "dc": {
                                   "type": "string",
+                                  "description": "The domain of the data center located in the city.",
                                   "example": "ams1.edc"
                                 },
                                 "range": {
                                   "type": "string",
+                                  "description": "The IP or CIDR range of the data center that is located in the city.",
                                   "example": "146.112.98.2/32"
                                 },
                                 "fqdn": {
@@ -6819,6 +6846,7 @@
                           },
                           "name": {
                             "type": "string",
+                            "description": "The name of the continent.",
                             "example": "Europe"
                           }
                         }
@@ -6847,7 +6875,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -6891,10 +6936,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -6905,7 +6967,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -6918,10 +6980,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -6945,10 +7024,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -6971,7 +7067,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -7059,23 +7172,24 @@
                     "maxLength": 12,
                     "minLength": 12,
                     "pattern": "[0-9A-Fa-f]{12}",
-                    "description": "Specify the MAC address of the device. The unique MAC address may include\nup to twelve characters and must not contain hyphens or colons."
+                    "description": "The MAC address of the device. The unique MAC address may include\nup to 12 characters and must not contain hyphens or colons."
                   },
                   "name": {
                     "type": "string",
                     "example": "label1",
                     "maxLength": 50,
-                    "description": "A name of the device. Provide a unique device name in your organization."
+                    "minLength": 1,
+                    "description": "The name of the device. The name is a sequence of characters with a length from 1 through 50.\nThe name must be unique in your organization."
                   },
                   "serialNumber": {
                     "type": "string",
                     "example": "12345a",
                     "maxLength": 255,
-                    "description": "The serial number of the device"
+                    "description": "The serial number of the device."
                   },
                   "tag": {
                     "type": "string",
-                    "description": "A text tag that describes the device or this particular origin assigned to the device. Provide a tag that is unique to your organization.",
+                    "description": "A text tag that describes the device or this origin, which is assigned to the device. Provide a tag that is unique to your organization.",
                     "maxLength": 50
                   }
                 }
@@ -7092,6 +7206,23 @@
         "responses": {
           "201": {
             "description": "Created",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -7112,19 +7243,19 @@
                       "type": "integer",
                       "example": 35872943,
                       "minimum": 1,
-                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                      "description": "The unique global identifier for this traffic source (origin). Use\nthe origin ID to manage the device. The origin ID is not used by the device."
                     },
                     "deviceId": {
                       "type": "string",
                       "example": "0123456789abcdef",
                       "maxLength": 16,
                       "minLength": 15,
-                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                      "description": "The unique identifier for the specific network device. Insert the identifier into the EDNS packets."
                     },
                     "deviceKey": {
                       "type": "string",
                       "example": "ModelName-0123456789ab",
-                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                      "description": "A descriptive unique identifier for the device. Not used by the\ndevice."
                     },
                     "name": {
                       "type": "string",
@@ -7354,6 +7485,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -7377,19 +7525,19 @@
                         "type": "integer",
                         "example": 35872943,
                         "minimum": 1,
-                        "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                        "description": "The unique global identifier for this traffic source (origin). Use\nthe origin ID to manage the device. The origin ID is not used by the device."
                       },
                       "deviceId": {
                         "type": "string",
                         "example": "0123456789abcdef",
                         "maxLength": 16,
                         "minLength": 15,
-                        "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                        "description": "The unique identifier for the specific network device. Insert the identifier into the EDNS packets."
                       },
                       "deviceKey": {
                         "type": "string",
                         "example": "ModelName-0123456789ab",
-                        "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                        "description": "A descriptive unique identifier for the device. Not used by the\ndevice."
                       },
                       "name": {
                         "type": "string",
@@ -7634,7 +7782,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity.",
+            "description": "The origin ID of the network device.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -7657,7 +7805,8 @@
                     "type": "string",
                     "example": "label1",
                     "maxLength": 50,
-                    "description": "A name of the device. Provide a unique device name in your organization."
+                    "minLength": 1,
+                    "description": "The name of the device. The name is a sequence of characters with a length from 1 through 50.\nThe name must be unique in your organization."
                   }
                 },
                 "example": {
@@ -7675,6 +7824,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -7695,19 +7861,19 @@
                       "type": "integer",
                       "example": 35872943,
                       "minimum": 1,
-                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                      "description": "The unique global identifier for this traffic source (origin). Use\nthe origin ID to manage the device. The origin ID is not used by the device."
                     },
                     "deviceId": {
                       "type": "string",
                       "example": "0123456789abcdef",
                       "maxLength": 16,
                       "minLength": 15,
-                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                      "description": "The unique identifier for the specific network device. Insert the identifier into the EDNS packets."
                     },
                     "deviceKey": {
                       "type": "string",
                       "example": "ModelName-0123456789ab",
-                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                      "description": "A descriptive unique identifier for the device. Not used by the\ndevice."
                     },
                     "name": {
                       "type": "string",
@@ -7936,7 +8102,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity.",
+            "description": "The origin ID of the network device.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -7948,6 +8114,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -7968,19 +8151,19 @@
                       "type": "integer",
                       "example": 35872943,
                       "minimum": 1,
-                      "description": "Umbrella wide unique identifier for this traffic source (origin). Used\nto manage the device, not used by the device itself."
+                      "description": "The unique global identifier for this traffic source (origin). Use\nthe origin ID to manage the device. The origin ID is not used by the device."
                     },
                     "deviceId": {
                       "type": "string",
                       "example": "0123456789abcdef",
                       "maxLength": 16,
                       "minLength": 15,
-                      "description": "The unique identifier for this specific network device.\nThis is the identifier that should be inserted into EDNS packets."
+                      "description": "The unique identifier for the specific network device. Insert the identifier into the EDNS packets."
                     },
                     "deviceKey": {
                       "type": "string",
                       "example": "ModelName-0123456789ab",
-                      "description": "A more descriptive unique identifier for the device. Not used by the\ndevice itself."
+                      "description": "A descriptive unique identifier for the device. Not used by the\ndevice."
                     },
                     "name": {
                       "type": "string",
@@ -8209,7 +8392,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity.",
+            "description": "The origin ID of the network device.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -8221,6 +8404,23 @@
         "responses": {
           "204": {
             "description": "No Content",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -8422,7 +8622,7 @@
           {
             "name": "originId",
             "in": "path",
-            "description": "The origin ID of the identity.",
+            "description": "The origin ID of the network device.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -8433,10 +8633,14 @@
           {
             "name": "type",
             "in": "query",
-            "description": "The type of Umbrella policy (either DNS or Web).",
+            "description": "The type of the policy (`dns` or `web`).",
             "required": false,
             "schema": {
               "default": "dns",
+              "enum": [
+                "dns",
+                "web"
+              ],
               "type": "string"
             },
             "example": "dns"
@@ -8445,14 +8649,31 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "description": "The list of policies associated with the network device.",
+                  "description": "The list of policies, which are associated with the network device.",
                   "items": {
                     "type": "object",
-                    "description": "The policy associated with a network device.",
+                    "description": "The policy that is associated with a network device.",
                     "minProperties": 6,
                     "required": [
                       "policyId",
@@ -8471,13 +8692,13 @@
                       },
                       "name": {
                         "type": "string",
-                        "description": "The name of the policy as displayed in Umbrella.",
+                        "description": "The name of the policy.",
                         "example": "ApiDemoPolicy"
                       },
                       "priority": {
                         "type": "integer",
                         "maxLength": 64,
-                        "description": "The prioirity of the policy.",
+                        "description": "The priority of the policy.",
                         "minimum": 0
                       },
                       "isAppliedDirectly": {
@@ -8708,13 +8929,13 @@
               "default": false,
               "type": "boolean"
             },
-            "description": "Provide details about the tunnel state.",
+            "description": "Specify whether to include the tunnel state information in the response.",
             "required": false
           },
           {
             "in": "query",
             "name": "limit",
-            "description": "Specify the number of items to return in the collection.\nIf not set, all tunnels are returned.",
+            "description": "The number of items to return in the collection. If not set, all tunnels are returned.",
             "required": false,
             "schema": {
               "type": "integer"
@@ -8723,7 +8944,7 @@
           {
             "in": "query",
             "name": "startKey",
-            "description": "Specify where to start reading in the tunnel collection (`startKey` correlates to the first tunnel to return).\nIf the `startKey` query parameter is not included in the API request, Umbrella reads the collection from the first available tunnel.\nUmbrella returns the value of `startKey` for the next tunnel in the hypermedia Link header when the API request\nincludes the `limit` query parameter and there are more tunnels to read from the collection.",
+            "description": "Specify where to start reading in the tunnel collection (`startKey` correlates to the first tunnel to return).\nIf the `startKey` query parameter is not included in the API request, Umbrella reads the collection from the first available tunnel.\nWhen the API request includes the `limit` query parameter and you have more tunnels to read,\nUmbrella returns the value of `startKey` for the next tunnel in the hypermedia Link header.",
             "required": false,
             "schema": {
               "type": "string"
@@ -8741,41 +8962,56 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "OKs",
             "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              },
               "Total-Item-Count": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Total number of active, inactive, and unestablished tunnels in the organization.",
+                "description": "The total number of active, inactive, and unestablished tunnels in the organization.",
                 "example": "500"
               },
               "Total-Distinct-DC-Count": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Number of distinct data centers in the organization.",
+                "description": "The number of distinct data centers in the organization.",
                 "example": "2"
               },
               "Total-Active-Item-Count": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Total number of active tunnels in the organization.",
+                "description": "The total number of active tunnels in the organization.",
                 "example": "5"
               },
               "Total-Inactive-Item-Count": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Total number of inactive tunnels in the organization.",
+                "description": "The total number of inactive tunnels in the organization.",
                 "example": "10"
               },
               "Link": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Hypermedia links in string format. Used to provide parameters for pagination.\nOnly available if request limits the number of tunnels returned.\nLink provided is a relative path. The \"rel\" value here is always \"next\"\n(pagination moves forward)."
+                "description": "The hypermedia links are formatted as a string. Use to provide parameters for pagination.\nOnly available if request limits the number of tunnels returned.\nThe link is a relative path. The `rel` value is always `next` (pagination moves forward)."
               }
             },
             "content": {
@@ -8784,12 +9020,12 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "description": "Get the information about the tunnel in the organization.\nYou must set the `includeState` request query parameter to `true` for the response\nto include the state information.",
+                    "description": "Get the information about the tunnel in the organization.\nTo include the tunnel state information in the response, set the `includeState` request query parameter to `true`.",
                     "properties": {
                       "id": {
                         "type": "integer",
                         "readOnly": true,
-                        "description": "The tunnel resource ID. Use this ID for subsequent requests.",
+                        "description": "The tunnel resource ID. Use this ID as a reference for subsequent requests.",
                         "example": 1122321
                       },
                       "uri": {
@@ -8800,7 +9036,7 @@
                       },
                       "name": {
                         "type": "string",
-                        "description": "Display name given to the tunnel. Tunnel Name is required, cannot exceed 50 characters in length\nand cannot have any special characters other than spaces and hyphens.",
+                        "description": "The display name of the tunnel. The tunnel name is required, cannot exceed 50 characters in length,\nand cannot have any special characters other than spaces and hyphens.",
                         "example": "Site01Tunnel"
                       },
                       "siteOriginId": {
@@ -8862,7 +9098,7 @@
                         "type": "object",
                         "properties": {
                           "protocol": {
-                            "description": "Tunnel transport protocol, default is IPSec.",
+                            "description": "The tunnel transport protocol. The default is IPSec.",
                             "type": "string",
                             "enum": [
                               "IPSec"
@@ -8874,7 +9110,7 @@
                       },
                       "serviceType": {
                         "type": "string",
-                        "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
+                        "description": "The type of service to associate with the tunnel. The default value is `SIG`.",
                         "enum": [
                           "SIG",
                           "Private Access"
@@ -8883,7 +9119,7 @@
                       },
                       "networkCIDRs": {
                         "type": "array",
-                        "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
+                        "description": "Enter IPv4 ranges and CIDR addresses.\nIf `serviceType` is SIG, add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic that is destined for RFC-1918 addresses to return through the tunnel.\nIf `serviceType` is Private Access, this field is required.\nThe 0.0.0.0/0 address range is not allowed.",
                         "items": {
                           "type": "string",
                           "description": "An IPv4 CIDR range.",
@@ -8896,23 +9132,23 @@
                       },
                       "meta": {
                         "type": "object",
-                        "description": "Metadata for the tunnel object, relating to service internals.",
+                        "description": "The metadata for the tunnel object that relates to service internals.",
                         "readOnly": true,
                         "properties": {
                           "state": {
                             "title": "tunnelState",
-                            "description": "Tunnel State Information",
+                            "description": "The tunnel state information.",
                             "properties": {
                               "tunnelId": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "The tunnel ID",
+                                "description": "The tunnel ID.",
                                 "example": "163367136"
                               },
                               "status": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "High level tunnel status:\n* up - the tunnel is active\n* down - the tunnel is inactive\n* failed - the tunnel is in a failed state\n* unknown - the current status is unknown and pending updated information\n",
+                                "description": "The high-level tunnel status:\n* up - the tunnel is active\n* down - the tunnel is inactive\n* failed - the tunnel is in a failed state\n* unknown - the status is unknown and pending updated information\n",
                                 "enum": [
                                   "UP",
                                   "DOWN",
@@ -8924,19 +9160,19 @@
                               "dc": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "the name of the datacenter",
+                                "description": "The domain name that is associate with the data center.",
                                 "example": "chi1.edc"
                               },
                               "dcName": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "datacenter name",
+                                "description": "The name of the data center.",
                                 "example": "Equinix Chicago"
                               },
                               "dcDesc": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "datacenter location description (city and country/region)",
+                                "description": "The city and country or region of the data center.",
                                 "example": "Chicago, Illinois - US"
                               },
                               "ikeState": {
@@ -8977,116 +9213,116 @@
                               "peerId": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "Remote peer IKE ID",
+                                "description": "The remote peer IKE ID.",
                                 "example": "unique-value@1234567-234567812-umbrella.com"
                               },
                               "peerIp": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "Remote peer IP",
+                                "description": "The remote peer IP.",
                                 "example": "198.18.195.1"
                               },
                               "localIp": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "Public IP address assigned to an endpoint device (ISR, Viptela, etc)",
+                                "description": "The public IP address, which is assigned to an endpoint device (ISR, Viptela).",
                                 "example": "198.25.43.19"
                               },
                               "peerPort": {
                                 "type": "string",
                                 "readOnly": true,
-                                "description": "Remote peer port",
+                                "description": "The port number of the remote peer.",
                                 "example": "4500"
                               },
                               "ike": {
                                 "title": "tunnelIKEState",
-                                "description": "Tunnel IKE Session State",
+                                "description": "The tunnel IKE session state.",
                                 "properties": {
                                   "age": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Established state age in seconds",
+                                    "description": "The age of the established state in seconds.",
                                     "example": "6194"
                                   },
                                   "dhGroup": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "IKE Diffie-Hellman group",
+                                    "description": "The IKE Diffie-Hellman group.",
                                     "example": "MODP_2048"
                                   },
                                   "prfAlgo": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "IKE pseudo random function",
+                                    "description": "The IKE pseudo random function.",
                                     "example": "PRF_HMAC_SHA1"
                                   },
                                   "encAlgo": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "IKE encryption algorithm",
+                                    "description": "The IKE encryption algorithm.",
                                     "example": "AES_CBC"
                                   },
                                   "initiatorSpi": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Hex encoded initiator SPI / cookie",
+                                    "description": "The hex encoded initiator SPI or cookie.",
                                     "example": "cf065c564a511834"
                                   },
                                   "responderSpi": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Hex encoded responder SPI / cookie",
+                                    "description": "The hex encoded responder SPI or cookie.",
                                     "example": "a3cd5c8533c80069"
                                   }
                                 }
                               },
                               "ipsec": {
                                 "title": "tunnelIPSecState",
-                                "description": "Tunnel IPSec Session State",
+                                "description": "The tunnel IPsec session state.",
                                 "properties": {
                                   "age": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Installed state age in seconds",
+                                    "description": "The age of the installed state in seconds.",
                                     "example": "6194"
                                   },
                                   "integrityAlgo": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "ESP or AH integrity algorithm name",
+                                    "description": "The ESP or AH integrity algorithm name.",
                                     "example": "HMAC_SHA1_96"
                                   },
                                   "encAlgo": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "ESP encryption algorithm name",
+                                    "description": "The ESP encryption algorithm name.",
                                     "example": "NULL"
                                   },
                                   "encKeySize": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "ESP encryption key size (optional field, not available with NULL encryption)",
+                                    "description": "The ESP encryption key size (optional field; not available with NULL encryption.",
                                     "example": "128"
                                   },
                                   "spiIn": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Hex encoded inbound SPI",
+                                    "description": "The hex encoded inbound SPI.",
                                     "example": "c6ef7503"
                                   },
                                   "spiOut": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Hex encoded outbound SPI",
+                                    "description": "The hex encoded outbound SPI.",
                                     "example": "00010102"
                                   },
                                   "peerSelectors": {
                                     "type": "array",
                                     "readOnly": true,
-                                    "description": "Peer traffic selectors",
+                                    "description": "The peer traffic selectors.",
                                     "items": {
                                       "type": "string",
-                                      "description": "Selector expression",
+                                      "description": "The selector expression.",
                                       "example": "0.0.0.0/0"
                                     }
                                   }
@@ -9094,48 +9330,48 @@
                               },
                               "data": {
                                 "title": "tunnelDataState",
-                                "description": "Tunnel Dataplane State",
+                                "description": "The state of the tunnel's data plane.",
                                 "properties": {
                                   "packetsIn": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Number of processed input packets (tunnel ingress)",
+                                    "description": "The number of processed input packets (tunnel ingress).",
                                     "example": "10"
                                   },
                                   "bytesIn": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Number of processed input bytes (tunnel ingress)",
+                                    "description": "The number of processed input bytes (tunnel ingress).",
                                     "example": "1000"
                                   },
                                   "idleTimeIn": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Idle time (seconds since last inbound packet)",
+                                    "description": "The idle time (seconds since last inbound packet).",
                                     "example": "100"
                                   },
                                   "packetsOut": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Number of processed output packets (tunnel egress)",
+                                    "description": "The number of processed output packets (tunnel egress).",
                                     "example": "10"
                                   },
                                   "bytesOut": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Number of processed output bytes (tunnel egress)",
+                                    "description": "The number of processed output bytes (tunnel egress).",
                                     "example": "1000"
                                   },
                                   "idleTimeOut": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Idle time (seconds since last outbound packet)",
+                                    "description": "The idle time (seconds since last outbound packet).",
                                     "example": "100"
                                   },
                                   "initialized": {
                                     "type": "string",
                                     "readOnly": true,
-                                    "description": "Time when packet and byte counters were initialized to 0.",
+                                    "description": "The time when packet and byte counters were initialized to 0.",
                                     "example": "2023-10-19T22:15:12.765623734Z"
                                   }
                                 }
@@ -9154,6 +9390,7 @@
                       "createdAt": {
                         "type": "string",
                         "format": "date-time",
+                        "description": "The date and n time (UTC time with milliseconds) when the tunnel was created.",
                         "readOnly": true,
                         "example": "2018-06-13T16:07:07.222Z"
                       },
@@ -9200,7 +9437,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -9244,10 +9498,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9258,7 +9529,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -9271,10 +9542,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9298,10 +9586,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9324,7 +9629,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -9392,7 +9714,7 @@
                   },
                   "deviceType": {
                     "type": "string",
-                    "description": "The type of device from which the tunnel originates. The default value is 'other'.",
+                    "description": "The type of device where the tunnel originates. The default value is `other`.",
                     "enum": [
                       "ASA",
                       "FTD",
@@ -9405,7 +9727,7 @@
                   },
                   "serviceType": {
                     "type": "string",
-                    "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
+                    "description": "The type of service to associate with the tunnel. The default value is `SIG`.",
                     "enum": [
                       "SIG",
                       "Private Access"
@@ -9414,7 +9736,7 @@
                   },
                   "networkCIDRs": {
                     "type": "array",
-                    "description": "Enter IPv4 ranges and CIDR addresses.\nFor serviceType 'SIG' - Add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic destined for RFC-1918 addresses to return through the tunnel.\nIf serviceType is 'Private Access' this field is required.\n0.0.0.0/0 is not allowed.",
+                    "description": "Enter IPv4 ranges and CIDR addresses.\nIf `serviceType` is SIG, add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic that is destined for RFC-1918 addresses to return through the tunnel.\nIf `serviceType` is Private Access, this field is required.\nThe 0.0.0.0/0 address range is not allowed.",
                     "items": {
                       "type": "string",
                       "description": "An IPv4 CIDR range.",
@@ -9443,7 +9765,7 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "The authentication method. The default is PSK.",
+                        "description": "The authentication method. The default is pre-shared key (PSK).",
                         "enum": [
                           "PSK"
                         ]
@@ -9457,7 +9779,7 @@
                           },
                           "secret": {
                             "type": "string",
-                            "description": "The secret portion of a Pre-Shared Key (PSK).\nIf omitted, a secret is generated and provided in the response.\nSecrets are a sequence of 16-64 characters, and contain at least one upper\nand lowercase letter, one number, and no special characters."
+                            "description": "The secret portion of a Pre-Shared Key (PSK).\nIf omitted, a secret is generated and provided in the response.\nSecrets are a sequence of 16 to 64 characters, and contain at least one upper\nand lowercase letter, one number, and no special characters."
                           }
                         }
                       }
@@ -9494,16 +9816,33 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Tunnel resource object",
+                  "description": "The properties of the tunnel resource object.",
                   "properties": {
                     "id": {
                       "type": "integer",
                       "readOnly": true,
-                      "description": "Tunnel resource ID, use this ID as reference for subsequent requests",
+                      "description": "The tunnel resource ID. Use this ID as a reference for subsequent requests.",
                       "example": 1122321
                     },
                     "uri": {
@@ -9514,12 +9853,12 @@
                     },
                     "name": {
                       "type": "string",
-                      "description": "Display name given to the tunnel. Tunnel Name is required, cannot exceed 50 characters in length\nand cannot have any special characters other than spaces and hyphens.",
+                      "description": "Display the name of the tunnel. The tunnel name is required, cannot exceed 50 characters in length,\nand can't have any special characters other than spaces and hyphens.",
                       "example": "Site01Tunnel"
                     },
                     "siteOriginId": {
                       "type": "integer",
-                      "description": "The Site origin ID to associate with the tunnel",
+                      "description": "The Site origin ID that is associated with the tunnel.",
                       "example": 123456
                     },
                     "client": {
@@ -9569,7 +9908,7 @@
                                 "secret": {
                                   "type": "string",
                                   "example": "123Secret",
-                                  "description": "The secret of the PSK credentials. Ensure that you save the secret.\nThis is the only time the system provides this value."
+                                  "description": "The secret of the PSK credentials. Ensure that you save the secret. The secret is not provided at any other time."
                                 }
                               }
                             }
@@ -9593,7 +9932,7 @@
                     },
                     "serviceType": {
                       "type": "string",
-                      "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
+                      "description": "The type of service to associate with the tunnel. The default value is `SIG`.",
                       "enum": [
                         "SIG",
                         "Private Access"
@@ -9602,7 +9941,7 @@
                     },
                     "networkCIDRs": {
                       "type": "array",
-                      "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
+                      "description": "Enter IPv4 ranges and CIDR addresses.\nIf `serviceType` is SIG, add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic that is destined for RFC-1918 addresses to return through the tunnel.\nIf `serviceType` is Private Access, this field is required.\nThe 0.0.0.0/0 address range is not allowed.",
                       "items": {
                         "type": "string",
                         "description": "An IPv4 CIDR range.",
@@ -9615,7 +9954,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Metadata for the tunnel object, relating to service internals.",
+                      "description": "The metadata for the tunnel object, related to service internals.",
                       "readOnly": true
                     },
                     "createdAt": {
@@ -9695,7 +10034,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -9739,10 +10095,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9753,7 +10126,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -9766,10 +10139,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9793,10 +10183,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -9819,7 +10226,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -9904,6 +10328,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -9924,12 +10365,12 @@
                     },
                     "name": {
                       "type": "string",
-                      "description": "Display name given to the tunnel. Tunnel Name is required, cannot exceed 50 characters in length\nand cannot have any special characters other than spaces and hyphens.",
+                      "description": "The display name of the tunnel. The tunnel name is required, cannot exceed 50 characters in length,\nand can't have any special characters other than spaces and hyphens.",
                       "example": "Site01Tunnel"
                     },
                     "siteOriginId": {
                       "type": "integer",
-                      "description": "Site Origin ID to associate with the tunnel",
+                      "description": "The site origin ID, which is associated with the tunnel.",
                       "example": 123456
                     },
                     "client": {
@@ -9986,7 +10427,7 @@
                       "type": "object",
                       "properties": {
                         "protocol": {
-                          "description": "Tunnel transport protocol, default is IPSec.",
+                          "description": "The tunnel transport protocol. The default is IPSec.",
                           "type": "string",
                           "enum": [
                             "IPSec"
@@ -9998,7 +10439,7 @@
                     },
                     "serviceType": {
                       "type": "string",
-                      "description": "The type of service to associate with the tunnel. The default value is 'SIG'.",
+                      "description": "The type of service to associate with the tunnel. The default value is `SIG`.",
                       "enum": [
                         "SIG",
                         "Private Access"
@@ -10007,7 +10448,7 @@
                     },
                     "networkCIDRs": {
                       "type": "array",
-                      "description": "The IP ranges that are associated with the tunnel. If serviceType is `Private Access`, this field is required.",
+                      "description": "Enter IPv4 ranges and CIDR addresses.\nIf `serviceType` is SIG, add all public and private address ranges used internally\nby your organization. Overrides Umbrella's default behavior,\nwhich allows traffic that is destined for RFC-1918 addresses to return through the tunnel.\nIf `serviceType` is Private Access, this field is required.\nThe 0.0.0.0/0 address range is not allowed.",
                       "items": {
                         "type": "string",
                         "description": "An IPv4 CIDR range.",
@@ -10098,7 +10539,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10142,10 +10600,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10156,7 +10631,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -10169,10 +10644,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10196,10 +10688,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10222,7 +10731,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10302,7 +10828,7 @@
                   "detachPolicies": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Specifies whether to detach associated policies from the tunnel identity."
+                    "description": "Specifies whether to detach associated policies from the tunnel."
                   }
                 }
               }
@@ -10312,6 +10838,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10330,7 +10873,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10374,10 +10934,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10388,7 +10965,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -10401,10 +10978,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10428,10 +11022,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10454,11 +11065,29 @@
             }
           },
           "409": {
-            "description": "Conflict - Unable to delete requested tunnel as it is attached\nto a policy and detachPolicies was not specified in the request.\nCheck the response body for policies which this tunnel is attached to.",
+            "description": "Conflict",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "Conflict - Unable to delete requested tunnel as it is attached\nto a policy and detachPolicies was not specified in the request.\nCheck the response body for policies which this tunnel is attached to.",
                   "properties": {
                     "error": {
                       "type": "string",
@@ -10518,7 +11147,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10564,7 +11210,7 @@
             ]
           }
         ],
-        "description": "List the policies that make use of the tunnel.",
+        "description": "List the policies that include the network tunnel.",
         "parameters": [
           {
             "name": "organizationId",
@@ -10612,7 +11258,7 @@
               "type": "integer"
             },
             "name": "page",
-            "description": "The number of the page in the collection. Use with the limit parameter to implement pagination.",
+            "description": "The number of a page in the collection. Use with the limit parameter to implement pagination.",
             "required": false
           }
         ],
@@ -10623,6 +11269,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10648,12 +11311,12 @@
                       },
                       "name": {
                         "type": "string",
-                        "description": "The name given to the policy.",
+                        "description": "The name of the policy.",
                         "example": "Test Firewall Rule (Block Application)"
                       },
                       "organizationId": {
                         "type": "integer",
-                        "description": "An Umbrella organization ID.",
+                        "description": "The organization ID.",
                         "example": 33451234
                       },
                       "priority": {
@@ -10707,7 +11370,24 @@
             }
           },
           "400": {
-            "description": "Validation Error",
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10751,10 +11431,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10765,7 +11462,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -10778,10 +11475,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10805,10 +11519,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -10831,7 +11562,24 @@
             }
           },
           "500": {
-            "description": "Error- This request could not be processed by the server",
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10895,7 +11643,7 @@
           {
             "name": "page",
             "in": "query",
-            "description": "Specifies a page number in the collection.",
+            "description": "The number of a page in the collection.",
             "required": false,
             "schema": {
               "default": 1,
@@ -10907,7 +11655,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Specifies the number of records to return per page.",
+            "description": "The number of records in the collection to return on the page.",
             "required": false,
             "schema": {
               "default": 100,
@@ -10920,10 +11668,14 @@
           {
             "name": "type",
             "in": "query",
-            "description": "The type of Umbrella policy (either DNS or Web).",
+            "description": "The type of the policy (`dns` or `web`).",
             "required": false,
             "schema": {
               "default": "dns",
+              "enum": [
+                "dns",
+                "web"
+              ],
               "type": "string"
             },
             "example": "dns"
@@ -10932,6 +11684,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -10950,7 +11719,7 @@
                     "properties": {
                       "policyId": {
                         "type": "integer",
-                        "description": "The unique ID for this policy.",
+                        "description": "The unique policy ID.",
                         "minimum": 1
                       },
                       "organizationId": {
@@ -10960,25 +11729,25 @@
                       },
                       "name": {
                         "type": "string",
-                        "description": "The label for the policy as displayed in the dashboard.",
+                        "description": "The label for the policy.",
                         "example": "ApiDemoPolicy",
                         "minLength": 1
                       },
                       "priority": {
                         "type": "integer",
-                        "description": "The priority of this policy.",
+                        "description": "The priority of the policy.",
                         "minimum": 0
                       },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time",
                         "example": "2017-09-22T04:18:51.000Z",
-                        "description": "The time when the policy was created. Specify an ISO 8601-formatted timestamp."
+                        "description": "The time and date (ISO 8601-formatted timestamp) when the policy was created."
                       },
                       "isDefault": {
                         "type": "boolean",
                         "example": true,
-                        "description": "True if this is the default policy, otherwise false."
+                        "description": "Specified whether the policy is the default."
                       }
                     }
                   }
@@ -10998,10 +11767,27 @@
           },
           "400": {
             "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Validation Error",
+                  "description": "Bad Request",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -11035,10 +11821,27 @@
           },
           "401": {
             "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Unauthorized- The authorization header is missing or the token is unauthorized",
+                  "description": "Unauthorized",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -11049,7 +11852,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized"
                     },
                     "message": {
                       "type": "string",
@@ -11062,10 +11865,27 @@
           },
           "403": {
             "description": "Forbidden",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Forbidden- The token is invalid",
+                  "description": "Forbidden",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -11089,10 +11909,27 @@
           },
           "404": {
             "description": "Not found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Not Found- A resource specified in the URL was not found",
+                  "description": "Not Found",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -11116,10 +11953,27 @@
           },
           "500": {
             "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "Error- This request could not be processed by the server",
+                  "description": "Internal Server Error",
                   "type": "object",
                   "properties": {
                     "statusCode": {
@@ -11130,7 +11984,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server has an internal error and could not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -11204,19 +12058,20 @@
           {
             "name": "page",
             "in": "query",
-            "description": "Specifies a page number in the collection.",
+            "description": "The number of a page in the collection.",
             "required": false,
             "schema": {
               "default": 1,
               "type": "integer",
               "format": "int32",
               "minimum": 1
-            }
+            },
+            "example": 4
           },
           {
             "name": "limit",
             "in": "query",
-            "description": "Specifies the number of records to return on the page.",
+            "description": "The number of records in the collection to return on the page.",
             "required": false,
             "schema": {
               "default": 100,
@@ -11224,7 +12079,8 @@
               "format": "int32",
               "minimum": 1,
               "maximum": 100
-            }
+            },
+            "example": 50
           }
         ],
         "security": [
@@ -11237,6 +12093,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -11268,13 +12141,17 @@
                       },
                       "access": {
                         "type": "string",
+                        "enum": [
+                          "allow",
+                          "block"
+                        ],
                         "example": "allow",
-                        "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                        "description": "The type of access for the destination list."
                       },
                       "isGlobal": {
                         "type": "boolean",
                         "example": true,
-                        "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                        "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                       },
                       "name": {
                         "type": "string",
@@ -11394,7 +12271,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11420,12 +12297,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11435,7 +12312,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -11447,12 +12324,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11462,7 +12339,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -11474,12 +12351,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11489,7 +12366,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -11501,12 +12378,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11516,7 +12393,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -11563,17 +12440,21 @@
                 "properties": {
                   "access": {
                     "type": "string",
+                    "enum": [
+                      "allow",
+                      "block"
+                    ],
                     "example": "allow",
-                    "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                    "description": "The type of access for the destination list."
                   },
                   "isGlobal": {
                     "type": "boolean",
                     "example": true,
-                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                   },
                   "name": {
                     "type": "string",
-                    "example": "New name of the destination list",
+                    "example": "Global Allow list",
                     "description": "The name of the destination list."
                   },
                   "bundleTypeId": {
@@ -11589,19 +12470,25 @@
                   },
                   "destinations": {
                     "type": "array",
-                    "description": "The properties of the destinations.",
+                    "description": "The list of destinations.",
                     "items": {
                       "type": "object",
+                      "description": "The propertes of the destination.",
                       "properties": {
                         "destination": {
                           "type": "string",
                           "example": "cisco.com",
-                          "description": "Specify a destination. A destination may be a domain, URL, or IP."
+                          "description": "A domain, URL, or IP."
                         },
                         "type": {
                           "type": "string",
+                          "enum": [
+                            "DOMAIN",
+                            "URL",
+                            "IPV4"
+                          ],
                           "example": "DOMAIN",
-                          "description": "Specify the type of the destination. Valid values: DOMAIN, URL, or IPV4."
+                          "description": "The type of the destination."
                         },
                         "comment": {
                           "type": "string",
@@ -11630,6 +12517,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -11659,13 +12563,17 @@
                     },
                     "access": {
                       "type": "string",
+                      "enum": [
+                        "allow",
+                        "block"
+                      ],
                       "example": "allow",
-                      "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                      "description": "The type of access for the destination list."
                     },
                     "isGlobal": {
                       "type": "boolean",
                       "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                     },
                     "name": {
                       "type": "string",
@@ -11779,7 +12687,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11805,12 +12713,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11820,7 +12728,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -11832,12 +12740,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11847,7 +12755,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -11859,12 +12767,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11874,7 +12782,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -11886,12 +12794,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -11901,7 +12809,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -11963,7 +12871,8 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           }
         ],
         "requestBody": {
@@ -11973,13 +12882,14 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "description": "Update the name of the destination list.",
                 "required": [
                   "name"
                 ],
                 "properties": {
                   "name": {
                     "type": "string",
-                    "example": "New name of destination list",
+                    "example": "Global Allow list",
                     "description": "The name of the destination list."
                   }
                 }
@@ -11993,6 +12903,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -12022,13 +12949,17 @@
                     },
                     "access": {
                       "type": "string",
+                      "enum": [
+                        "allow",
+                        "block"
+                      ],
                       "example": "allow",
-                      "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                      "description": "The type of access for the destination list."
                     },
                     "isGlobal": {
                       "type": "boolean",
                       "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                     },
                     "name": {
                       "type": "string",
@@ -12142,7 +13073,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12168,12 +13099,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12183,7 +13114,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -12195,12 +13126,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12210,7 +13141,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -12222,12 +13153,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12237,7 +13168,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -12249,12 +13180,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12264,7 +13195,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -12313,12 +13244,30 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -12351,7 +13300,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12377,12 +13326,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12392,7 +13341,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -12404,12 +13353,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12419,7 +13368,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -12431,12 +13380,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12446,7 +13395,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -12458,12 +13407,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12473,7 +13422,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -12522,7 +13471,8 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           }
         ],
         "responses": {
@@ -12557,13 +13507,17 @@
                     },
                     "access": {
                       "type": "string",
+                      "enum": [
+                        "allow",
+                        "block"
+                      ],
                       "example": "allow",
-                      "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                      "description": "The type of access for the destination list."
                     },
                     "isGlobal": {
                       "type": "boolean",
                       "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                     },
                     "name": {
                       "type": "string",
@@ -12677,7 +13631,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12703,12 +13657,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12718,7 +13672,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -12730,12 +13684,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12745,7 +13699,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -12757,12 +13711,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12772,7 +13726,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -12784,12 +13738,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12799,7 +13753,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -12850,24 +13804,26 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           },
           {
             "name": "page",
             "in": "query",
-            "description": "Specifies a page number in the collection.",
+            "description": "The number of a page in the collection.",
             "required": false,
             "schema": {
               "default": 1,
               "type": "integer",
               "format": "int32",
               "minimum": 1
-            }
+            },
+            "example": 4
           },
           {
             "name": "limit",
             "in": "query",
-            "description": "Specifies the number of records to return on the page.",
+            "description": "The number of records in the collection to return on the page.",
             "required": false,
             "schema": {
               "default": 100,
@@ -12875,12 +13831,30 @@
               "format": "int32",
               "minimum": 1,
               "maximum": 100
-            }
+            },
+            "example": 50
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -12902,18 +13876,23 @@
                       },
                       "destination": {
                         "type": "string",
-                        "example": "destination-one.com",
-                        "description": "Specify a destination. A destination may be a domain, URL, or IP address."
+                        "example": "cisco.com",
+                        "description": "A domain, URL, or IP."
                       },
                       "type": {
                         "type": "string",
+                        "enum": [
+                          "DOMAIN",
+                          "URL",
+                          "IPV4"
+                        ],
                         "example": "DOMAIN",
-                        "description": "The type of the destination. Valid values are: DOMAIN, URL, IPV4."
+                        "description": "The type of the destination."
                       },
                       "comment": {
                         "type": "string",
-                        "description": "A comment about the destination.",
-                        "example": "A comment about the destination"
+                        "description": "The comment about the destination.",
+                        "example": "Add new destination list"
                       },
                       "createdAt": {
                         "type": "string",
@@ -12948,7 +13927,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12974,12 +13953,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -12989,7 +13968,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -13001,12 +13980,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13016,7 +13995,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -13028,12 +14007,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13043,7 +14022,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -13055,12 +14034,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13070,7 +14049,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -13119,7 +14098,8 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           }
         ],
         "requestBody": {
@@ -13138,8 +14118,8 @@
                   "properties": {
                     "destination": {
                       "type": "string",
-                      "example": "mydestination.com",
-                      "description": "Specify a destination. A destination may be a domain, URL, or IP address."
+                      "example": "cisco.com",
+                      "description": "A domain, URL, or IP."
                     },
                     "comment": {
                       "type": "string",
@@ -13170,6 +14150,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -13199,13 +14196,17 @@
                     },
                     "access": {
                       "type": "string",
+                      "enum": [
+                        "allow",
+                        "block"
+                      ],
                       "example": "allow",
-                      "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                      "description": "The type of access for the destination list."
                     },
                     "isGlobal": {
                       "type": "boolean",
                       "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                     },
                     "name": {
                       "type": "string",
@@ -13319,7 +14320,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13345,12 +14346,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13360,7 +14361,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -13372,12 +14373,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13387,7 +14388,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -13399,12 +14400,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13414,7 +14415,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -13426,12 +14427,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13441,7 +14442,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",
@@ -13492,7 +14493,8 @@
               "type": "integer"
             },
             "description": "The unique ID of the destination list.",
-            "required": true
+            "required": true,
+            "example": 245
           }
         ],
         "requestBody": {
@@ -13522,6 +14524,23 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The MIME content type of the response body.",
+                "example": "application/json"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
+                },
+                "description": "The timestamp of the response.",
+                "example": "2023-03-14T18:34:25Z"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -13551,13 +14570,17 @@
                     },
                     "access": {
                       "type": "string",
+                      "enum": [
+                        "allow",
+                        "block"
+                      ],
                       "example": "allow",
-                      "description": "The type of access for the destination list. Valid values are: 'allow' or 'block'."
+                      "description": "The type of access for the destination list."
                     },
                     "isGlobal": {
                       "type": "boolean",
                       "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type 'allow' or 'block' for an organization."
+                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
                     },
                     "name": {
                       "type": "string",
@@ -13671,7 +14694,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Bad Request error response.",
+                  "description": "Bad Request",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13697,12 +14720,12 @@
             }
           },
           "401": {
-            "description": "Unauthorized - The authorization header is missing or the token is unauthorized.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "UnAuthorized error response.",
+                  "description": "Unauthorized",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13712,7 +14735,7 @@
                     "error": {
                       "type": "string",
                       "example": "Unauthorized",
-                      "description": "A brief description of the error"
+                      "description": "The authorization header is missing or the token is unauthorized."
                     },
                     "txId": {
                       "type": "string",
@@ -13724,12 +14747,12 @@
             }
           },
           "403": {
-            "description": "Forbidden - The token is invalid.",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Forbidden error response.",
+                  "description": "Forbidden",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13739,7 +14762,7 @@
                     "error": {
                       "type": "string",
                       "example": "Forbidden",
-                      "description": "a brief description of the error"
+                      "description": "The token is invalid."
                     },
                     "txId": {
                       "type": "string",
@@ -13751,12 +14774,12 @@
             }
           },
           "404": {
-            "description": "Not Found- A resource specified in the URL was not found.",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Not Found error response.",
+                  "description": "Not Found",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13766,7 +14789,7 @@
                     "error": {
                       "type": "string",
                       "example": "Not Found",
-                      "description": "A brief description of the error"
+                      "description": "A resource specified in the URL was not found."
                     },
                     "txId": {
                       "type": "string",
@@ -13778,12 +14801,12 @@
             }
           },
           "500": {
-            "description": "Internal Server Error- The server can not process the request.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Internal Server Error response.",
+                  "description": "Internal Server Error",
                   "properties": {
                     "statusCode": {
                       "type": "integer",
@@ -13793,7 +14816,7 @@
                     "error": {
                       "type": "string",
                       "example": "Internal Server Error",
-                      "description": "A brief description of the error"
+                      "description": "The server can not process the request."
                     },
                     "message": {
                       "type": "string",

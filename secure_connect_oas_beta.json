@@ -7328,64 +7328,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -7613,64 +7597,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -7946,64 +7914,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -8236,64 +8188,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -8464,64 +8400,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -8767,64 +8687,48 @@
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Unauthorized request"
                 }
               }
             }
           },
           "403": {
             "description": "Forbidden",
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "The MIME content type of the response body.",
-                "example": "application/json"
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-90-90-90-9-0-90-9-0-90-9T0-90-9:0-90-9:0-90-9Z]+$"
-                },
-                "description": "The timestamp of the response.",
-                "example": "2023-03-14T18:34:25Z"
-              }
-            },
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The information about the error condition.",
                   "properties": {
-                    "Error": {
-                      "type": "string"
+                    "message": {
+                      "type": "string",
+                      "description": "The message associated with the error condition."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The status code for the error condition."
                     }
                   }
+                },
+                "example": {
+                  "message": "Forbidden"
                 }
               }
             }
@@ -12113,114 +12017,203 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id",
-                      "organizationId",
-                      "access",
-                      "isGlobal",
-                      "name",
-                      "thirdpartyCategoryId",
-                      "createdAt",
-                      "modifiedAt",
-                      "isMspDefault",
-                      "markedForDeletion"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "integer",
-                        "example": 1234567,
-                        "description": "The unique ID of the destination list."
+                  "type": "object",
+                  "description": "The status, metadata, and properties of the destination lists.",
+                  "required": [
+                    "status",
+                    "meta",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
                       },
-                      "organizationId": {
-                        "type": "integer",
-                        "example": 2345678,
-                        "description": "The organization ID."
-                      },
-                      "access": {
-                        "type": "string",
-                        "enum": [
-                          "allow",
-                          "block"
-                        ],
-                        "example": "allow",
-                        "description": "The type of access for the destination list."
-                      },
-                      "isGlobal": {
-                        "type": "boolean",
-                        "example": true,
-                        "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                      },
-                      "name": {
-                        "type": "string",
-                        "example": "Global Allow list",
-                        "description": "The name of the destination list."
-                      },
-                      "thirdpartyCategoryId": {
-                        "type": "integer",
-                        "example": 1,
-                        "description": "The third-party category ID of the destination list."
-                      },
-                      "createdAt": {
-                        "type": "integer",
-                        "example": 1490206249,
-                        "description": "The date and time when the destination list was created."
-                      },
-                      "modifiedAt": {
-                        "type": "integer",
-                        "example": 1520476127,
-                        "description": "The date and time when the destination list was modified."
-                      },
-                      "isMspDefault": {
-                        "type": "boolean",
-                        "description": "Specifies whether MSP is the default.",
-                        "example": false
-                      },
-                      "markedForDeletion": {
-                        "type": "boolean",
-                        "example": false,
-                        "description": "Specifies whether the destination list is marked for deletion."
-                      },
-                      "bundleTypeId": {
-                        "type": "integer",
-                        "default": 1,
-                        "enum": [
-                          1,
-                          2,
-                          4
-                        ],
-                        "example": 4,
-                        "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                      },
-                      "meta": {
-                        "type": "object",
-                        "properties": {
-                          "destinationCount": {
-                            "type": "integer",
-                            "example": 5,
-                            "description": "The total number of destinations in a destination list."
-                          },
-                          "domainCount": {
-                            "type": "integer",
-                            "example": 5,
-                            "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
-                          },
-                          "urlCount": {
-                            "type": "integer",
-                            "example": 0,
-                            "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
-                          },
-                          "ipv4Count": {
-                            "type": "integer",
-                            "example": 0,
-                            "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
-                          }
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "description": "The pagination information for the response.",
+                      "properties": {
+                        "page": {
+                          "type": "integer",
+                          "description": "The number of the page in the collection.",
+                          "example": 50
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of items that are returned on the page.",
+                          "example": 10
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "The total number of items in the collection.",
+                          "example": 20
                         }
                       }
                     },
-                    "example": {
+                    "data": {
+                      "type": "array",
+                      "description": "The list of destination lists.",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "organizationId",
+                          "access",
+                          "isGlobal",
+                          "name",
+                          "thirdpartyCategoryId",
+                          "createdAt",
+                          "modifiedAt",
+                          "isMspDefault",
+                          "markedForDeletion"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "example": 1234567,
+                            "description": "The unique ID of the destination list."
+                          },
+                          "organizationId": {
+                            "type": "integer",
+                            "example": 2345678,
+                            "description": "The organization ID."
+                          },
+                          "access": {
+                            "type": "string",
+                            "enum": [
+                              "allow",
+                              "block"
+                            ],
+                            "example": "allow",
+                            "description": "The type of access for the destination list."
+                          },
+                          "isGlobal": {
+                            "type": "boolean",
+                            "example": false,
+                            "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Global Allow list",
+                            "description": "The name of the destination list."
+                          },
+                          "thirdpartyCategoryId": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "The third-party category ID of the destination list."
+                          },
+                          "createdAt": {
+                            "type": "integer",
+                            "example": 1490206249,
+                            "description": "The date and time when the destination list was created."
+                          },
+                          "modifiedAt": {
+                            "type": "integer",
+                            "example": 1520476127,
+                            "description": "The date and time when the destination list was modified."
+                          },
+                          "isMspDefault": {
+                            "type": "boolean",
+                            "description": "Specifies whether MSP is the default.",
+                            "example": false
+                          },
+                          "markedForDeletion": {
+                            "type": "boolean",
+                            "example": false,
+                            "description": "Specifies whether the destination list is marked for deletion."
+                          },
+                          "bundleTypeId": {
+                            "type": "integer",
+                            "default": 1,
+                            "enum": [
+                              1,
+                              2,
+                              4
+                            ],
+                            "example": 4,
+                            "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          },
+                          "meta": {
+                            "type": "object",
+                            "properties": {
+                              "destinationCount": {
+                                "type": "integer",
+                                "example": 5,
+                                "description": "The total number of destinations in a destination list."
+                              },
+                              "domainCount": {
+                                "type": "integer",
+                                "example": 5,
+                                "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                              },
+                              "urlCount": {
+                                "type": "integer",
+                                "example": 0,
+                                "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                              },
+                              "ipv4Count": {
+                                "type": "integer",
+                                "example": 0,
+                                "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                              }
+                            }
+                          }
+                        },
+                        "example": {
+                          "id": 1234567,
+                          "organizationId": 2345678,
+                          "access": "allow",
+                          "isGlobal": true,
+                          "name": "Global Allow List",
+                          "thirdpartyCategoryId": 0,
+                          "createdAt": 1490206249,
+                          "modifiedAt": 1520476127,
+                          "isMspDefault": false,
+                          "markedForDeletion": false,
+                          "bundleTypeId": 2,
+                          "meta": {
+                            "destinationCount": 5,
+                            "domainCount": 5,
+                            "urlCount": 0,
+                            "ipv4Count": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "meta": {
+                    "page": 1,
+                    "limit": 100,
+                    "total": 100
+                  },
+                  "data": [
+                    {
                       "id": 1234567,
                       "organizationId": 2345678,
                       "access": "allow",
@@ -12239,29 +12232,8 @@
                         "ipv4Count": 0
                       }
                     }
-                  }
-                },
-                "example": [
-                  {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
-                    }
-                  }
-                ]
+                  ]
+                }
               }
             }
           },
@@ -12449,8 +12421,8 @@
                   },
                   "isGlobal": {
                     "type": "boolean",
-                    "example": true,
-                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
+                    "example": false,
+                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
                   },
                   "name": {
                     "type": "string",
@@ -12473,7 +12445,7 @@
                     "description": "The list of destinations.",
                     "items": {
                       "type": "object",
-                      "description": "The propertes of the destination.",
+                      "description": "The properties of the destination.",
                       "properties": {
                         "destination": {
                           "type": "string",
@@ -12538,144 +12510,184 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The status and properties of the destination lists.",
                   "required": [
-                    "id",
-                    "organizationId",
-                    "access",
-                    "isGlobal",
-                    "name",
-                    "thirdpartyCategoryId",
-                    "createdAt",
-                    "modifiedAt",
-                    "isMspDefault",
-                    "markedForDeletion"
+                    "status",
+                    "data"
                   ],
                   "properties": {
-                    "id": {
-                      "type": "integer",
-                      "example": 1234567,
-                      "description": "The unique ID of the destination list."
-                    },
-                    "organizationId": {
-                      "type": "integer",
-                      "example": 2345678,
-                      "description": "The organization ID."
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "allow",
-                        "block"
-                      ],
-                      "example": "allow",
-                      "description": "The type of access for the destination list."
-                    },
-                    "isGlobal": {
-                      "type": "boolean",
-                      "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Global Allow list",
-                      "description": "The name of the destination list."
-                    },
-                    "thirdpartyCategoryId": {
-                      "type": "integer",
-                      "example": 1,
-                      "description": "The third-party category ID of the destination list."
-                    },
-                    "createdAt": {
-                      "type": "integer",
-                      "example": 1490206249,
-                      "description": "The date and time when the destination list was created."
-                    },
-                    "modifiedAt": {
-                      "type": "integer",
-                      "example": 1520476127,
-                      "description": "The date and time when the destination list was modified."
-                    },
-                    "isMspDefault": {
-                      "type": "boolean",
-                      "description": "Specifies whether MSP is the default.",
-                      "example": false
-                    },
-                    "markedForDeletion": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "Specifies whether the destination list is marked for deletion."
-                    },
-                    "bundleTypeId": {
-                      "type": "integer",
-                      "default": 1,
-                      "enum": [
-                        1,
-                        2,
-                        4
-                      ],
-                      "example": 4,
-                      "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                    },
-                    "meta": {
+                    "status": {
                       "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
                       "properties": {
-                        "destinationCount": {
+                        "code": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of destinations in a destination list."
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
                         },
-                        "domainCount": {
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "organizationId",
+                        "access",
+                        "isGlobal",
+                        "name",
+                        "thirdpartyCategoryId",
+                        "createdAt",
+                        "modifiedAt",
+                        "isMspDefault",
+                        "markedForDeletion"
+                      ],
+                      "properties": {
+                        "id": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                          "example": 1234567,
+                          "description": "The unique ID of the destination list."
                         },
-                        "urlCount": {
+                        "organizationId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                          "example": 2345678,
+                          "description": "The organization ID."
                         },
-                        "ipv4Count": {
+                        "access": {
+                          "type": "string",
+                          "enum": [
+                            "allow",
+                            "block"
+                          ],
+                          "example": "allow",
+                          "description": "The type of access for the destination list."
+                        },
+                        "isGlobal": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Global Allow list",
+                          "description": "The name of the destination list."
+                        },
+                        "thirdpartyCategoryId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                          "example": 1,
+                          "description": "The third-party category ID of the destination list."
+                        },
+                        "createdAt": {
+                          "type": "integer",
+                          "example": 1490206249,
+                          "description": "The date and time when the destination list was created."
+                        },
+                        "modifiedAt": {
+                          "type": "integer",
+                          "example": 1520476127,
+                          "description": "The date and time when the destination list was modified."
+                        },
+                        "isMspDefault": {
+                          "type": "boolean",
+                          "description": "Specifies whether MSP is the default.",
+                          "example": false
+                        },
+                        "markedForDeletion": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is marked for deletion."
+                        },
+                        "bundleTypeId": {
+                          "type": "integer",
+                          "default": 1,
+                          "enum": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "example": 4,
+                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                        },
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "destinationCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of destinations in a destination list."
+                            },
+                            "domainCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                            },
+                            "urlCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                            },
+                            "ipv4Count": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            }
+                          }
+                        }
+                      },
+                      "example": {
+                        "id": 1234567,
+                        "organizationId": 2345678,
+                        "access": "allow",
+                        "isGlobal": true,
+                        "name": "Global Allow List",
+                        "thirdpartyCategoryId": 0,
+                        "createdAt": 1490206249,
+                        "modifiedAt": 1520476127,
+                        "isMspDefault": false,
+                        "markedForDeletion": false,
+                        "bundleTypeId": 2,
+                        "meta": {
+                          "destinationCount": 5,
+                          "domainCount": 5,
+                          "urlCount": 0,
+                          "ipv4Count": 0
                         }
                       }
-                    }
-                  },
-                  "example": {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
                     }
                   }
                 },
                 "example": {
-                  "id": 2477857,
-                  "organizationId": 22429759,
-                  "access": "allow",
-                  "isGlobal": false,
-                  "name": "New Destination List",
-                  "thirdpartyCategoryId": 0,
-                  "createdAt": 1532628019,
-                  "modifiedAt": 1532628019,
-                  "isMspDefault": false,
-                  "markedForDeletion": false,
-                  "bundleTypeId": 2,
-                  "meta": {
-                    "destinationCount": 1
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "data": {
+                    "id": 2477857,
+                    "organizationId": 22429759,
+                    "access": "allow",
+                    "isGlobal": false,
+                    "name": "New Destination List",
+                    "thirdpartyCategoryId": 0,
+                    "createdAt": 1532628019,
+                    "modifiedAt": 1532628019,
+                    "isMspDefault": false,
+                    "markedForDeletion": false,
+                    "bundleTypeId": 2,
+                    "meta": {
+                      "destinationCount": 1
+                    }
                   }
                 }
               }
@@ -12924,144 +12936,184 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The status and properties of the destination lists.",
                   "required": [
-                    "id",
-                    "organizationId",
-                    "access",
-                    "isGlobal",
-                    "name",
-                    "thirdpartyCategoryId",
-                    "createdAt",
-                    "modifiedAt",
-                    "isMspDefault",
-                    "markedForDeletion"
+                    "status",
+                    "data"
                   ],
                   "properties": {
-                    "id": {
-                      "type": "integer",
-                      "example": 1234567,
-                      "description": "The unique ID of the destination list."
-                    },
-                    "organizationId": {
-                      "type": "integer",
-                      "example": 2345678,
-                      "description": "The organization ID."
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "allow",
-                        "block"
-                      ],
-                      "example": "allow",
-                      "description": "The type of access for the destination list."
-                    },
-                    "isGlobal": {
-                      "type": "boolean",
-                      "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Global Allow list",
-                      "description": "The name of the destination list."
-                    },
-                    "thirdpartyCategoryId": {
-                      "type": "integer",
-                      "example": 1,
-                      "description": "The third-party category ID of the destination list."
-                    },
-                    "createdAt": {
-                      "type": "integer",
-                      "example": 1490206249,
-                      "description": "The date and time when the destination list was created."
-                    },
-                    "modifiedAt": {
-                      "type": "integer",
-                      "example": 1520476127,
-                      "description": "The date and time when the destination list was modified."
-                    },
-                    "isMspDefault": {
-                      "type": "boolean",
-                      "description": "Specifies whether MSP is the default.",
-                      "example": false
-                    },
-                    "markedForDeletion": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "Specifies whether the destination list is marked for deletion."
-                    },
-                    "bundleTypeId": {
-                      "type": "integer",
-                      "default": 1,
-                      "enum": [
-                        1,
-                        2,
-                        4
-                      ],
-                      "example": 4,
-                      "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                    },
-                    "meta": {
+                    "status": {
                       "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
                       "properties": {
-                        "destinationCount": {
+                        "code": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of destinations in a destination list."
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
                         },
-                        "domainCount": {
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "organizationId",
+                        "access",
+                        "isGlobal",
+                        "name",
+                        "thirdpartyCategoryId",
+                        "createdAt",
+                        "modifiedAt",
+                        "isMspDefault",
+                        "markedForDeletion"
+                      ],
+                      "properties": {
+                        "id": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                          "example": 1234567,
+                          "description": "The unique ID of the destination list."
                         },
-                        "urlCount": {
+                        "organizationId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                          "example": 2345678,
+                          "description": "The organization ID."
                         },
-                        "ipv4Count": {
+                        "access": {
+                          "type": "string",
+                          "enum": [
+                            "allow",
+                            "block"
+                          ],
+                          "example": "allow",
+                          "description": "The type of access for the destination list."
+                        },
+                        "isGlobal": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Global Allow list",
+                          "description": "The name of the destination list."
+                        },
+                        "thirdpartyCategoryId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                          "example": 1,
+                          "description": "The third-party category ID of the destination list."
+                        },
+                        "createdAt": {
+                          "type": "integer",
+                          "example": 1490206249,
+                          "description": "The date and time when the destination list was created."
+                        },
+                        "modifiedAt": {
+                          "type": "integer",
+                          "example": 1520476127,
+                          "description": "The date and time when the destination list was modified."
+                        },
+                        "isMspDefault": {
+                          "type": "boolean",
+                          "description": "Specifies whether MSP is the default.",
+                          "example": false
+                        },
+                        "markedForDeletion": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is marked for deletion."
+                        },
+                        "bundleTypeId": {
+                          "type": "integer",
+                          "default": 1,
+                          "enum": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "example": 4,
+                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                        },
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "destinationCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of destinations in a destination list."
+                            },
+                            "domainCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                            },
+                            "urlCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                            },
+                            "ipv4Count": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            }
+                          }
+                        }
+                      },
+                      "example": {
+                        "id": 1234567,
+                        "organizationId": 2345678,
+                        "access": "allow",
+                        "isGlobal": true,
+                        "name": "Global Allow List",
+                        "thirdpartyCategoryId": 0,
+                        "createdAt": 1490206249,
+                        "modifiedAt": 1520476127,
+                        "isMspDefault": false,
+                        "markedForDeletion": false,
+                        "bundleTypeId": 2,
+                        "meta": {
+                          "destinationCount": 5,
+                          "domainCount": 5,
+                          "urlCount": 0,
+                          "ipv4Count": 0
                         }
                       }
-                    }
-                  },
-                  "example": {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
                     }
                   }
                 },
                 "example": {
-                  "id": 2477857,
-                  "organizationId": 22429759,
-                  "access": "allow",
-                  "isGlobal": false,
-                  "name": "New name of destination list",
-                  "thirdpartyCategoryId": 0,
-                  "createdAt": 1532628019,
-                  "modifiedAt": 1532628019,
-                  "isMspDefault": false,
-                  "markedForDeletion": false,
-                  "bundleTypeId": 2,
-                  "meta": {
-                    "destinationCount": 1
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "data": {
+                    "id": 2477857,
+                    "organizationId": 22429759,
+                    "access": "allow",
+                    "isGlobal": false,
+                    "name": "New name of destination list",
+                    "thirdpartyCategoryId": 0,
+                    "createdAt": 1532628019,
+                    "modifiedAt": 1532628019,
+                    "isMspDefault": false,
+                    "markedForDeletion": false,
+                    "bundleTypeId": 2,
+                    "meta": {
+                      "destinationCount": 1
+                    }
                   }
                 }
               }
@@ -13273,7 +13325,35 @@
                 "schema": {
                   "type": "object",
                   "description": "Delete the destination list. The data field is empty in the response.",
+                  "required": [
+                    "status",
+                    "data"
+                  ],
                   "properties": {
+                    "status": {
+                      "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
                     "data": {
                       "type": "array",
                       "items": {
@@ -13281,12 +13361,20 @@
                     }
                   },
                   "example": {
+                    "status": {
+                      "code": 200,
+                      "text": "OK"
+                    },
                     "data": [
 
                     ]
                   }
                 },
                 "example": {
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
                   "data": [
 
                   ]
@@ -13482,144 +13570,184 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The status and properties of the destination lists.",
                   "required": [
-                    "id",
-                    "organizationId",
-                    "access",
-                    "isGlobal",
-                    "name",
-                    "thirdpartyCategoryId",
-                    "createdAt",
-                    "modifiedAt",
-                    "isMspDefault",
-                    "markedForDeletion"
+                    "status",
+                    "data"
                   ],
                   "properties": {
-                    "id": {
-                      "type": "integer",
-                      "example": 1234567,
-                      "description": "The unique ID of the destination list."
-                    },
-                    "organizationId": {
-                      "type": "integer",
-                      "example": 2345678,
-                      "description": "The organization ID."
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "allow",
-                        "block"
-                      ],
-                      "example": "allow",
-                      "description": "The type of access for the destination list."
-                    },
-                    "isGlobal": {
-                      "type": "boolean",
-                      "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Global Allow list",
-                      "description": "The name of the destination list."
-                    },
-                    "thirdpartyCategoryId": {
-                      "type": "integer",
-                      "example": 1,
-                      "description": "The third-party category ID of the destination list."
-                    },
-                    "createdAt": {
-                      "type": "integer",
-                      "example": 1490206249,
-                      "description": "The date and time when the destination list was created."
-                    },
-                    "modifiedAt": {
-                      "type": "integer",
-                      "example": 1520476127,
-                      "description": "The date and time when the destination list was modified."
-                    },
-                    "isMspDefault": {
-                      "type": "boolean",
-                      "description": "Specifies whether MSP is the default.",
-                      "example": false
-                    },
-                    "markedForDeletion": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "Specifies whether the destination list is marked for deletion."
-                    },
-                    "bundleTypeId": {
-                      "type": "integer",
-                      "default": 1,
-                      "enum": [
-                        1,
-                        2,
-                        4
-                      ],
-                      "example": 4,
-                      "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                    },
-                    "meta": {
+                    "status": {
                       "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
                       "properties": {
-                        "destinationCount": {
+                        "code": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of destinations in a destination list."
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
                         },
-                        "domainCount": {
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "organizationId",
+                        "access",
+                        "isGlobal",
+                        "name",
+                        "thirdpartyCategoryId",
+                        "createdAt",
+                        "modifiedAt",
+                        "isMspDefault",
+                        "markedForDeletion"
+                      ],
+                      "properties": {
+                        "id": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                          "example": 1234567,
+                          "description": "The unique ID of the destination list."
                         },
-                        "urlCount": {
+                        "organizationId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                          "example": 2345678,
+                          "description": "The organization ID."
                         },
-                        "ipv4Count": {
+                        "access": {
+                          "type": "string",
+                          "enum": [
+                            "allow",
+                            "block"
+                          ],
+                          "example": "allow",
+                          "description": "The type of access for the destination list."
+                        },
+                        "isGlobal": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Global Allow list",
+                          "description": "The name of the destination list."
+                        },
+                        "thirdpartyCategoryId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                          "example": 1,
+                          "description": "The third-party category ID of the destination list."
+                        },
+                        "createdAt": {
+                          "type": "integer",
+                          "example": 1490206249,
+                          "description": "The date and time when the destination list was created."
+                        },
+                        "modifiedAt": {
+                          "type": "integer",
+                          "example": 1520476127,
+                          "description": "The date and time when the destination list was modified."
+                        },
+                        "isMspDefault": {
+                          "type": "boolean",
+                          "description": "Specifies whether MSP is the default.",
+                          "example": false
+                        },
+                        "markedForDeletion": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is marked for deletion."
+                        },
+                        "bundleTypeId": {
+                          "type": "integer",
+                          "default": 1,
+                          "enum": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "example": 4,
+                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                        },
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "destinationCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of destinations in a destination list."
+                            },
+                            "domainCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                            },
+                            "urlCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                            },
+                            "ipv4Count": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            }
+                          }
+                        }
+                      },
+                      "example": {
+                        "id": 1234567,
+                        "organizationId": 2345678,
+                        "access": "allow",
+                        "isGlobal": true,
+                        "name": "Global Allow List",
+                        "thirdpartyCategoryId": 0,
+                        "createdAt": 1490206249,
+                        "modifiedAt": 1520476127,
+                        "isMspDefault": false,
+                        "markedForDeletion": false,
+                        "bundleTypeId": 2,
+                        "meta": {
+                          "destinationCount": 5,
+                          "domainCount": 5,
+                          "urlCount": 0,
+                          "ipv4Count": 0
                         }
                       }
-                    }
-                  },
-                  "example": {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
                     }
                   }
                 },
                 "example": {
-                  "id": 2477857,
-                  "organizationId": 22429759,
-                  "access": "allow",
-                  "isGlobal": false,
-                  "name": "New name of destination list",
-                  "thirdpartyCategoryId": 0,
-                  "createdAt": 1532628019,
-                  "modifiedAt": 1532628019,
-                  "isMspDefault": false,
-                  "markedForDeletion": false,
-                  "bundleTypeId": 2,
-                  "meta": {
-                    "destinationCount": 1
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "data": {
+                    "id": 2477857,
+                    "organizationId": 22429759,
+                    "access": "allow",
+                    "isGlobal": false,
+                    "name": "New name of destination list",
+                    "thirdpartyCategoryId": 0,
+                    "createdAt": 1532628019,
+                    "modifiedAt": 1532628019,
+                    "isMspDefault": false,
+                    "markedForDeletion": false,
+                    "bundleTypeId": 2,
+                    "meta": {
+                      "destinationCount": 1
+                    }
                   }
                 }
               }
@@ -13858,66 +13986,133 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id",
-                      "type",
-                      "comment",
-                      "destination",
-                      "createdAt"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "example": "12345a",
-                        "description": "The unique ID of the destination."
+                  "type": "object",
+                  "description": "The status, metadata, and list of destinations for the destination list.",
+                  "required": [
+                    "status",
+                    "meta",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
                       },
-                      "destination": {
-                        "type": "string",
-                        "example": "cisco.com",
-                        "description": "A domain, URL, or IP."
-                      },
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "DOMAIN",
-                          "URL",
-                          "IPV4"
-                        ],
-                        "example": "DOMAIN",
-                        "description": "The type of the destination."
-                      },
-                      "comment": {
-                        "type": "string",
-                        "description": "The comment about the destination.",
-                        "example": "Add new destination list"
-                      },
-                      "createdAt": {
-                        "type": "string",
-                        "description": "The date and time when the destination list was created.",
-                        "example": "2018-07-23 19:36:45"
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
                       }
                     },
-                    "example": {
+                    "meta": {
+                      "type": "object",
+                      "description": "The pagination information for the response.",
+                      "properties": {
+                        "page": {
+                          "type": "integer",
+                          "description": "The number of the page in the collection.",
+                          "example": 50
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of items that are returned on the page.",
+                          "example": 10
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "The total number of items in the collection.",
+                          "example": 20
+                        }
+                      }
+                    },
+                    "data": {
+                      "type": "array",
+                      "description": "The list of destinations in the destination list.",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "type",
+                          "destination",
+                          "createdAt"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "12345a",
+                            "description": "The unique ID of the destination."
+                          },
+                          "destination": {
+                            "type": "string",
+                            "example": "cisco.com",
+                            "description": "A domain, URL, or IP."
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "DOMAIN",
+                              "URL",
+                              "IPV4"
+                            ],
+                            "example": "DOMAIN",
+                            "description": "The type of the destination."
+                          },
+                          "comment": {
+                            "type": "string",
+                            "description": "The comment about the destination.",
+                            "example": "Add new destination list"
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "description": "The date and time when the destination list was created.",
+                            "example": "2018-07-23 19:36:45"
+                          }
+                        },
+                        "example": {
+                          "id": "12345a",
+                          "destination": "destination-two.com",
+                          "type": "DOMAIN",
+                          "comment": "A comment about test destination",
+                          "createdAt": "2021-07-23 19:36:45"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "meta": {
+                    "page": 1,
+                    "limit": 100,
+                    "total": 24
+                  },
+                  "data": [
+                    {
                       "id": "12345a",
-                      "destination": "destination-two.com",
+                      "destination": "cisco.com",
                       "type": "DOMAIN",
                       "comment": "A comment about test destination",
                       "createdAt": "2021-07-23 19:36:45"
                     }
-                  }
-                },
-                "example": [
-                  {
-                    "id": "12345a",
-                    "destination": "cisco.com",
-                    "type": "DOMAIN",
-                    "comment": "A comment about test destination",
-                    "createdAt": "2021-07-23 19:36:45"
-                  }
-                ]
+                  ]
+                }
               }
             }
           },
@@ -14171,144 +14366,184 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The status and properties of the destination lists.",
                   "required": [
-                    "id",
-                    "organizationId",
-                    "access",
-                    "isGlobal",
-                    "name",
-                    "thirdpartyCategoryId",
-                    "createdAt",
-                    "modifiedAt",
-                    "isMspDefault",
-                    "markedForDeletion"
+                    "status",
+                    "data"
                   ],
                   "properties": {
-                    "id": {
-                      "type": "integer",
-                      "example": 1234567,
-                      "description": "The unique ID of the destination list."
-                    },
-                    "organizationId": {
-                      "type": "integer",
-                      "example": 2345678,
-                      "description": "The organization ID."
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "allow",
-                        "block"
-                      ],
-                      "example": "allow",
-                      "description": "The type of access for the destination list."
-                    },
-                    "isGlobal": {
-                      "type": "boolean",
-                      "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Global Allow list",
-                      "description": "The name of the destination list."
-                    },
-                    "thirdpartyCategoryId": {
-                      "type": "integer",
-                      "example": 1,
-                      "description": "The third-party category ID of the destination list."
-                    },
-                    "createdAt": {
-                      "type": "integer",
-                      "example": 1490206249,
-                      "description": "The date and time when the destination list was created."
-                    },
-                    "modifiedAt": {
-                      "type": "integer",
-                      "example": 1520476127,
-                      "description": "The date and time when the destination list was modified."
-                    },
-                    "isMspDefault": {
-                      "type": "boolean",
-                      "description": "Specifies whether MSP is the default.",
-                      "example": false
-                    },
-                    "markedForDeletion": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "Specifies whether the destination list is marked for deletion."
-                    },
-                    "bundleTypeId": {
-                      "type": "integer",
-                      "default": 1,
-                      "enum": [
-                        1,
-                        2,
-                        4
-                      ],
-                      "example": 4,
-                      "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                    },
-                    "meta": {
+                    "status": {
                       "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
                       "properties": {
-                        "destinationCount": {
+                        "code": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of destinations in a destination list."
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
                         },
-                        "domainCount": {
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "organizationId",
+                        "access",
+                        "isGlobal",
+                        "name",
+                        "thirdpartyCategoryId",
+                        "createdAt",
+                        "modifiedAt",
+                        "isMspDefault",
+                        "markedForDeletion"
+                      ],
+                      "properties": {
+                        "id": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                          "example": 1234567,
+                          "description": "The unique ID of the destination list."
                         },
-                        "urlCount": {
+                        "organizationId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                          "example": 2345678,
+                          "description": "The organization ID."
                         },
-                        "ipv4Count": {
+                        "access": {
+                          "type": "string",
+                          "enum": [
+                            "allow",
+                            "block"
+                          ],
+                          "example": "allow",
+                          "description": "The type of access for the destination list."
+                        },
+                        "isGlobal": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Global Allow list",
+                          "description": "The name of the destination list."
+                        },
+                        "thirdpartyCategoryId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                          "example": 1,
+                          "description": "The third-party category ID of the destination list."
+                        },
+                        "createdAt": {
+                          "type": "integer",
+                          "example": 1490206249,
+                          "description": "The date and time when the destination list was created."
+                        },
+                        "modifiedAt": {
+                          "type": "integer",
+                          "example": 1520476127,
+                          "description": "The date and time when the destination list was modified."
+                        },
+                        "isMspDefault": {
+                          "type": "boolean",
+                          "description": "Specifies whether MSP is the default.",
+                          "example": false
+                        },
+                        "markedForDeletion": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is marked for deletion."
+                        },
+                        "bundleTypeId": {
+                          "type": "integer",
+                          "default": 1,
+                          "enum": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "example": 4,
+                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                        },
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "destinationCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of destinations in a destination list."
+                            },
+                            "domainCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                            },
+                            "urlCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                            },
+                            "ipv4Count": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            }
+                          }
+                        }
+                      },
+                      "example": {
+                        "id": 1234567,
+                        "organizationId": 2345678,
+                        "access": "allow",
+                        "isGlobal": true,
+                        "name": "Global Allow List",
+                        "thirdpartyCategoryId": 0,
+                        "createdAt": 1490206249,
+                        "modifiedAt": 1520476127,
+                        "isMspDefault": false,
+                        "markedForDeletion": false,
+                        "bundleTypeId": 2,
+                        "meta": {
+                          "destinationCount": 5,
+                          "domainCount": 5,
+                          "urlCount": 0,
+                          "ipv4Count": 0
                         }
                       }
-                    }
-                  },
-                  "example": {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
                     }
                   }
                 },
                 "example": {
-                  "id": 1234567,
-                  "organizationId": 2345678,
-                  "access": "allow",
-                  "isGlobal": true,
-                  "name": "Global Allow List",
-                  "thirdpartyCategoryId": 0,
-                  "createdAt": 1490206249,
-                  "modifiedAt": 1520476127,
-                  "isMspDefault": false,
-                  "markedForDeletion": false,
-                  "bundleTypeId": 1,
-                  "meta": {
-                    "destinationCount": 5
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "data": {
+                    "id": 2477857,
+                    "organizationId": 22429759,
+                    "access": "allow",
+                    "isGlobal": false,
+                    "name": "New Destination List",
+                    "thirdpartyCategoryId": 0,
+                    "createdAt": 1532628019,
+                    "modifiedAt": 1532628019,
+                    "isMspDefault": false,
+                    "markedForDeletion": false,
+                    "bundleTypeId": 2,
+                    "meta": {
+                      "destinationCount": 5
+                    }
                   }
                 }
               }
@@ -14545,144 +14780,184 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "description": "The status and properties of the destination lists.",
                   "required": [
-                    "id",
-                    "organizationId",
-                    "access",
-                    "isGlobal",
-                    "name",
-                    "thirdpartyCategoryId",
-                    "createdAt",
-                    "modifiedAt",
-                    "isMspDefault",
-                    "markedForDeletion"
+                    "status",
+                    "data"
                   ],
                   "properties": {
-                    "id": {
-                      "type": "integer",
-                      "example": 1234567,
-                      "description": "The unique ID of the destination list."
-                    },
-                    "organizationId": {
-                      "type": "integer",
-                      "example": 2345678,
-                      "description": "The organization ID."
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "allow",
-                        "block"
-                      ],
-                      "example": "allow",
-                      "description": "The type of access for the destination list."
-                    },
-                    "isGlobal": {
-                      "type": "boolean",
-                      "example": true,
-                      "description": "Specifies whether the destination list is a global destination list.\nThere is only one default destination list of type `allow` or `block` for an organization."
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Global Allow list",
-                      "description": "The name of the destination list."
-                    },
-                    "thirdpartyCategoryId": {
-                      "type": "integer",
-                      "example": 1,
-                      "description": "The third-party category ID of the destination list."
-                    },
-                    "createdAt": {
-                      "type": "integer",
-                      "example": 1490206249,
-                      "description": "The date and time when the destination list was created."
-                    },
-                    "modifiedAt": {
-                      "type": "integer",
-                      "example": 1520476127,
-                      "description": "The date and time when the destination list was modified."
-                    },
-                    "isMspDefault": {
-                      "type": "boolean",
-                      "description": "Specifies whether MSP is the default.",
-                      "example": false
-                    },
-                    "markedForDeletion": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "Specifies whether the destination list is marked for deletion."
-                    },
-                    "bundleTypeId": {
-                      "type": "integer",
-                      "default": 1,
-                      "enum": [
-                        1,
-                        2,
-                        4
-                      ],
-                      "example": 4,
-                      "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
-                    },
-                    "meta": {
+                    "status": {
                       "type": "object",
+                      "required": [
+                        "code",
+                        "text"
+                      ],
+                      "description": "The status information for the response.",
                       "properties": {
-                        "destinationCount": {
+                        "code": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of destinations in a destination list."
+                          "description": "The HTTP status code of the response.",
+                          "example": 200
                         },
-                        "domainCount": {
+                        "text": {
+                          "type": "string",
+                          "description": "The HTTP message that describes the response.",
+                          "example": "OK"
+                        }
+                      },
+                      "example": {
+                        "code": 200,
+                        "text": "OK"
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "organizationId",
+                        "access",
+                        "isGlobal",
+                        "name",
+                        "thirdpartyCategoryId",
+                        "createdAt",
+                        "modifiedAt",
+                        "isMspDefault",
+                        "markedForDeletion"
+                      ],
+                      "properties": {
+                        "id": {
                           "type": "integer",
-                          "example": 5,
-                          "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                          "example": 1234567,
+                          "description": "The unique ID of the destination list."
                         },
-                        "urlCount": {
+                        "organizationId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                          "example": 2345678,
+                          "description": "The organization ID."
                         },
-                        "ipv4Count": {
+                        "access": {
+                          "type": "string",
+                          "enum": [
+                            "allow",
+                            "block"
+                          ],
+                          "example": "allow",
+                          "description": "The type of access for the destination list."
+                        },
+                        "isGlobal": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Global Allow list",
+                          "description": "The name of the destination list."
+                        },
+                        "thirdpartyCategoryId": {
                           "type": "integer",
-                          "example": 0,
-                          "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                          "example": 1,
+                          "description": "The third-party category ID of the destination list."
+                        },
+                        "createdAt": {
+                          "type": "integer",
+                          "example": 1490206249,
+                          "description": "The date and time when the destination list was created."
+                        },
+                        "modifiedAt": {
+                          "type": "integer",
+                          "example": 1520476127,
+                          "description": "The date and time when the destination list was modified."
+                        },
+                        "isMspDefault": {
+                          "type": "boolean",
+                          "description": "Specifies whether MSP is the default.",
+                          "example": false
+                        },
+                        "markedForDeletion": {
+                          "type": "boolean",
+                          "example": false,
+                          "description": "Specifies whether the destination list is marked for deletion."
+                        },
+                        "bundleTypeId": {
+                          "type": "integer",
+                          "default": 1,
+                          "enum": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "example": 4,
+                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                        },
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "destinationCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of destinations in a destination list."
+                            },
+                            "domainCount": {
+                              "type": "integer",
+                              "example": 5,
+                              "description": "The total number of domains in a destination list.\nDomains are part of the total number of destinations in a destination list."
+                            },
+                            "urlCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of URLs in a destination list.\nUrls are part of the total number of destinations in a destination list."
+                            },
+                            "ipv4Count": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            }
+                          }
+                        }
+                      },
+                      "example": {
+                        "id": 1234567,
+                        "organizationId": 2345678,
+                        "access": "allow",
+                        "isGlobal": true,
+                        "name": "Global Allow List",
+                        "thirdpartyCategoryId": 0,
+                        "createdAt": 1490206249,
+                        "modifiedAt": 1520476127,
+                        "isMspDefault": false,
+                        "markedForDeletion": false,
+                        "bundleTypeId": 2,
+                        "meta": {
+                          "destinationCount": 5,
+                          "domainCount": 5,
+                          "urlCount": 0,
+                          "ipv4Count": 0
                         }
                       }
-                    }
-                  },
-                  "example": {
-                    "id": 1234567,
-                    "organizationId": 2345678,
-                    "access": "allow",
-                    "isGlobal": true,
-                    "name": "Global Allow List",
-                    "thirdpartyCategoryId": 0,
-                    "createdAt": 1490206249,
-                    "modifiedAt": 1520476127,
-                    "isMspDefault": false,
-                    "markedForDeletion": false,
-                    "bundleTypeId": 2,
-                    "meta": {
-                      "destinationCount": 5,
-                      "domainCount": 5,
-                      "urlCount": 0,
-                      "ipv4Count": 0
                     }
                   }
                 },
                 "example": {
-                  "id": 1234567,
-                  "organizationId": 2345678,
-                  "access": "allow",
-                  "isGlobal": true,
-                  "name": "Global Allow list",
-                  "thirdpartyCategoryId": 0,
-                  "createdAt": 1490206249,
-                  "modifiedAt": 1520476127,
-                  "isMspDefault": false,
-                  "markedForDeletion": false,
-                  "bundleTypeId": 1,
-                  "meta": {
-                    "destinationCount": 5
+                  "status": {
+                    "code": 200,
+                    "text": "OK"
+                  },
+                  "data": {
+                    "id": 2477857,
+                    "organizationId": 22429759,
+                    "access": "allow",
+                    "isGlobal": false,
+                    "name": "New Destination List",
+                    "thirdpartyCategoryId": 0,
+                    "createdAt": 1532628019,
+                    "modifiedAt": 1532628019,
+                    "isMspDefault": false,
+                    "markedForDeletion": false,
+                    "bundleTypeId": 2,
+                    "meta": {
+                      "destinationCount": 5
+                    }
                   }
                 }
               }

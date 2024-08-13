@@ -12110,7 +12110,7 @@
                           "isGlobal": {
                             "type": "boolean",
                             "example": false,
-                            "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                            "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                           },
                           "name": {
                             "type": "string",
@@ -12151,7 +12151,7 @@
                               4
                             ],
                             "example": 4,
-                            "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                            "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                           },
                           "meta": {
                             "type": "object",
@@ -12422,7 +12422,7 @@
                   "isGlobal": {
                     "type": "boolean",
                     "example": false,
-                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                    "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                   },
                   "name": {
                     "type": "string",
@@ -12438,7 +12438,7 @@
                       4
                     ],
                     "example": 4,
-                    "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                    "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                   },
                   "destinations": {
                     "type": "array",
@@ -12577,7 +12577,7 @@
                         "isGlobal": {
                           "type": "boolean",
                           "example": false,
-                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                         },
                         "name": {
                           "type": "string",
@@ -12618,7 +12618,7 @@
                             4
                           ],
                           "example": 4,
-                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                         },
                         "meta": {
                           "type": "object",
@@ -13003,7 +13003,7 @@
                         "isGlobal": {
                           "type": "boolean",
                           "example": false,
-                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                         },
                         "name": {
                           "type": "string",
@@ -13044,7 +13044,7 @@
                             4
                           ],
                           "example": 4,
-                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                         },
                         "meta": {
                           "type": "object",
@@ -13637,7 +13637,7 @@
                         "isGlobal": {
                           "type": "boolean",
                           "example": false,
-                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                         },
                         "name": {
                           "type": "string",
@@ -13678,7 +13678,7 @@
                             4
                           ],
                           "example": 4,
-                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                         },
                         "meta": {
                           "type": "object",
@@ -14052,8 +14052,8 @@
                         ],
                         "properties": {
                           "id": {
-                            "type": "string",
-                            "example": "12345a",
+                            "type": "integer",
+                            "example": 1234567,
                             "description": "The unique ID of the destination."
                           },
                           "destination": {
@@ -14083,7 +14083,7 @@
                           }
                         },
                         "example": {
-                          "id": "12345a",
+                          "id": 1234590,
                           "destination": "destination-two.com",
                           "type": "DOMAIN",
                           "comment": "A comment about test destination",
@@ -14105,7 +14105,7 @@
                   },
                   "data": [
                     {
-                      "id": "12345a",
+                      "id": 1234590,
                       "destination": "cisco.com",
                       "type": "DOMAIN",
                       "comment": "A comment about test destination",
@@ -14433,7 +14433,7 @@
                         "isGlobal": {
                           "type": "boolean",
                           "example": false,
-                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                         },
                         "name": {
                           "type": "string",
@@ -14474,7 +14474,7 @@
                             4
                           ],
                           "example": 4,
-                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                         },
                         "meta": {
                           "type": "object",
@@ -14847,7 +14847,7 @@
                         "isGlobal": {
                           "type": "boolean",
                           "example": false,
-                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization.\n**Note:** Secure Access does not support global destination lists. When you creat a destination list, set the `isGlobal` field to `false`."
+                          "description": "Specifies whether the destination list is a global destination list.\nThere is only one default `allow` destination list and one default `block` destination list for an organization."
                         },
                         "name": {
                           "type": "string",
@@ -14888,7 +14888,7 @@
                             4
                           ],
                           "example": 4,
-                          "description": "The type of the destination list in the Umbrella policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
+                          "description": "The type of the destination list in the policy.\nSet `1` for DNS, `2` for web, and `4` for SAML Bypass.\nIf the field is not specified, the default value is `1`."
                         },
                         "meta": {
                           "type": "object",

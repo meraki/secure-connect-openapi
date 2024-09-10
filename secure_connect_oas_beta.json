@@ -12155,6 +12155,7 @@
                           },
                           "meta": {
                             "type": "object",
+                            "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                             "properties": {
                               "destinationCount": {
                                 "type": "integer",
@@ -12175,7 +12176,19 @@
                                 "type": "integer",
                                 "example": 0,
                                 "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                              },
+                              "applicationCount": {
+                                "type": "integer",
+                                "example": 0,
+                                "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                               }
+                            },
+                            "example": {
+                              "domainCount": 1,
+                              "urlCount": 0,
+                              "ipv4Count": 1,
+                              "destinationCount": 2,
+                              "applicationCount": 0
                             }
                           }
                         },
@@ -12195,7 +12208,8 @@
                             "destinationCount": 5,
                             "domainCount": 5,
                             "urlCount": 0,
-                            "ipv4Count": 0
+                            "ipv4Count": 0,
+                            "applicationCount": 0
                           }
                         }
                       }
@@ -12229,7 +12243,8 @@
                         "destinationCount": 5,
                         "domainCount": 5,
                         "urlCount": 0,
-                        "ipv4Count": 0
+                        "ipv4Count": 0,
+                        "applicationCount": 0
                       }
                     }
                   ]
@@ -12622,6 +12637,7 @@
                         },
                         "meta": {
                           "type": "object",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -12642,7 +12658,19 @@
                               "type": "integer",
                               "example": 0,
                               "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            },
+                            "applicationCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                             }
+                          },
+                          "example": {
+                            "domainCount": 1,
+                            "urlCount": 0,
+                            "ipv4Count": 1,
+                            "destinationCount": 2,
+                            "applicationCount": 0
                           }
                         }
                       },
@@ -12662,7 +12690,8 @@
                           "destinationCount": 5,
                           "domainCount": 5,
                           "urlCount": 0,
-                          "ipv4Count": 0
+                          "ipv4Count": 0,
+                          "applicationCount": 0
                         }
                       }
                     }
@@ -13048,6 +13077,7 @@
                         },
                         "meta": {
                           "type": "object",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -13068,7 +13098,19 @@
                               "type": "integer",
                               "example": 0,
                               "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            },
+                            "applicationCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                             }
+                          },
+                          "example": {
+                            "domainCount": 1,
+                            "urlCount": 0,
+                            "ipv4Count": 1,
+                            "destinationCount": 2,
+                            "applicationCount": 0
                           }
                         }
                       },
@@ -13088,7 +13130,8 @@
                           "destinationCount": 5,
                           "domainCount": 5,
                           "urlCount": 0,
-                          "ipv4Count": 0
+                          "ipv4Count": 0,
+                          "applicationCount": 0
                         }
                       }
                     }
@@ -13682,6 +13725,7 @@
                         },
                         "meta": {
                           "type": "object",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -13702,7 +13746,19 @@
                               "type": "integer",
                               "example": 0,
                               "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            },
+                            "applicationCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                             }
+                          },
+                          "example": {
+                            "domainCount": 1,
+                            "urlCount": 0,
+                            "ipv4Count": 1,
+                            "destinationCount": 2,
+                            "applicationCount": 0
                           }
                         }
                       },
@@ -13722,7 +13778,8 @@
                           "destinationCount": 5,
                           "domainCount": 5,
                           "urlCount": 0,
-                          "ipv4Count": 0
+                          "ipv4Count": 0,
+                          "applicationCount": 0
                         }
                       }
                     }
@@ -14478,6 +14535,7 @@
                         },
                         "meta": {
                           "type": "object",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -14498,7 +14556,19 @@
                               "type": "integer",
                               "example": 0,
                               "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            },
+                            "applicationCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                             }
+                          },
+                          "example": {
+                            "domainCount": 1,
+                            "urlCount": 0,
+                            "ipv4Count": 1,
+                            "destinationCount": 2,
+                            "applicationCount": 0
                           }
                         }
                       },
@@ -14518,7 +14588,8 @@
                           "destinationCount": 5,
                           "domainCount": 5,
                           "urlCount": 0,
-                          "ipv4Count": 0
+                          "ipv4Count": 0,
+                          "applicationCount": 0
                         }
                       }
                     }
@@ -14702,7 +14773,7 @@
           "Destinations"
         ],
         "summary": "Delete Destinations from Destination List",
-        "description": "Delete destinations from destination list.",
+        "description": "Remove destinations from the destination list.\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the \nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",
         "operationId": "deleteDestinations",
         "security": [
           {
@@ -14892,6 +14963,7 @@
                         },
                         "meta": {
                           "type": "object",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -14912,7 +14984,19 @@
                               "type": "integer",
                               "example": 0,
                               "description": "The total number of IP addresses in a destination list.\nIP addresses are part of the total number of destinations in a destination list."
+                            },
+                            "applicationCount": {
+                              "type": "integer",
+                              "example": 0,
+                              "description": "The total number of applications in a destination list.\nApplications are part of the total number of destinations in a destination list."
                             }
+                          },
+                          "example": {
+                            "domainCount": 1,
+                            "urlCount": 0,
+                            "ipv4Count": 1,
+                            "destinationCount": 2,
+                            "applicationCount": 0
                           }
                         }
                       },
@@ -14932,7 +15016,8 @@
                           "destinationCount": 5,
                           "domainCount": 5,
                           "urlCount": 0,
-                          "ipv4Count": 0
+                          "ipv4Count": 0,
+                          "applicationCount": 0
                         }
                       }
                     }

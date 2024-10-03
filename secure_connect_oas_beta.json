@@ -12155,7 +12155,7 @@
                           },
                           "meta": {
                             "type": "object",
-                            "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                            "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                             "properties": {
                               "destinationCount": {
                                 "type": "integer",
@@ -12637,7 +12637,7 @@
                         },
                         "meta": {
                           "type": "object",
-                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -13077,7 +13077,7 @@
                         },
                         "meta": {
                           "type": "object",
-                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -13725,7 +13725,7 @@
                         },
                         "meta": {
                           "type": "object",
-                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -14535,7 +14535,7 @@
                         },
                         "meta": {
                           "type": "object",
-                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",
@@ -14773,7 +14773,7 @@
           "Destinations"
         ],
         "summary": "Delete Destinations from Destination List",
-        "description": "Remove destinations from the destination list.\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the \nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",
+        "description": "Remove destinations from the destination list.\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the\nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",
         "operationId": "deleteDestinations",
         "security": [
           {
@@ -14963,7 +14963,7 @@
                         },
                         "meta": {
                           "type": "object",
-                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` objects are optional.",
+                          "description": "The total number of each type of destination in the destination list. The fields in the `meta` object are optional.",
                           "properties": {
                             "destinationCount": {
                               "type": "integer",

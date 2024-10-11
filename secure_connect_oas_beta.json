@@ -12413,7 +12413,7 @@
           }
         ],
         "requestBody": {
-          "description": "Provide destination information and an optional array of destination objects.\nAccepts no more than 500 destination objects.",
+          "description": "Provide destination information and an optional array of destination objects.\nAccepts no more than 500 destination objects.\n\nIf you make an API request on the POST operation that adds a URL on a high-volume domain to a destination list,\nthe operation may succeed (`HTTP/200 OK`).\nHowever, the server returns an error message (`HTTP/400 Bad Request`) that indicates that the destination is on a high-volume domain.\n**Note:** Umbrella does not add URLs that are on high-volume domains to destination lists. Instead, we recommend that you add the domain only.",
           "content": {
             "application/json": {
               "schema": {
@@ -14355,7 +14355,7 @@
           }
         ],
         "requestBody": {
-          "description": "Add destinations to a destination list.\nAccepts no more than 500 destination objects in the body of the request.",
+          "description": "Add destinations to a destination list.\nAccepts no more than 500 destination objects in the body of the request.\n\nIf you make an API request on the POST operation that adds a URL on a high-volume domain to a destination list,\nthe operation may succeed (`HTTP/200 OK`).\nHowever, the server returns an error message (`HTTP/400 Bad Request`) that indicates that the destination is on a high-volume domain.\n**Note:** Umbrella does not add URLs that are on high-volume domains to destination lists. Instead, we recommend that you add the domain only.",
           "required": true,
           "content": {
             "application/json": {

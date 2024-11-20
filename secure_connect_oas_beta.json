@@ -11904,9 +11904,9 @@
     },
     "/organizations/{organizationId}/firewall/applications": {
       "get": {
-        "summary": "",
+        "summary": "Get Firewall Applications",
         "description": "",
-        "operationId": "\\OpenDNS\\Api\\V3\\Method_Organizations_Firewallapplications_ReadCollection",
+        "operationId": "getFirewallApplications",
         "parameters": [
           {
             "name": "organizationId",

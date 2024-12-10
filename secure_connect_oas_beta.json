@@ -417,7 +417,7 @@
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in millseconds",
+                                "description": "The timestamp represented in milliseconds",
                                 "example": 1594557263000
                               },
                               "identities": {
@@ -781,7 +781,7 @@
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in millseconds",
+                                "description": "The timestamp represented in milliseconds",
                                 "example": 1594557263000
                               },
                               "identities": {
@@ -1195,7 +1195,7 @@
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in millseconds",
+                                "description": "The timestamp represented in milliseconds",
                                 "example": 1594557263000
                               },
                               "type": {
@@ -1346,7 +1346,7 @@
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in millseconds",
+                                "description": "The timestamp represented in milliseconds",
                                 "example": 1594557263000
                               },
                               "identities": {

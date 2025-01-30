@@ -17,7 +17,7 @@
           "Activity"
         ],
         "summary": "Get Activities (All)",
-        "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\n**Note:** The IP activity report is not available.",
+        "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\n**Note:** The IP activity report is not available.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getActivities",
         "security": [
           {
@@ -116,7 +116,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -125,7 +125,7 @@
           {
             "name": "ports",
             "in": "query",
-            "description": "A port number or comma-delimited list of port number.",
+            "description": "A port number or comma-delimited list of port numbers.",
             "schema": {
               "type": "string"
             },
@@ -134,7 +134,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -143,7 +143,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -152,7 +152,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -161,7 +161,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -170,7 +170,7 @@
           {
             "name": "ruleid",
             "in": "query",
-            "description": "A firewall policy rule ID.",
+            "description": "The firewall policy rule ID.",
             "schema": {
               "type": "number"
             },
@@ -206,7 +206,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -214,7 +214,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -222,7 +222,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -231,7 +231,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -240,7 +240,7 @@
           {
             "name": "x-traffic-type",
             "in": "header",
-            "description": "A string or comma-delimited list of string that describes the type of traffic. Valid values are:\ndns, proxy, firewall, or ip. If the header is not set, the default value is 'all'.",
+            "description": "A string or comma-delimited list of strings that describes the type of traffic.\nIf the header is not set, the default value is `all`. Valid values are: `dns`, `proxy`, `firewall`, and `ip`.",
             "schema": {
               "type": "string"
             },
@@ -249,7 +249,7 @@
           {
             "name": "isolatedstate",
             "in": "query",
-            "description": "A string that describes the remote browser isolation\n(RBI) isolation type (for example: 'isolated' or 'not-isolated').",
+            "description": "A string that describes the remote browser isolation (RBI) isolation type.",
             "schema": {
               "type": "string",
               "enum": [
@@ -262,7 +262,7 @@
           {
             "name": "isolatedFileAction",
             "in": "query",
-            "description": "A string that describes the remote browser isolation (RBI) file action type\n(for example: 'viewed', 'downloaded-original-file', or 'downloaded-safe-pdf').",
+            "description": "A string that describes the remote browser isolation (RBI) file action type.",
             "schema": {
               "type": "string",
               "enum": [
@@ -276,16 +276,19 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
@@ -294,7 +297,7 @@
           {
             "name": "httperrors",
             "in": "query",
-            "description": "Filter data for requests that resulted in a TLS error or a certificate error.\nValid values: `certificateerror` or `tlserror`.",
+            "description": "Filter data for requests that resulted in a TLS error or a certificate error.",
             "schema": {
               "type": "string",
               "enum": [
@@ -307,7 +310,7 @@
           {
             "name": "exists",
             "in": "query",
-            "description": "Specify a comma-separated list of attributes to filter the data. Valid values are: categories, policycategories, applicationid,\nnbarapplicationid, nbarapplicationtypeids, privateapplicationid, applicationgroupids, sha256, filename, threats, threattypes,\nantivirusthreats, destinationlistids, httperrors.",
+            "description": "Specify an attribute or comma-separated list of attributes to filter the data.\nValid values are: `categories`, `policycategories`, `applicationid`,\n`nbarapplicationid`, `nbarapplicationtypeids`, `privateapplicationid`, `applicationgroupids`,\n`sha256`, `filename`, `threats`, `threattypes`, `antivirusthreats`, `destinationlistids`, and `httperrors`.",
             "schema": {
               "type": "string"
             },
@@ -341,121 +344,131 @@
                             "properties": {
                               "externalip": {
                                 "type": "string",
-                                "description": "external IP for entry"
+                                "description": "The external IP for the entry."
                               },
                               "internalip": {
                                 "type": "string",
-                                "description": "internal IP for entry"
+                                "description": "The internal IP for the entry."
                               },
                               "policycategories": {
                                 "type": "array",
-                                "description": "array of policy categories",
+                                "description": "The list of the policy categories.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The category object",
+                                  "description": "The properties of the category.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the category"
+                                      "description": "The ID of the category."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "the human readable label of the category"
+                                      "description": "The descriptive label for the category."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of category"
+                                      "description": "The type of the category."
                                     },
                                     "integration": {
                                       "type": "boolean",
-                                      "description": "if the category is an integration"
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
                                     },
                                     "deprecated": {
                                       "type": "boolean",
-                                      "description": "if the category is a legacy category"
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
                                     }
                                   }
                                 }
                               },
                               "categories": {
                                 "type": "array",
-                                "description": "array of categories",
+                                "description": "The list of categories.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The category object",
+                                  "description": "The properties of the category.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the category"
+                                      "description": "The ID of the category."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "the human readable label of the category"
+                                      "description": "The descriptive label for the category."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of category"
+                                      "description": "The type of the category."
                                     },
                                     "integration": {
                                       "type": "boolean",
-                                      "description": "if the category is an integration"
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
                                     },
                                     "deprecated": {
                                       "type": "boolean",
-                                      "description": "if the category is a legacy category"
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
                                     }
                                   }
                                 }
                               },
                               "verdict": {
                                 "type": "string",
-                                "description": "verdict for entry"
+                                "description": "The verdict for the entry.",
+                                "enum": [
+                                  "allowed",
+                                  "blocked"
+                                ],
+                                "example": "allowed"
                               },
                               "domain": {
                                 "type": "string",
-                                "description": "domain for entry"
+                                "description": "The domain name for the entry."
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in milliseconds",
+                                "description": "The timestamp represented in milliseconds.",
                                 "example": 1594557263000
                               },
                               "identities": {
                                 "type": "array",
-                                "description": "array of identities for entry",
+                                "description": "The list of identities for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the identity",
+                                  "description": "The information about the identity.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the identity"
+                                      "description": "The ID of the identity."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "The label for the identity"
+                                      "description": "The descriptive label for the identity."
                                     },
                                     "type": {
                                       "type": "object",
-                                      "description": "The information about the identity including the type",
+                                      "description": "The information about the identity including the type.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "The ID of the origin type for the identity"
+                                          "description": "The ID of the origin type for the identity."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "The label of the origin type for the identity"
+                                          "description": "The label of the origin type for the identity."
                                         },
                                         "type": {
                                           "type": "string",
-                                          "description": "The name of the origin type for the identity"
+                                          "description": "The name of the origin type for the identity."
                                         }
                                       }
                                     },
                                     "deleted": {
                                       "type": "boolean",
-                                      "description": "Indicates whether the identity was deleted or not"
+                                      "description": "Indicates whether the identity was deleted.",
+                                      "example": true
                                     }
                                   },
                                   "required": [
@@ -478,34 +491,39 @@
                               },
                               "allapplications": {
                                 "type": "array",
-                                "description": "array of applications for entry",
+                                "description": "The list of all applications for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -513,7 +531,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -523,25 +541,29 @@
                               },
                               "threats": {
                                 "type": "array",
+                                "description": "The list of threats for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the threat",
+                                  "description": "The information about the threat.",
                                   "properties": {
                                     "label": {
                                       "type": "string",
-                                      "description": "the threat name or label"
+                                      "description": "The descriptive label for the threat name."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of threat"
+                                      "description": "The type of the threat."
                                     }
                                   }
-                                },
-                                "description": "array of threats for entry"
+                                }
                               },
                               "type": {
                                 "type": "string",
-                                "description": "The type of the request. A DNS request always has the type dns."
+                                "description": "The type of the request. A DNS request always has the type dns.",
+                                "enum": [
+                                  "dns"
+                                ],
+                                "example": "dns"
                               },
                               "querytype": {
                                 "type": "string",
@@ -549,12 +571,12 @@
                               },
                               "date": {
                                 "type": "string",
-                                "description": "The date from the timestamp based on the timezone parameter",
+                                "description": "The date from the timestamp based on the timezone parameter.",
                                 "example": "2020-07-12"
                               },
                               "time": {
                                 "type": "string",
-                                "description": "The time in 24 hour format based on the timezone parameter",
+                                "description": "The time in 24-hour format based on the timezone parameter.",
                                 "example": "12:34"
                               },
                               "returncode": {
@@ -563,33 +585,39 @@
                               },
                               "allowedapplications": {
                                 "type": "array",
+                                "description": "The list of allowed applications.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -597,7 +625,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -607,33 +635,39 @@
                               },
                               "blockedapplications": {
                                 "type": "array",
+                                "description": "The list of blocked applications.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -641,7 +675,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -690,7 +724,7 @@
                               ],
                               "verdict": "allowed",
                               "domain": "google.com",
-                              "timestamp": 1548311506,
+                              "timestamp": 1548311506000,
                               "time": "06:31:46",
                               "date": "2019-01-24",
                               "identities": [
@@ -747,79 +781,117 @@
                             "properties": {
                               "date": {
                                 "type": "string",
-                                "description": "The date from the timestamp based on the timezone parameter",
+                                "description": "The date from the timestamp based on the timezone parameter.",
                                 "example": "2020-07-12"
                               },
                               "destinationip": {
                                 "type": "string",
-                                "description": "destination IP for entry",
+                                "description": "The destination IP for the entry.",
                                 "example": "12.10.10.10"
                               },
                               "sourceip": {
                                 "type": "string",
-                                "description": "source IP for entry",
+                                "description": "The source IP for the entry.",
                                 "example": "10.11.10.10"
                               },
                               "sourceport": {
                                 "type": "number",
-                                "description": "source port for entry",
+                                "description": "The source port for the entry.",
                                 "example": 3000
                               },
                               "destinationport": {
                                 "type": "number",
-                                "description": "destination port for entry",
+                                "description": "The destination port for entry.",
                                 "example": 89
+                              },
+                              "categories": {
+                                "type": "array",
+                                "description": "The list of categories.",
+                                "items": {
+                                  "type": "object",
+                                  "description": "The properties of the category.",
+                                  "properties": {
+                                    "id": {
+                                      "type": "number",
+                                      "description": "The ID of the category."
+                                    },
+                                    "label": {
+                                      "type": "string",
+                                      "description": "The descriptive label for the category."
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "description": "The type of the category."
+                                    },
+                                    "integration": {
+                                      "type": "boolean",
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
+                                    },
+                                    "deprecated": {
+                                      "type": "boolean",
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
+                                    }
+                                  }
+                                }
                               },
                               "verdict": {
                                 "type": "string",
-                                "description": "verdict for entry"
+                                "description": "The verdict for the entry.",
+                                "enum": [
+                                  "allowed",
+                                  "blocked"
+                                ],
+                                "example": "allowed"
                               },
                               "time": {
                                 "type": "string",
-                                "description": "The time in 24 hour format based on the timezone parameter",
+                                "description": "The time in 24-hour format based on the timezone parameter.",
                                 "example": "12:34"
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in milliseconds",
+                                "description": "The timestamp represented in milliseconds.",
                                 "example": 1594557263000
                               },
                               "identities": {
                                 "type": "array",
-                                "description": "array of identities for entry",
+                                "description": "The list of identities for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the identity",
+                                  "description": "The information about the identity.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the identity"
+                                      "description": "The ID of the identity."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "The label for the identity"
+                                      "description": "The descriptive label for the identity."
                                     },
                                     "type": {
                                       "type": "object",
-                                      "description": "The information about the identity including the type",
+                                      "description": "The information about the identity including the type.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "The ID of the origin type for the identity"
+                                          "description": "The ID of the origin type for the identity."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "The label of the origin type for the identity"
+                                          "description": "The label of the origin type for the identity."
                                         },
                                         "type": {
                                           "type": "string",
-                                          "description": "The name of the origin type for the identity"
+                                          "description": "The name of the origin type for the identity."
                                         }
                                       }
                                     },
                                     "deleted": {
                                       "type": "boolean",
-                                      "description": "Indicates whether the identity was deleted or not"
+                                      "description": "Indicates whether the identity was deleted.",
+                                      "example": true
                                     }
                                   },
                                   "required": [
@@ -842,15 +914,15 @@
                               },
                               "protocol": {
                                 "type": "object",
-                                "description": "IP protocol",
+                                "description": "The properties of the protocol.",
                                 "properties": {
                                   "id": {
                                     "type": "number",
-                                    "description": "The ID of protocol"
+                                    "description": "The ID of protocol."
                                   },
                                   "label": {
                                     "type": "string",
-                                    "description": "The name of the protocol"
+                                    "description": "The name of the protocol."
                                   }
                                 },
                                 "required": [
@@ -860,29 +932,29 @@
                               },
                               "rule": {
                                 "type": "object",
-                                "description": "The firewall rule",
+                                "description": "The properties of the firewall rule.",
                                 "properties": {
                                   "id": {
                                     "type": "number",
-                                    "description": "The ID of the rule"
+                                    "description": "The ID of the rule."
                                   },
                                   "label": {
                                     "type": "string",
-                                    "description": "The name of the rule"
+                                    "description": "The name of the rule."
                                   },
                                   "privateapplicationgroup": {
                                     "type": "object",
-                                    "description": "The private application group",
+                                    "description": "The private application group.",
                                     "properties": {
                                       "id": {
                                         "nullable": true,
                                         "type": "number",
-                                        "description": "The ID of application group"
+                                        "description": "The ID of application group."
                                       },
                                       "label": {
                                         "nullable": true,
                                         "type": "string",
-                                        "description": "The name of the application group"
+                                        "description": "The name of the application group."
                                       }
                                     }
                                   }
@@ -894,26 +966,28 @@
                               },
                               "type": {
                                 "type": "string",
-                                "description": "The type of the request. A firewall request always has type firewall."
+                                "description": "The type of the request. A firewall request always has type firewall.",
+                                "example": "firewall"
                               },
                               "allapplications": {
                                 "type": "array",
                                 "description": "A list of firewall applications",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the applications managed by the firewall",
+                                  "description": "The information about the applications managed by the firewall.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "application/protocol id"
+                                      "description": "The ID of the application or protocol."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "application/protocol label"
+                                      "description": "The descriptive label for the application or protocol."
                                     },
                                     "app": {
                                       "type": "string",
-                                      "description": "type: \"IT Service Management\" (string) - application/protocol type"
+                                      "description": "The information about the app type.",
+                                      "example": "IT Service Management (string) - application/protocol type"
                                     }
                                   }
                                 }
@@ -923,19 +997,20 @@
                                 "description": "A list of firewall application protocols.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the applications managed by the firewall",
+                                  "description": "The information about the applications managed by the firewall.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "application/protocol id"
+                                      "description": "The ID of the application or protocol."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "application/protocol label"
+                                      "description": "The descriptive label for the application or protocol."
                                     },
                                     "app": {
                                       "type": "string",
-                                      "description": "type: \"IT Service Management\" (string) - application/protocol type"
+                                      "description": "The information about the app type.",
+                                      "example": "IT Service Management (string) - application/protocol type"
                                     }
                                   }
                                 }
@@ -946,7 +1021,7 @@
                               },
                               "packetsize": {
                                 "type": "number",
-                                "description": "The size of the packet that Umbrella CDFW received."
+                                "description": "The size of the packet that was received."
                               }
                             },
                             "required": [
@@ -974,9 +1049,17 @@
                               "sourceport": 0,
                               "destinationport": 0,
                               "direction": "toward",
+                              "categories": [
+                                {
+                                  "id": 66,
+                                  "label": "Malware",
+                                  "type": "security",
+                                  "integration": true
+                                }
+                              ],
                               "verdict": "allowed",
                               "time": "12:34",
-                              "timestamp": 1548311506,
+                              "timestamp": 1548311506000,
                               "packetsize": 32,
                               "identities": [
                                 {
@@ -1026,55 +1109,56 @@
                               },
                               "date": {
                                 "type": "string",
-                                "description": "The date from the timestamp based on the timezone parameter",
+                                "description": "The date from the timestamp based on the timezone parameter.",
                                 "example": "2020-07-12"
                               },
                               "destinationip": {
                                 "type": "string",
-                                "description": "destination IP for entry",
+                                "description": "The destination IP for the entry.",
                                 "example": "12.10.10.10"
                               },
                               "destinationport": {
                                 "type": "number",
-                                "description": "destination port for entry",
+                                "description": "The destination port for entry.",
                                 "example": 89
                               },
                               "identities": {
                                 "type": "array",
-                                "description": "array of identities for entry",
+                                "description": "The list of identities for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the identity",
+                                  "description": "The information about the identity.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the identity"
+                                      "description": "The ID of the identity."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "The label for the identity"
+                                      "description": "The descriptive label for the identity."
                                     },
                                     "type": {
                                       "type": "object",
-                                      "description": "The information about the identity including the type",
+                                      "description": "The information about the identity including the type.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "The ID of the origin type for the identity"
+                                          "description": "The ID of the origin type for the identity."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "The label of the origin type for the identity"
+                                          "description": "The label of the origin type for the identity."
                                         },
                                         "type": {
                                           "type": "string",
-                                          "description": "The name of the origin type for the identity"
+                                          "description": "The name of the origin type for the identity."
                                         }
                                       }
                                     },
                                     "deleted": {
                                       "type": "boolean",
-                                      "description": "Indicates whether the identity was deleted or not"
+                                      "description": "Indicates whether the identity was deleted.",
+                                      "example": true
                                     }
                                   },
                                   "required": [
@@ -1097,15 +1181,15 @@
                               },
                               "protocol": {
                                 "type": "object",
-                                "description": "IP protocol",
+                                "description": "The properties of the protocol.",
                                 "properties": {
                                   "id": {
                                     "type": "number",
-                                    "description": "The ID of protocol"
+                                    "description": "The ID of protocol."
                                   },
                                   "label": {
                                     "type": "string",
-                                    "description": "The name of the protocol"
+                                    "description": "The name of the protocol."
                                   }
                                 },
                                 "required": [
@@ -1120,29 +1204,37 @@
                               },
                               "severity": {
                                 "type": "string",
-                                "description": "The severity level of the rule, such as High, Medium, Low, and Very Low.",
-                                "example": "High"
+                                "description": "The severity level of the rule.",
+                                "enum": [
+                                  "HIGH",
+                                  "MEDIUM",
+                                  "LOW",
+                                  "VERY LOW"
+                                ],
+                                "example": "HIGH"
                               },
                               "signature": {
                                 "type": "object",
+                                "description": "The properties of the signature.",
                                 "properties": {
                                   "generatorid": {
                                     "type": "number",
-                                    "description": "Unique id assigned to the part of the IPS that generated the event."
+                                    "description": "The unique ID that is assigned to the part of the IPS, which generated the event."
                                   },
                                   "id": {
                                     "type": "number",
-                                    "description": "Used to uniquely identify signatures."
+                                    "description": "The ID that is used to uniquely identify signatures."
                                   },
                                   "label": {
                                     "type": "string",
-                                    "description": "A brief description of the signature."
+                                    "description": "A descriptive label for the the signature."
                                   },
                                   "cves": {
                                     "type": "array",
+                                    "description": "The list of common vulnerabilites and exposures (CVEs).",
                                     "items": {
                                       "type": "string",
-                                      "description": "An identifier for a known security vulnerability/exposure",
+                                      "description": "An identifier for a known security vulnerability/exposure.",
                                       "example": "cve-2015-0279"
                                     }
                                   }
@@ -1164,11 +1256,11 @@
                               },
                               "signaturelist": {
                                 "type": "object",
-                                "description": "A list of signature ID",
+                                "description": "The properties of the signature list.",
                                 "properties": {
                                   "id": {
                                     "type": "number",
-                                    "description": "Unique id assigned to a Default or Custom Signature List."
+                                    "description": "The unique ID assigned to a default or custom signature list."
                                   }
                                 },
                                 "required": [
@@ -1180,31 +1272,36 @@
                               },
                               "sourceip": {
                                 "type": "string",
-                                "description": "source IP for entry",
+                                "description": "The source IP for the entry.",
                                 "example": "10.11.10.10"
                               },
                               "sourceport": {
                                 "type": "number",
-                                "description": "source port for entry",
+                                "description": "The source port for the entry.",
                                 "example": 3000
                               },
                               "time": {
                                 "type": "string",
-                                "description": "The time in 24 hour format based on the timezone parameter",
+                                "description": "The time in 24-hour format based on the timezone parameter.",
                                 "example": "12:34"
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in milliseconds",
+                                "description": "The timestamp represented in milliseconds.",
                                 "example": 1594557263000
                               },
                               "type": {
                                 "type": "string",
-                                "description": "The type of the request. An intrusion request always has type intrusion."
+                                "description": "The type of the request. An intrusion request always has type intrusion.",
+                                "example": "intrusion"
                               },
                               "verdict": {
                                 "type": "string",
-                                "description": "verdict for entry"
+                                "description": "The verdict for the entry.",
+                                "enum": [
+                                  "detected"
+                                ],
+                                "example": "detected"
                               }
                             },
                             "required": [
@@ -1270,121 +1367,131 @@
                           },
                           {
                             "type": "object",
-                            "description": "The activity of the proxy",
+                            "description": "The activity of the proxy.",
                             "properties": {
                               "externalip": {
                                 "type": "string",
-                                "description": "external IP for entry"
+                                "description": "The external IP for the entry."
                               },
                               "internalip": {
                                 "type": "string",
-                                "description": "internal IP for entry"
+                                "description": "The internal IP for the entry."
                               },
                               "policycategories": {
                                 "type": "array",
-                                "description": "array of policy categories",
+                                "description": "The list of policy categories.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The category object",
+                                  "description": "The properties of the category.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the category"
+                                      "description": "The ID of the category."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "the human readable label of the category"
+                                      "description": "The descriptive label for the category."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of category"
+                                      "description": "The type of the category."
                                     },
                                     "integration": {
                                       "type": "boolean",
-                                      "description": "if the category is an integration"
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
                                     },
                                     "deprecated": {
                                       "type": "boolean",
-                                      "description": "if the category is a legacy category"
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
                                     }
                                   }
                                 }
                               },
                               "categories": {
                                 "type": "array",
-                                "description": "array of categories",
+                                "description": "The list of categories.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The category object",
+                                  "description": "The properties of the category.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the category"
+                                      "description": "The ID of the category."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "the human readable label of the category"
+                                      "description": "The descriptive label for the category."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of category"
+                                      "description": "The type of the category."
                                     },
                                     "integration": {
                                       "type": "boolean",
-                                      "description": "if the category is an integration"
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
                                     },
                                     "deprecated": {
                                       "type": "boolean",
-                                      "description": "if the category is a legacy category"
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
                                     }
                                   }
                                 }
                               },
                               "verdict": {
                                 "type": "string",
-                                "description": "verdict for entry"
+                                "description": "The verdict for the entry.",
+                                "enum": [
+                                  "allowed",
+                                  "blocked"
+                                ],
+                                "example": "allowed"
                               },
                               "timestamp": {
                                 "type": "number",
-                                "description": "The timestamp represented in milliseconds",
+                                "description": "The timestamp represented in milliseconds.",
                                 "example": 1594557263000
                               },
                               "identities": {
                                 "type": "array",
-                                "description": "array of identities for entry",
+                                "description": "The list of identities for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the identity",
+                                  "description": "The information about the identity.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the identity"
+                                      "description": "The ID of the identity."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "The label for the identity"
+                                      "description": "The descriptive label for the identity."
                                     },
                                     "type": {
                                       "type": "object",
-                                      "description": "The information about the identity including the type",
+                                      "description": "The information about the identity including the type.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "The ID of the origin type for the identity"
+                                          "description": "The ID of the origin type for the identity."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "The label of the origin type for the identity"
+                                          "description": "The label of the origin type for the identity."
                                         },
                                         "type": {
                                           "type": "string",
-                                          "description": "The name of the origin type for the identity"
+                                          "description": "The name of the origin type for the identity."
                                         }
                                       }
                                     },
                                     "deleted": {
                                       "type": "boolean",
-                                      "description": "Indicates whether the identity was deleted or not"
+                                      "description": "Indicates whether the identity was deleted.",
+                                      "example": true
                                     }
                                   },
                                   "required": [
@@ -1407,34 +1514,39 @@
                               },
                               "allapplications": {
                                 "type": "array",
-                                "description": "array of applications for entry",
+                                "description": "The list of applications for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -1442,7 +1554,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -1452,34 +1564,39 @@
                               },
                               "allowedapplications": {
                                 "type": "array",
-                                "description": "array of allowed applications for entry",
+                                "description": "The list of allowed applications for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -1487,7 +1604,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -1497,34 +1614,39 @@
                               },
                               "blockedapplications": {
                                 "type": "array",
-                                "description": "array of blocked applications for entry",
+                                "description": "The list of blocked applications for the entry.",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the application",
+                                  "description": "The information about the application.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "id of the application"
+                                      "description": "The ID of the application."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "label of the application"
+                                      "description": "The descriptive label for the application."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the application, NBAR or AVC"
+                                      "description": "The type of the application: NBAR or AVC.",
+                                      "enum": [
+                                        "NBAR",
+                                        "AVC"
+                                      ],
+                                      "example": "AVC"
                                     },
                                     "category": {
                                       "type": "object",
-                                      "description": "the category of the application",
+                                      "description": "The category of the application.",
                                       "properties": {
                                         "id": {
                                           "type": "number",
-                                          "description": "id of the application category"
+                                          "description": "The ID of the application category."
                                         },
                                         "label": {
                                           "type": "string",
-                                          "description": "label of the application category"
+                                          "description": "The label of the application category."
                                         }
                                       }
                                     }
@@ -1532,7 +1654,7 @@
                                   "example": {
                                     "id": 1,
                                     "label": "malware",
-                                    "type": "avc",
+                                    "type": "AVC",
                                     "category": {
                                       "id": 2,
                                       "label": "Education"
@@ -1542,31 +1664,31 @@
                               },
                               "responsefilename": {
                                 "type": "string",
-                                "description": "response filename for entry"
+                                "description": "The response filename for the entry."
                               },
                               "blockedfiletype": {
                                 "type": "string",
-                                "description": "blocked file type for entry"
+                                "description": "The blocked file type for the entry."
                               },
                               "bundleid": {
                                 "type": "number",
-                                "description": "The ID of the bundle"
+                                "description": "The ID of the bundle type."
                               },
                               "amp": {
                                 "type": "object",
-                                "description": "AMP disposition/score/malware",
+                                "description": "The properties of the AMP disposition and score for the malware.",
                                 "properties": {
                                   "score": {
                                     "type": "number",
-                                    "description": "AMP score"
+                                    "description": "The AMP score."
                                   },
                                   "disposition": {
                                     "type": "string",
-                                    "description": "AMP disposition"
+                                    "description": "The AMP disposition."
                                   },
                                   "malware": {
                                     "type": "string",
-                                    "description": "AMP malware"
+                                    "description": "The AMP malware."
                                   }
                                 },
                                 "required": [
@@ -1577,38 +1699,38 @@
                               },
                               "type": {
                                 "type": "string",
-                                "description": "type of the request. A proxy request is always of type 'proxy'."
+                                "description": "The type of the request. A proxy request is always of type 'proxy'."
                               },
                               "tenantcontrols": {
                                 "type": "boolean",
-                                "description": "if the request was part of a tenant control policy"
+                                "description": "Specifies whether the request is part of a tenant control policy."
                               },
                               "port": {
                                 "type": "number",
-                                "description": "request port",
+                                "description": "The port used to make the request.",
                                 "nullable": true
                               },
                               "antivirusthreats": {
                                 "type": "object",
-                                "description": "The information about the antivirus threats",
+                                "description": "The information about the antivirus threats.",
                                 "properties": {
                                   "puas": {
                                     "type": "array",
-                                    "description": "Potentially unwanted applications",
+                                    "description": "The list of potentially unwanted applications.",
                                     "items": {
                                       "type": "object"
                                     }
                                   },
                                   "viruses": {
                                     "type": "array",
-                                    "description": "Viruses",
+                                    "description": "The list of viruses.",
                                     "items": {
                                       "type": "string"
                                     }
                                   },
                                   "others": {
                                     "type": "array",
-                                    "description": "Other antivirus threats",
+                                    "description": "The list of other antivirus threats.",
                                     "items": {
                                       "type": "object"
                                     }
@@ -1622,6 +1744,7 @@
                               },
                               "policy": {
                                 "type": "object",
+                                "description": "The properties of the rules in the policy.",
                                 "required": [
                                   "destinationlistids",
                                   "ruleid",
@@ -1631,48 +1754,52 @@
                                 "properties": {
                                   "timebasedrule": {
                                     "type": "boolean",
-                                    "description": "whether the policy triggered a time-of-day rule"
+                                    "description": "Specify whether the policy triggered a time-of-day rule."
                                   },
                                   "destinationlistids": {
                                     "type": "array",
-                                    "description": "the destination lists that the policy triggered",
+                                    "description": "The list of destination lists that the rules triggered.",
                                     "items": {
                                       "type": "number"
                                     }
                                   },
                                   "ruleid": {
                                     "type": "number",
-                                    "description": "the rule ID for the policy",
+                                    "description": "The ID of the rule in the policy.",
                                     "nullable": true
                                   },
                                   "rulesetid": {
                                     "type": "number",
-                                    "description": "the rule set ID for the policy",
+                                    "description": "The ID of the ruleset in the policy.",
                                     "nullable": true
                                   }
                                 }
                               },
                               "requestmethod": {
                                 "type": "string",
-                                "description": "The HTTP request method that was made.",
+                                "description": "The HTTP request method.",
                                 "example": "GET"
                               },
                               "responsesize": {
                                 "type": "number",
-                                "description": "Response size in bytes."
+                                "description": "The response size in bytes."
                               },
                               "requestsize": {
                                 "type": "number",
-                                "description": "Request size in bytes."
+                                "description": "The response size in bytes."
                               },
                               "statuscode": {
                                 "type": "number",
-                                "description": "The HTTP status code; should always be 200 or 201.",
+                                "description": "The HTTP status code (`200` or `201`).",
+                                "enum": [
+                                  200,
+                                  201
+                                ],
                                 "example": 200
                               },
                               "useragent": {
                                 "type": "string",
-                                "description": "The browser agent that made the request."
+                                "description": "The name of the browser that made the request."
                               },
                               "referer": {
                                 "type": "string",
@@ -1688,14 +1815,15 @@
                               },
                               "isolated": {
                                 "type": "object",
+                                "description": "The properties of the isolated file.",
                                 "properties": {
                                   "state": {
                                     "type": "string",
-                                    "description": "The state of the isolated file"
+                                    "description": "The state of the isolated file."
                                   },
                                   "fileaction": {
                                     "type": "string",
-                                    "description": "The action taken for the file"
+                                    "description": "The action taken for the file."
                                   }
                                 },
                                 "required": [
@@ -1709,11 +1837,15 @@
                               },
                               "datalossprevention": {
                                 "type": "object",
-                                "description": "The information about the Data Loss Prevention state",
+                                "description": "The information about the Data Loss Prevention state.",
                                 "properties": {
                                   "state": {
                                     "type": "string",
-                                    "description": "If the request was Blocked for DLP. Either 'blocked' or ''"
+                                    "description": "Indicates the status of the DLP. The state is either `blocked` or the empty string (` `).",
+                                    "enum": [
+                                      "blocked",
+                                      ""
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -1725,7 +1857,7 @@
                               },
                               "securityoverridden": {
                                 "type": "boolean",
-                                "description": "Specifies whether Umbrella has security overrides."
+                                "description": "Specifies whether security overrides are configured."
                               },
                               "contenttype": {
                                 "type": "string",
@@ -1741,22 +1873,27 @@
                                 "type": "array",
                                 "items": {
                                   "type": "object",
+                                  "description": "The properties of the HTTP error.",
                                   "properties": {
                                     "type": {
                                       "type": "string",
-                                      "description": "type of the error `CertificateError` or `TLSError`"
+                                      "description": "The type of the error, either `CertificateError` or `TLSError`.",
+                                      "enum": [
+                                        "CertificateError",
+                                        "TLSError"
+                                      ]
                                     },
                                     "code": {
                                       "type": "number",
-                                      "description": "the http error code"
+                                      "description": "The HTTP error code."
                                     },
                                     "reason": {
                                       "type": "string",
-                                      "description": "the name of the error"
+                                      "description": "The name of the error."
                                     },
                                     "attributes": {
                                       "type": "object",
-                                      "description": "map of additional information about the error"
+                                      "description": "The properties of the additional information for the error."
                                     }
                                   }
                                 },
@@ -1766,30 +1903,31 @@
                                 "type": "array",
                                 "items": {
                                   "type": "object",
-                                  "description": "The information about the threat",
+                                  "description": "The information about the threat.",
                                   "properties": {
                                     "label": {
                                       "type": "string",
-                                      "description": "the threat name or label"
+                                      "description": "The descriptive label for the threat name."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of threat"
+                                      "description": "The type of the threat."
                                     }
                                   }
                                 }
                               },
                               "egress": {
                                 "type": "object",
-                                "description": "The information about the egress IP",
+                                "description": "The information about the egress IP.",
                                 "properties": {
                                   "ip": {
                                     "type": "string",
-                                    "description": "Egress IP"
+                                    "description": "The egress IP."
                                   },
                                   "type": {
                                     "type": "string",
-                                    "description": "Egress Type"
+                                    "description": "The type of the egress IP.",
+                                    "example": "shared"
                                   }
                                 },
                                 "required": [
@@ -1803,15 +1941,15 @@
                               },
                               "datacenter": {
                                 "type": "object",
-                                "description": "The information about the data center",
+                                "description": "The information about the data center.",
                                 "properties": {
                                   "id": {
                                     "type": "string",
-                                    "description": "Unique ID for the data center"
+                                    "description": "The unique ID for the data center."
                                   },
                                   "label": {
                                     "type": "string",
-                                    "description": "Name of the data center"
+                                    "description": "The name of the data center."
                                   }
                                 },
                                 "required": [
@@ -1825,22 +1963,22 @@
                               },
                               "date": {
                                 "type": "string",
-                                "description": "The date from the timestamp based on the timezone parameter",
+                                "description": "The date from the timestamp based on the timezone parameter.",
                                 "example": "2020-07-12"
                               },
                               "time": {
                                 "type": "string",
-                                "description": "The time in 24 hour format based on the timezone parameter",
+                                "description": "The time in 24-hour format based on the timezone parameter.",
                                 "example": "12:34"
                               },
                               "destinationip": {
                                 "type": "string",
-                                "description": "destination IP for entry",
+                                "description": "The destination IP for the entry.",
                                 "example": "12.10.10.10"
                               },
                               "url": {
                                 "type": "string",
-                                "description": "The URL requested"
+                                "description": "The URL that was requested."
                               }
                             },
                             "required": [
@@ -2001,7 +2139,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -2036,7 +2174,7 @@
                       ],
                       "verdict": "allowed",
                       "domain": "google.com",
-                      "timestamp": 1548311506,
+                      "timestamp": 1731002169000,
                       "time": "06:31:46",
                       "date": "2019-01-24",
                       "identities": [
@@ -2316,7 +2454,7 @@
           "Top Categories"
         ],
         "summary": "Get Top Categories (All)",
-        "description": "List the categories that received the greatest number of requests.\nOrder the number of requests in descending order.",
+        "description": "List the categories that received the greatest number of requests.\nOrder the number of requests in descending order.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getTopCategories",
         "security": [
           {
@@ -2415,7 +2553,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -2424,7 +2562,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -2433,7 +2571,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -2442,7 +2580,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -2451,7 +2589,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -2460,7 +2598,7 @@
           {
             "name": "sha256",
             "in": "query",
-            "description": "A SHA-256 hash",
+            "description": "A SHA-256 hash.",
             "schema": {
               "type": "string"
             },
@@ -2487,7 +2625,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -2495,7 +2633,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -2503,7 +2641,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -2512,7 +2650,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -2521,16 +2659,19 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
@@ -2558,45 +2699,48 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "description": "The information about the top category requests",
+                        "description": "The information about the top category requests.",
                         "properties": {
                           "rank": {
                             "type": "number",
-                            "description": "the rank of the result based on the number of requests"
+                            "description": "The rank of the result based on the number of requests."
                           },
                           "category": {
                             "type": "object",
-                            "description": "The category object",
+                            "description": "The properties of the category.",
                             "properties": {
                               "id": {
                                 "type": "number",
-                                "description": "The ID of the category"
+                                "description": "The ID of the category."
                               },
                               "label": {
                                 "type": "string",
-                                "description": "the human readable label of the category"
+                                "description": "The descriptive label for the category."
                               },
                               "type": {
                                 "type": "string",
-                                "description": "the type of category"
+                                "description": "The type of the category."
                               },
                               "integration": {
                                 "type": "boolean",
-                                "description": "if the category is an integration"
+                                "description": "Specifies whether the category is an integration.",
+                                "example": true
                               },
                               "deprecated": {
                                 "type": "boolean",
-                                "description": "if the category is a legacy category"
+                                "description": "Specifies whether the category is a legacy category.",
+                                "example": true
                               }
                             }
                           },
                           "count": {
                             "type": "number",
-                            "description": "number of requests made that match this category"
+                            "description": "The number of requests that match this category."
                           },
                           "bandwidth": {
                             "type": "number",
-                            "nullable": true
+                            "nullable": true,
+                            "description": "The amount of bandwidth"
                           }
                         },
                         "required": [
@@ -2618,7 +2762,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -2871,8 +3015,8 @@
           "Reports",
           "Organization Requests by Timerange and Category"
         ],
-        "summary": "Get Requests by Timerange and Category (ALL)",
-        "description": "List the activity volume within the timeframe by category.",
+        "summary": "Get Requests by Timerange and Category (All)",
+        "description": "List the activity volume within the timeframe by category.\n\n**Access Scope:** Reports > Granular Events > Read-Only",
         "operationId": "getRequestsByTimerangeAndCategory",
         "security": [
           {
@@ -2971,7 +3115,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -2980,7 +3124,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -2989,7 +3133,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -2998,7 +3142,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -3007,7 +3151,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -3034,7 +3178,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -3042,7 +3186,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -3050,7 +3194,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -3059,7 +3203,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -3068,25 +3212,33 @@
           {
             "name": "timerange",
             "in": "header",
-            "description": "A string that represents a range of time (for example: `minute`, `hour`, or `day`).\nIf the header is not set, the header value defaults to `hour`.",
+            "description": "A string that represents a range of time.\nIf the header is not set, the header value defaults to `hour`.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "minute",
+                "hour",
+                "day"
+              ]
             },
             "example": "minute"
           },
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
@@ -3120,58 +3272,61 @@
                           "timestamp"
                         ],
                         "type": "object",
-                        "description": "The information about the categories seen by hour",
+                        "description": "The information about the categories seen by hour.",
                         "properties": {
                           "timestamp": {
                             "type": "number",
-                            "description": "The timestamp represented in milliseconds for this bucket",
+                            "description": "The timestamp represented in milliseconds for the bucket.",
                             "example": 1594557263000
                           },
                           "date": {
                             "type": "string",
-                            "description": "The date from the timestamp based on the timezone parameter",
+                            "description": "The date from the timestamp based on the timezone parameter.",
                             "example": "2020-07-12"
                           },
                           "time": {
                             "type": "string",
-                            "description": "The time in 24 hour format based on the timezone parameter",
+                            "description": "The time in 24-hour format based on the timezone parameter.",
                             "example": "12:34"
                           },
                           "counts": {
                             "type": "array",
+                            "description": "The list of counts for the category.",
                             "items": {
                               "type": "object",
-                              "description": "The information about the category counts",
+                              "description": "The information about the category counts.",
                               "properties": {
                                 "category": {
                                   "type": "object",
-                                  "description": "The category object",
+                                  "description": "The properties of the category.",
                                   "properties": {
                                     "id": {
                                       "type": "number",
-                                      "description": "The ID of the category"
+                                      "description": "The ID of the category."
                                     },
                                     "label": {
                                       "type": "string",
-                                      "description": "the human readable label of the category"
+                                      "description": "The descriptive label for the category."
                                     },
                                     "type": {
                                       "type": "string",
-                                      "description": "the type of category"
+                                      "description": "The type of the category."
                                     },
                                     "integration": {
                                       "type": "boolean",
-                                      "description": "if the category is an integration"
+                                      "description": "Specifies whether the category is an integration.",
+                                      "example": true
                                     },
                                     "deprecated": {
                                       "type": "boolean",
-                                      "description": "if the category is a legacy category"
+                                      "description": "Specifies whether the category is a legacy category.",
+                                      "example": true
                                     }
                                   }
                                 },
                                 "requests": {
                                   "type": "number",
-                                  "description": "total number of requests for category"
+                                  "description": "The total number of requests for the category."
                                 }
                               },
                               "required": [
@@ -3206,7 +3361,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -3466,7 +3621,7 @@
           "Total Requests"
         ],
         "summary": "Get Total Requests (All)",
-        "description": "List the count of total requests for the given filters.",
+        "description": "Get the count of the total requests.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getTotalRequests",
         "security": [
           {
@@ -3544,7 +3699,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -3553,7 +3708,7 @@
           {
             "name": "ports",
             "in": "query",
-            "description": "A port number or comma-delimited list of port number.",
+            "description": "A port number or comma-delimited list of port numbers.",
             "schema": {
               "type": "string"
             },
@@ -3562,7 +3717,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -3571,7 +3726,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -3580,7 +3735,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -3589,7 +3744,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -3598,7 +3753,7 @@
           {
             "name": "ruleid",
             "in": "query",
-            "description": "A firewall policy rule ID.",
+            "description": "The firewall policy rule ID.",
             "schema": {
               "type": "number"
             },
@@ -3607,7 +3762,7 @@
           {
             "name": "sha256",
             "in": "query",
-            "description": "A SHA-256 hash",
+            "description": "A SHA-256 hash.",
             "schema": {
               "type": "string"
             },
@@ -3634,7 +3789,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -3642,7 +3797,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -3650,7 +3805,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -3659,7 +3814,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -3668,16 +3823,19 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
@@ -3703,10 +3861,13 @@
                   "properties": {
                     "data": {
                       "type": "object",
+                      "description": "The total number of requests.",
                       "properties": {
                         "count": {
-                          "type": "number",
-                          "description": "The total number of requests"
+                          "type": "integer",
+                          "format": "int32",
+                          "description": "The total number of API requests.",
+                          "example": 450
                         }
                       },
                       "required": [
@@ -3718,7 +3879,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -3963,7 +4124,7 @@
           "Total Requests"
         ],
         "summary": "Get Total Requests (By Type)",
-        "description": "Get the count of total requests for the given filters.",
+        "description": "Get the count of the total requests for the request type.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getTotalRequestsByType",
         "security": [
           {
@@ -3985,7 +4146,7 @@
           {
             "name": "type",
             "in": "path",
-            "description": "Specify the type of traffic. Valid values: `dns`, `proxy`, `firewall`, or `ip`.",
+            "description": "Specify the type of traffic.",
             "required": true,
             "schema": {
               "type": "string",
@@ -4057,7 +4218,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -4066,7 +4227,7 @@
           {
             "name": "ports",
             "in": "query",
-            "description": "A port number or comma-delimited list of port number.",
+            "description": "A port number or comma-delimited list of port numbers.",
             "schema": {
               "type": "string"
             },
@@ -4075,7 +4236,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -4084,7 +4245,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -4093,7 +4254,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -4102,7 +4263,7 @@
           {
             "name": "ruleid",
             "in": "query",
-            "description": "A firewall policy rule ID.",
+            "description": "The firewall policy rule ID.",
             "schema": {
               "type": "number"
             },
@@ -4111,7 +4272,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -4138,7 +4299,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -4146,7 +4307,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -4154,7 +4315,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -4163,7 +4324,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -4172,16 +4333,19 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
@@ -4207,10 +4371,13 @@
                   "properties": {
                     "data": {
                       "type": "object",
+                      "description": "The total number of requests.",
                       "properties": {
                         "count": {
-                          "type": "number",
-                          "description": "The total number of requests"
+                          "type": "integer",
+                          "format": "int32",
+                          "description": "The total number of API requests.",
+                          "example": 450
                         }
                       },
                       "required": [
@@ -4222,7 +4389,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -4467,7 +4634,7 @@
           "Summary"
         ],
         "summary": "Get Summary (All)",
-        "description": "Get the summary report",
+        "description": "Get the summary report.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getSummary",
         "security": [
           {
@@ -4566,7 +4733,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -4575,7 +4742,7 @@
           {
             "name": "ports",
             "in": "query",
-            "description": "A port number or comma-delimited list of port number.",
+            "description": "A port number or comma-delimited list of port numbers.",
             "schema": {
               "type": "string"
             },
@@ -4584,7 +4751,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -4593,7 +4760,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -4602,7 +4769,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -4611,7 +4778,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -4620,7 +4787,7 @@
           {
             "name": "ruleid",
             "in": "query",
-            "description": "A firewall policy rule ID.",
+            "description": "The firewall policy rule ID.",
             "schema": {
               "type": "number"
             },
@@ -4656,7 +4823,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -4664,7 +4831,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -4672,7 +4839,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -4681,7 +4848,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -4690,20 +4857,32 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
             "example": true
+          },
+          {
+            "name": "timezone",
+            "in": "query",
+            "description": "Display the timestamp of the traffic events in the specified timezone.\nFor the timezone, provide a continent and city separated by an url-encoded forward slash ('/'), for example: timezone='ASIA%2fCALCUTTA'.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "ASIA%2fCALCUTTA"
           }
         ],
         "responses": {
@@ -4716,63 +4895,63 @@
                   "properties": {
                     "data": {
                       "type": "object",
-                      "description": "The summary information about the requests",
+                      "description": "The summary information about the requests.",
                       "properties": {
                         "applications": {
                           "type": "number",
-                          "description": "total number of applications (avc or total)"
+                          "description": "The total number of applications (avc or total)."
                         },
                         "domains": {
                           "type": "number",
-                          "description": "total number of domains"
+                          "description": "The total number of domains."
                         },
                         "requestsblocked": {
                           "type": "number",
-                          "description": "total number of blocked requests"
+                          "description": "The total number of domains."
                         },
                         "filetypes": {
                           "type": "number",
-                          "description": "total number of file types"
+                          "description": "The total number of domains."
                         },
                         "policycategories": {
                           "type": "number",
-                          "description": "total number of blocked categories"
+                          "description": "The total number of blocked categories."
                         },
                         "policyrequests": {
                           "type": "number",
-                          "description": "total number of policy requests"
+                          "description": "The total number of policy requests."
                         },
                         "requests": {
                           "type": "number",
-                          "description": "total number of requests"
+                          "description": "The total number of requests."
                         },
                         "requestsallowed": {
                           "type": "number",
-                          "description": "total number of allowed requests"
+                          "description": "The total number of allowed requests."
                         },
                         "categories": {
                           "type": "number",
-                          "description": "total number of categories"
+                          "description": "The total number of categories."
                         },
                         "identitytypes": {
                           "type": "number",
-                          "description": "total number of identity types"
+                          "description": "The total number of identity types."
                         },
                         "applicationsblocked": {
                           "type": "number",
-                          "description": "total number of blocked applications"
+                          "description": "The total number of blocked applications."
                         },
                         "files": {
                           "type": "number",
-                          "description": "total number of files"
+                          "description": "The total number of files."
                         },
                         "identities": {
                           "type": "number",
-                          "description": "total number of identities"
+                          "description": "The total number of identities."
                         },
                         "applicationsallowed": {
                           "type": "number",
-                          "description": "total number of allowed applications"
+                          "description": "The total number of allowed applications."
                         }
                       },
                       "required": [
@@ -4810,7 +4989,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }
@@ -5068,7 +5247,7 @@
           "Summary"
         ],
         "summary": "Get Summary By Type",
-        "description": "Get the summary by traffic type.",
+        "description": "Get the summary of requests by the traffic type.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
         "operationId": "getSummaryByType",
         "security": [
           {
@@ -5090,7 +5269,7 @@
           {
             "name": "type",
             "in": "path",
-            "description": "Specify the type of traffic. Valid values: `dns`, `proxy`, `firewall`, or `ip`.",
+            "description": "Specify the type of traffic.",
             "required": true,
             "schema": {
               "type": "string",
@@ -5183,7 +5362,7 @@
           {
             "name": "ip",
             "in": "query",
-            "description": "An IP address",
+            "description": "An IP address.",
             "schema": {
               "type": "string"
             },
@@ -5192,7 +5371,7 @@
           {
             "name": "ports",
             "in": "query",
-            "description": "A port number or comma-delimited list of port number.",
+            "description": "A port number or comma-delimited list of port numbers.",
             "schema": {
               "type": "string"
             },
@@ -5201,7 +5380,7 @@
           {
             "name": "identityids",
             "in": "query",
-            "description": "An identity ID or comma-delimited list of identity ID.",
+            "description": "An identity ID or comma-delimited list of identity IDs.",
             "schema": {
               "type": "string"
             },
@@ -5210,7 +5389,7 @@
           {
             "name": "identitytypes",
             "in": "query",
-            "description": "An identity type or comma-delimited list of identity type.",
+            "description": "An identity type or comma-delimited list of identity types.",
             "schema": {
               "type": "string"
             },
@@ -5219,7 +5398,7 @@
           {
             "name": "applicationid",
             "in": "query",
-            "description": "An application ID.",
+            "description": "The ID of the application.",
             "schema": {
               "type": "string"
             },
@@ -5228,7 +5407,7 @@
           {
             "name": "verdict",
             "in": "query",
-            "description": "A verdict string or comma-delimited list of verdict string.",
+            "description": "A string or comma-delimited string that describes whether the traffic can reach the destination.",
             "schema": {
               "type": "string"
             },
@@ -5237,7 +5416,7 @@
           {
             "name": "ruleid",
             "in": "query",
-            "description": "A firewall policy rule ID.",
+            "description": "The firewall policy rule ID.",
             "schema": {
               "type": "number"
             },
@@ -5273,7 +5452,7 @@
           {
             "name": "threats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             }
@@ -5281,7 +5460,7 @@
           {
             "name": "threattypes",
             "in": "query",
-            "description": "A threat type or comma-delimited list of threat type.",
+            "description": "A threat type or comma-delimited list of threat types.",
             "schema": {
               "type": "string"
             }
@@ -5289,7 +5468,7 @@
           {
             "name": "ampdisposition",
             "in": "query",
-            "description": "An AMP disposition string or a comma-delimited list of AMP disposition string.",
+            "description": "An AMP disposition string or a comma-delimited list of AMP disposition strings.",
             "schema": {
               "type": "string"
             },
@@ -5298,7 +5477,7 @@
           {
             "name": "antivirusthreats",
             "in": "query",
-            "description": "A threat name or comma-delimited list of threat name.",
+            "description": "A threat name or comma-delimited list of threat names.",
             "schema": {
               "type": "string"
             },
@@ -5307,20 +5486,32 @@
           {
             "name": "datalosspreventionstate",
             "in": "query",
-            "description": "A string that describes the status of a destination (for example: 'blocked').\nFilter data for requests that were blocked to protect data.",
+            "description": "A string that describes the status of a destination.\nFilter for requests that are blocked by the DLP layer security.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "blocked"
+              ]
             },
             "example": "blocked"
           },
           {
             "name": "filternoisydomains",
             "in": "query",
-            "description": "filter out domains that generate a lot of insignificant traffic (noise).",
+            "description": "Filter out domains that generate a lot of insignificant traffic (noise).",
             "schema": {
               "type": "boolean"
             },
             "example": true
+          },
+          {
+            "name": "timezone",
+            "in": "query",
+            "description": "Display the timestamp of the traffic events in the specified timezone.\nFor the timezone, provide a continent and city separated by an url-encoded forward slash ('/'), for example: timezone='ASIA%2fCALCUTTA'.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "ASIA%2fCALCUTTA"
           }
         ],
         "responses": {
@@ -5333,63 +5524,63 @@
                   "properties": {
                     "data": {
                       "type": "object",
-                      "description": "The summary information about the requests",
+                      "description": "The summary information about the requests.",
                       "properties": {
                         "applications": {
                           "type": "number",
-                          "description": "total number of applications (avc or total)"
+                          "description": "The total number of applications (avc or total)."
                         },
                         "domains": {
                           "type": "number",
-                          "description": "total number of domains"
+                          "description": "The total number of domains."
                         },
                         "requestsblocked": {
                           "type": "number",
-                          "description": "total number of blocked requests"
+                          "description": "The total number of domains."
                         },
                         "filetypes": {
                           "type": "number",
-                          "description": "total number of file types"
+                          "description": "The total number of domains."
                         },
                         "policycategories": {
                           "type": "number",
-                          "description": "total number of blocked categories"
+                          "description": "The total number of blocked categories."
                         },
                         "policyrequests": {
                           "type": "number",
-                          "description": "total number of policy requests"
+                          "description": "The total number of policy requests."
                         },
                         "requests": {
                           "type": "number",
-                          "description": "total number of requests"
+                          "description": "The total number of requests."
                         },
                         "requestsallowed": {
                           "type": "number",
-                          "description": "total number of allowed requests"
+                          "description": "The total number of allowed requests."
                         },
                         "categories": {
                           "type": "number",
-                          "description": "total number of categories"
+                          "description": "The total number of categories."
                         },
                         "identitytypes": {
                           "type": "number",
-                          "description": "total number of identity types"
+                          "description": "The total number of identity types."
                         },
                         "applicationsblocked": {
                           "type": "number",
-                          "description": "total number of blocked applications"
+                          "description": "The total number of blocked applications."
                         },
                         "files": {
                           "type": "number",
-                          "description": "total number of files"
+                          "description": "The total number of files."
                         },
                         "identities": {
                           "type": "number",
-                          "description": "total number of identities"
+                          "description": "The total number of identities."
                         },
                         "applicationsallowed": {
                           "type": "number",
-                          "description": "total number of allowed applications"
+                          "description": "The total number of allowed applications."
                         }
                       },
                       "required": [
@@ -5427,7 +5618,7 @@
                     },
                     "meta": {
                       "type": "object",
-                      "description": "Meta data",
+                      "description": "The properties of the metadata.",
                       "example": {
                       }
                     }

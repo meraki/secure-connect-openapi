@@ -14964,7 +14964,7 @@
           "Destinations"
         ],
         "summary": "Delete Destinations from Destination List",
-        "description": "Remove destinations from the destination list.\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the\nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",
+        "description": "Remove destinations from the destination list.\n\n**Note:** Accepts a list that contains no more than 500 destination IDs.\n\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the\nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",
         "operationId": "deleteDestinations",
         "security": [
           {

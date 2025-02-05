@@ -12649,6 +12649,7 @@
                   "destinations": {
                     "type": "array",
                     "description": "The list of destinations.",
+                    "maxItems": 500,
                     "items": {
                       "type": "object",
                       "description": "The properties of the destination.",
@@ -15005,6 +15006,7 @@
                   "type": "integer",
                   "example": 1234
                 },
+                "maxItems": 500,
                 "description": "The list of destination ID.",
                 "example": [
                   1234,

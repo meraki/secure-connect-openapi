@@ -6088,7 +6088,7 @@
               "format": "date-time"
             },
             "example": "2022-01-01T00:00:00.000Z",
-            "description": "Filter the result set on the time when the label was updated."
+            "description": "Filter the result set on the date and time (ISO 8601 timestamp) when the label was updated."
           }
         ],
         "security": [
@@ -6205,7 +6205,7 @@
                                     },
                                     "blockedRequests": {
                                       "type": "integer",
-                                      "description": "The number of DNS requests blocked by Umbrella, based on policy configurations.",
+                                      "description": "The number of DNS requests blocked, which is based on the policy configurations.",
                                       "example": 50
                                     }
                                   },
@@ -6258,7 +6258,7 @@
                                 },
                                 {
                                   "type": "object",
-                                  "description": "The properties of the app's requests that are managed by the Umbrella cloud-delivered firewall (CDFW).",
+                                  "description": "The properties of the app's requests that are managed by the cloud-delivered firewall (CDFW).",
                                   "properties": {
                                     "name": {
                                       "type": "string",
@@ -6297,13 +6297,13 @@
                           },
                           "firstDetected": {
                             "type": "string",
-                            "description": "The date when the app was first detected.",
+                            "description": "The date and time (ISO 8601 timestamp) when the app was first detected.",
                             "format": "date-time",
                             "example": "2022-01-01T00:00:00.000Z"
                           },
                           "lastDetected": {
                             "type": "string",
-                            "description": "The date when the app was last detected.",
+                            "description": "The date and time (ISO 8601 timestamp) when the app was last detected.",
                             "format": "date-time",
                             "example": "2022-01-01T00:00:00.000Z"
                           }
@@ -6326,6 +6326,21 @@
                           "lastDetected": "2022-01-01T00:00:00.000Z"
                         }
                       }
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "description": "The index of the current page in the collection.",
+                      "example": 1
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "description": "The total number of pages in the collection.",
+                      "example": 100
+                    },
+                    "itemsCount": {
+                      "type": "integer",
+                      "description": "The number of items in the collection.",
+                      "example": 10
                     }
                   },
                   "example": {
@@ -6347,7 +6362,10 @@
                         "firstDetected": "2022-01-01T00:00:00.000Z",
                         "lastDetected": "2022-01-01T00:00:00.000Z"
                       }
-                    ]
+                    ],
+                    "currentPage": 1,
+                    "totalPages": 126,
+                    "itemsCount": 251
                   }
                 },
                 "example": {
@@ -6381,7 +6399,10 @@
                       "firstDetected": "2022-01-01T00:00:00.000Z",
                       "lastDetected": "2022-01-01T00:00:00.000Z"
                     }
-                  ]
+                  ],
+                  "currentPage": 1,
+                  "totalPages": 126,
+                  "itemsCount": 251
                 }
               }
             }
@@ -6648,7 +6669,7 @@
                               },
                               "blockedRequests": {
                                 "type": "integer",
-                                "description": "The number of DNS requests blocked by Umbrella, based on policy configurations.",
+                                "description": "The number of DNS requests blocked, which is based on the policy configurations.",
                                 "example": 50
                               }
                             },
@@ -6701,7 +6722,7 @@
                           },
                           {
                             "type": "object",
-                            "description": "The properties of the app's requests that are managed by the Umbrella cloud-delivered firewall (CDFW).",
+                            "description": "The properties of the app's requests that are managed by the cloud-delivered firewall (CDFW).",
                             "properties": {
                               "name": {
                                 "type": "string",
@@ -6741,12 +6762,12 @@
                     "firstDetected": {
                       "type": "string",
                       "format": "date-time",
-                      "description": "The date when the app was first detected.",
+                      "description": "The date and time (ISO 8601 timestamp) when the app was first detected.",
                       "example": "2022-01-01T00:00:00.000Z"
                     },
                     "lastDetected": {
                       "type": "string",
-                      "description": "The date when the app was last detected.",
+                      "description": "The date and time (ISO 8601 timestamp) when the app was last detected.",
                       "format": "date-time",
                       "example": "2022-01-01T00:00:00.000Z"
                     }

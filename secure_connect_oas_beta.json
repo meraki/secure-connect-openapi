@@ -14,7 +14,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Activity"
+          "Activity",
+          "Umbrella"
         ],
         "summary": "Get Activities (All)",
         "description": "List all activities (dns/proxy/firewall/intrusion) within the timeframe.\n**Note:** The IP activity report is not available.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -2451,7 +2452,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Top Categories"
+          "Top Categories",
+          "Umbrella"
         ],
         "summary": "Get Top Categories (All)",
         "description": "List the categories that received the greatest number of requests.\nOrder the number of requests in descending order.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -2494,23 +2496,12 @@
             "example": "1640010300000"
           },
           {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of records to return from the collection.",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "default": 100
-            },
-            "example": 100
-          },
-          {
             "name": "offset",
             "in": "query",
             "description": "A number that represents an index in the collection.",
+            "required": true,
             "schema": {
-              "type": "number",
-              "default": 0
+              "type": "number"
             },
             "example": 0
           },
@@ -3013,7 +3004,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Organization Requests by Timerange and Category"
+          "Organization Requests by Timerange and Category",
+          "Umbrella"
         ],
         "summary": "Get Requests by Timerange and Category (All)",
         "description": "List the activity volume within the timeframe by category.\n\n**Access Scope:** Reports > Granular Events > Read-Only",
@@ -3618,7 +3610,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Total Requests"
+          "Total Requests",
+          "Umbrella"
         ],
         "summary": "Get Total Requests (All)",
         "description": "Get the count of the total requests.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -4121,7 +4114,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Total Requests"
+          "Total Requests",
+          "Umbrella"
         ],
         "summary": "Get Total Requests (By Type)",
         "description": "Get the count of the total requests for the request type.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -4631,7 +4625,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Summary"
+          "Summary",
+          "Umbrella"
         ],
         "summary": "Get Summary (All)",
         "description": "Get the summary report.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -5244,7 +5239,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Summary"
+          "Summary",
+          "Umbrella"
         ],
         "summary": "Get Summary By Type",
         "description": "Get the summary of requests by the traffic type.\n\n**Access Scope:** Reports > Aggregations > Read-Only",
@@ -5873,7 +5869,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Applications"
+          "Applications",
+          "Umbrella"
         ],
         "summary": "List Applications",
         "description": "List all discovered applications.",
@@ -6521,7 +6518,8 @@
       "get": {
         "tags": [
           "Reports",
-          "Applications"
+          "Applications",
+          "Umbrella"
         ],
         "summary": "Get Application",
         "description": "Get an application by ID.",
@@ -15429,6 +15427,9 @@
     },
     {
       "name": "Activity"
+    },
+    {
+      "name": "Umbrella"
     },
     {
       "name": "Top Categories"

@@ -6979,7 +6979,8 @@
         "description": "List the information about the IPsec-enabled data centers.\nThe data center information includes the IP address and location details.",
         "tags": [
           "Deployments",
-          "Data Center"
+          "Data Center",
+          "Umbrella"
         ],
         "responses": {
           "200": {
@@ -7344,7 +7345,8 @@
       "post": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "Create Network Device",
         "description": "Create a network device.",
@@ -7664,7 +7666,8 @@
       "get": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "List Network Devices",
         "description": "List the network devices.",
@@ -7935,7 +7938,8 @@
       "patch": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "Update Network Device",
         "description": "Update a network device.",
@@ -8239,7 +8243,8 @@
       "get": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "Get Network Device",
         "description": "Get a network device.",
@@ -8513,7 +8518,8 @@
       "delete": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "Delete Network Device",
         "description": "Remove a network device.",
@@ -8568,12 +8574,6 @@
               }
             },
             "content": {
-              "application/json": {
-                "schema": {
-                },
-                "example": {
-                }
-              }
             }
           },
           "400": {
@@ -8727,7 +8727,8 @@
       "get": {
         "tags": [
           "Deployments",
-          "Network Devices"
+          "Network Devices",
+          "Umbrella"
         ],
         "summary": "List Policies for Network Device",
         "description": "List the Umbrella policies associated with a network device.\nIf no filters are supplied, Umbrella returns the DNS policies.",
@@ -9024,7 +9025,8 @@
         ],
         "tags": [
           "Deployments",
-          "Organization Tunnel"
+          "Organization Tunnel",
+          "Umbrella"
         ],
         "parameters": [
           {
@@ -9807,7 +9809,8 @@
         ],
         "tags": [
           "Deployments",
-          "Organization Tunnel"
+          "Organization Tunnel",
+          "Umbrella"
         ],
         "requestBody": {
           "description": "The tunnel to create.",
@@ -10437,7 +10440,8 @@
         ],
         "tags": [
           "Deployments",
-          "Organization Tunnel"
+          "Organization Tunnel",
+          "Umbrella"
         ],
         "responses": {
           "200": {
@@ -10909,7 +10913,8 @@
         ],
         "tags": [
           "Deployments",
-          "Organization Tunnel"
+          "Organization Tunnel",
+          "Umbrella"
         ],
         "parameters": [
           {
@@ -11378,7 +11383,8 @@
         ],
         "tags": [
           "Deployments",
-          "Organization Tunnel"
+          "Organization Tunnel",
+          "Umbrella"
         ],
         "responses": {
           "200": {
@@ -11732,7 +11738,8 @@
       "get": {
         "tags": [
           "Deployments",
-          "Policy"
+          "Policy",
+          "Umbrella"
         ],
         "summary": "List Policies",
         "description": "List the Umbrella policies. You can filter by policy type.\nIf you do not specify a policy type, Umbrella returns the DNS policies.",
@@ -12154,7 +12161,8 @@
       "get": {
         "tags": [
           "Policies",
-          "Destination Lists"
+          "Destination Lists",
+          "Umbrella"
         ],
         "description": "Get the destination lists in your organization.",
         "summary": "Get Destination Lists",
@@ -12610,7 +12618,8 @@
       "post": {
         "tags": [
           "Policies",
-          "Destination Lists"
+          "Destination Lists",
+          "Umbrella"
         ],
         "description": "Create a destination list in your organization.",
         "summary": "Create Destination List",
@@ -13094,7 +13103,8 @@
       "patch": {
         "tags": [
           "Policies",
-          "Destination Lists"
+          "Destination Lists",
+          "Umbrella"
         ],
         "description": "Update a destination list in your organization.",
         "summary": "Update Destination List",
@@ -13521,7 +13531,8 @@
       "delete": {
         "tags": [
           "Policies",
-          "Destination Lists"
+          "Destination Lists",
+          "Umbrella"
         ],
         "summary": "Delete Destination List",
         "description": "Delete a destination list from your organization.",
@@ -13784,7 +13795,8 @@
       "get": {
         "tags": [
           "Policies",
-          "Destination Lists"
+          "Destination Lists",
+          "Umbrella"
         ],
         "summary": "Get Destination List",
         "description": "Get a destination list.",
@@ -14171,7 +14183,8 @@
       "get": {
         "tags": [
           "Policies",
-          "Destinations"
+          "Destinations",
+          "Umbrella"
         ],
         "description": "Get destinations in a destination list.",
         "summary": "Get Destinations in Destination List",
@@ -14532,7 +14545,8 @@
       "post": {
         "tags": [
           "Policies",
-          "Destinations"
+          "Destinations",
+          "Umbrella"
         ],
         "summary": "Add Destinations to Destination List",
         "description": "Add destinations to a destination list.",
@@ -14981,7 +14995,8 @@
       "delete": {
         "tags": [
           "Policies",
-          "Destinations"
+          "Destinations",
+          "Umbrella"
         ],
         "summary": "Delete Destinations from Destination List",
         "description": "Remove destinations from the destination list.\n\n**Note:** Accepts a list that contains no more than 500 destination IDs.\n\nYou can retrieve a list of the destinations in the destination list through the GET `/destinationlists/{destinationListId}/destinations` operation.\nThen, to remove destinations in a destination list, provide a list of destination IDs in the request body of the\nDELETE `/destinationlists/{destinationListId}/destinations/remove` operation.",

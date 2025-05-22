@@ -4679,17 +4679,6 @@
             "example": 0
           },
           {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of records to return from the collection.",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "default": 100
-            },
-            "example": 100
-          },
-          {
             "name": "domains",
             "in": "query",
             "description": "A domain name or comma-delimited list of domain name.",

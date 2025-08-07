@@ -22,9 +22,7 @@
         "operationId": "getActivities",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -770,9 +768,7 @@
                               ],
                               "querytype": "MX",
                               "returncode": 2,
-                              "blockedapplications": [
-
-                              ],
+                              "blockedapplications": [],
                               "type": "dns"
                             }
                           },
@@ -2042,15 +2038,9 @@
                                 "state": ""
                               },
                               "antivirusthreats": {
-                                "puas": [
-
-                                ],
-                                "viruses": [
-
-                                ],
-                                "others": [
-
-                                ]
+                                "puas": [],
+                                "viruses": [],
+                                "others": []
                               },
                               "internalip": "192.168.1.43",
                               "referer": "",
@@ -2064,18 +2054,14 @@
                                 "score": 0,
                                 "malware": ""
                               },
-                              "policycategories": [
-
-                              ],
+                              "policycategories": [],
                               "type": "proxy",
                               "requestsize": 1996,
                               "port": 443,
                               "policy": {
                                 "ruleid": 0,
                                 "rulesetid": 0,
-                                "destinationlistids": [
-
-                                ],
+                                "destinationlistids": [],
                                 "timebasedrule": false
                               },
                               "forwardingmethod": "",
@@ -2104,12 +2090,8 @@
                               "warnstatus": "",
                               "sha256": "",
                               "timestamp": 1645226982000,
-                              "blockedapplications": [
-
-                              ],
-                              "allowedapplications": [
-
-                              ],
+                              "blockedapplications": [],
+                              "allowedapplications": [],
                               "identities": [
                                 {
                                   "id": 1,
@@ -2126,12 +2108,8 @@
                                 "label": "Atlanta, US",
                                 "id": "ATL"
                               },
-                              "threats": [
-
-                              ],
-                              "httperrors": [
-
-                              ],
+                              "threats": [],
+                              "httperrors": [],
                               "bundleid": 3
                             }
                           }
@@ -2141,8 +2119,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -2151,8 +2128,7 @@
                   ]
                 },
                 "example": {
-                  "meta": {
-                  },
+                  "meta": {},
                   "data": [
                     {
                       "externalip": "52.8.160.247",
@@ -2220,9 +2196,7 @@
                       ],
                       "querytype": "MX",
                       "returncode": 2,
-                      "blockedapplications": [
-
-                      ],
+                      "blockedapplications": [],
                       "type": "dns"
                     }
                   ]
@@ -2460,9 +2434,7 @@
         "operationId": "getTopCategories",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -2754,8 +2726,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -2776,8 +2747,7 @@
                       "count": 3827
                     }
                   ],
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -3012,9 +2982,7 @@
         "operationId": "getRequestsByTimerangeAndCategory",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -3326,8 +3294,7 @@
                                 "requests"
                               ],
                               "example": {
-                                "category": {
-                                },
+                                "category": {},
                                 "requests": 24
                               }
                             }
@@ -3354,8 +3321,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -3382,8 +3348,7 @@
                       ]
                     }
                   ],
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -3618,9 +3583,7 @@
         "operationId": "getTotalRequests",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -3873,8 +3836,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -3886,8 +3848,7 @@
                   "data": {
                     "count": 42
                   },
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -4122,9 +4083,7 @@
         "operationId": "getTotalRequestsByType",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -4384,8 +4343,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -4397,8 +4355,7 @@
                   "data": {
                     "count": 42
                   },
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -4633,9 +4590,7 @@
         "operationId": "getSummary",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -4974,8 +4929,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -5000,8 +4954,7 @@
                     "identities": 1,
                     "applicationsallowed": 2
                   },
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -5236,9 +5189,7 @@
         "operationId": "getSummaryByType",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -5604,8 +5555,7 @@
                     "meta": {
                       "type": "object",
                       "description": "The properties of the metadata.",
-                      "example": {
-                      }
+                      "example": {}
                     }
                   },
                   "required": [
@@ -5630,8 +5580,7 @@
                     "applicationsallowed": 2,
                     "policyrequests": 3
                   },
-                  "meta": {
-                  }
+                  "meta": {}
                 }
               }
             }
@@ -6079,9 +6028,7 @@
         ],
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "responses": {
@@ -6535,9 +6482,7 @@
         ],
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "responses": {
@@ -6960,9 +6905,7 @@
         "operationId": "getDatacenters",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "description": "List the information about the IPsec-enabled data centers.\nThe data center information includes the IP address and location details.",
@@ -7342,9 +7285,7 @@
         "operationId": "createNetworkDevice",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "requestBody": {
@@ -7663,9 +7604,7 @@
         "operationId": "getAllNetworkDevices",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "responses": {
@@ -7935,9 +7874,7 @@
         "operationId": "updateNetworkDevice",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -8240,9 +8177,7 @@
         "operationId": "getNetworkDevice",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -8515,9 +8450,7 @@
         "operationId": "deleteNetworkDevice",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -8562,8 +8495,7 @@
                 "example": "2023-03-14T18:34:25Z"
               }
             },
-            "content": {
-            }
+            "content": {}
           },
           "400": {
             "description": "Bad Request",
@@ -8724,9 +8656,7 @@
         "operationId": "listNetworkDevicePolicies",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -9007,9 +8937,7 @@
         "description": "List the tunnels for an organization.",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "tags": [
@@ -9532,8 +9460,7 @@
                       "123.111.222.25/24",
                       "111.222.39.1/32"
                     ],
-                    "meta": {
-                    },
+                    "meta": {},
                     "createdAt": "2018-06-13T16:07:07.222Z",
                     "modifiedAt": "2018-06-13T16:07:07.222Z"
                   }
@@ -9791,9 +9718,7 @@
         "description": "Add a new tunnel to the organization.",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "tags": [
@@ -10101,8 +10026,7 @@
                       "123.111.222.25/24",
                       "111.222.39.1/32"
                     ],
-                    "meta": {
-                    },
+                    "meta": {},
                     "createdAt": "2018-06-13T16:07:07.222Z",
                     "modifiedAt": "2018-06-13T16:07:07.222Z"
                   }
@@ -10131,8 +10055,7 @@
                     "123.111.222.25/24",
                     "111.222.39.1/32"
                   ],
-                  "meta": {
-                  },
+                  "meta": {},
                   "createdAt": "2018-06-13T16:07:07.222Z",
                   "modifiedAt": "2018-06-13T16:07:07.222Z"
                 }
@@ -10402,9 +10325,7 @@
         "description": "Get a specific tunnel.",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -10608,8 +10529,7 @@
                       "123.111.222.25/24",
                       "111.222.39.1/32"
                     ],
-                    "meta": {
-                    },
+                    "meta": {},
                     "createdAt": "2018-06-13T16:07:07.222Z",
                     "modifiedAt": "2018-06-13T16:07:07.222Z"
                   }
@@ -10637,8 +10557,7 @@
                     "123.111.222.25/24",
                     "111.222.39.1/32"
                   ],
-                  "meta": {
-                  },
+                  "meta": {},
                   "createdAt": "2018-06-13T16:07:07.222Z",
                   "modifiedAt": "2018-06-13T16:07:07.222Z"
                 }
@@ -10895,9 +10814,7 @@
         "description": "Delete a tunnel in the organization.",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "tags": [
@@ -11313,9 +11230,7 @@
         "operationId": "getTunnelPolicies",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "description": "List the policies that include the network tunnel.",
@@ -11735,9 +11650,7 @@
         "operationId": "listPolicies",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -12196,9 +12109,7 @@
         ],
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "responses": {
@@ -12615,9 +12526,7 @@
         "operationId": "createDestinationList",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "requestBody": {
@@ -13100,9 +13009,7 @@
         "operationId": "updateDestinationLists",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -13528,9 +13435,7 @@
         "operationId": "deleteDestinationList",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -13610,8 +13515,7 @@
                     },
                     "data": {
                       "type": "array",
-                      "items": {
-                      }
+                      "items": {}
                     }
                   },
                   "example": {
@@ -13619,9 +13523,7 @@
                       "code": 200,
                       "text": "OK"
                     },
-                    "data": [
-
-                    ]
+                    "data": []
                   }
                 },
                 "example": {
@@ -13629,9 +13531,7 @@
                     "code": 200,
                     "text": "OK"
                   },
-                  "data": [
-
-                  ]
+                  "data": []
                 }
               }
             }
@@ -13792,9 +13692,7 @@
         "operationId": "getDestinationList",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -14180,9 +14078,7 @@
         "operationId": "getDestinations",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -14542,9 +14438,7 @@
         "operationId": "createDestinations",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -14992,9 +14886,7 @@
         "operationId": "deleteDestinations",
         "security": [
           {
-            "meraki_api_key": [
-
-            ]
+            "meraki_api_key": []
           }
         ],
         "parameters": [
@@ -15490,14 +15382,10 @@
   ],
   "security": [
     {
-      "meraki_api_key": [
-
-      ]
+      "meraki_api_key": []
     },
     {
-      "bearerAuth": [
-
-      ]
+      "bearerAuth": []
     }
   ]
 }
